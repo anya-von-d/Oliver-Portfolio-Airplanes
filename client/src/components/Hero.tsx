@@ -59,12 +59,6 @@ export default function Hero() {
               <span>Palo Alto, CA</span>
             </div>
 
-            <p className="text-lg text-foreground/80 leading-relaxed">
-              Graduate student specializing in Machine Learning and AI Research with experience in deep learning,
-              computer vision, and medical imaging. Passionate about developing AI-driven solutions for real-world
-              clinical applications.
-            </p>
-
             <div className="flex flex-wrap items-center gap-4 pt-4">
               <Button
                 size="lg"
@@ -91,16 +85,6 @@ export default function Hero() {
                   <Linkedin className="w-4 h-4" />
                   LinkedIn
                 </a>
-              </Button>
-
-              <Button
-                size="lg"
-                variant="outline"
-                className="gap-2"
-                data-testid="button-resume"
-              >
-                <Download className="w-4 h-4" />
-                Resume
               </Button>
             </div>
           </div>
