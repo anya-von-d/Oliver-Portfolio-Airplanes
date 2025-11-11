@@ -29,7 +29,7 @@ export default function Home() {
         </div>
         <Contact />
       </main>
-      <footer className="py-16 px-6 bg-[#3E3A4E] text-white" data-testid="footer-main">
+      <footer className="py-16 px-6 bg-[#1A1A1A] text-white" data-testid="footer-main">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div className="md:col-span-2">
