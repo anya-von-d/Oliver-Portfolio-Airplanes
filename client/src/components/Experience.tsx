@@ -59,7 +59,7 @@ export default function Experience() {
   };
 
   return (
-    <section id="experience" className="relative py-16 px-6" data-testid="section-experience">
+    <section id="experience" className="relative pt-16 pb-32 px-6" data-testid="section-experience">
       <div className="relative max-w-6xl mx-auto">
         <div className="relative flex items-end mb-8">
           <div className="relative" style={{ width: '350px', height: '80px' }}>
