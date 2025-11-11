@@ -83,7 +83,7 @@ export default function Coursework() {
                 <Badge
                   key={skill}
                   variant="outline"
-                  className="font-mono px-4 py-2 text-sm border-primary/40 text-white hover:bg-primary hover:text-primary-foreground transition-all cursor-default animate-fade-in"
+                  className="font-mono px-4 py-2 text-sm !border-white text-white hover:bg-primary hover:text-primary-foreground transition-all cursor-default animate-fade-in"
                   style={{ animationDelay: `${index * 50}ms` }}
                   data-testid={`badge-tech-${skill.toLowerCase().replace(/\s+/g, '-')}`}
                 >
