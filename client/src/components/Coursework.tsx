@@ -38,7 +38,7 @@ export default function Coursework() {
             <svg className="w-full h-full absolute bottom-0" viewBox="0 0 400 80" preserveAspectRatio="none" style={{ display: 'block' }}>
               <path
                 d="M 0,60 Q 20,60 35,40 Q 50,20 75,20 L 325,20 Q 350,20 365,40 Q 380,60 400,60 L 400,80 L 0,80 Z"
-                fill="hsl(120, 20%, 15%)"
+                fill="#347571"
               />
             </svg>
             <div className="absolute inset-0 flex items-center justify-center pt-6">
@@ -47,10 +47,10 @@ export default function Coursework() {
               </h2>
             </div>
           </div>
-          <div className="flex-1 bg-[hsl(120,20%,15%)] h-5"></div>
+          <div className="flex-1 bg-[#347571] h-5"></div>
         </div>
 
-        <div className="bg-[hsl(120,20%,15%)] p-8 md:p-12">
+        <div className="bg-[#347571] p-8 md:p-12">
           <div className="grid md:grid-cols-2 gap-12">
           <div>
             <div className="flex items-center gap-3 mb-6">
