@@ -60,15 +60,15 @@ export default function Coursework() {
               {courses.map((course, index) => (
                 <Card
                   key={course}
-                  className={`p-4 hover-elevate active-elevate-2 cursor-default transition-all animate-fade-in bg-white/5 border-white/10 ${
-                    hoveredIndex === index ? 'scale-105 border-primary/50' : ''
+                  className={`p-4 hover-elevate active-elevate-2 cursor-default transition-all animate-fade-in bg-white/5 !border-[#1EDF84] ${
+                    hoveredIndex === index ? 'scale-105' : ''
                   }`}
                   style={{ animationDelay: `${index * 50}ms` }}
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
                   data-testid={`card-course-${index}`}
                 >
-                  <p className="font-mono text-sm leading-relaxed">{course}</p>
+                  <p className="font-mono text-sm leading-relaxed text-[#1EDF84]">{course}</p>
                 </Card>
               ))}
             </div>
