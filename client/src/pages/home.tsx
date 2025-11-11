@@ -12,11 +12,11 @@ export default function Home() {
       <ParticleBackground />
       <Navigation />
       <main>
-        <div className="relative bg-gradient-to-b from-[hsl(74,48%,95%)] via-[hsl(74,40%,92%)] to-[hsl(0,0%,100%)]">
+        <div className="relative bg-gradient-to-b from-[hsl(74,48%,95%)] via-[hsl(90,50%,90%)] via-[hsl(100,45%,88%)] to-[hsl(120,40%,85%)]">
           <Hero />
-        </div>
-        <div className="relative">
           <About />
+        </div>
+        <div className="relative bg-gradient-to-b from-[hsl(120,40%,85%)] to-[hsl(0,0%,100%)]">
           <Education />
         </div>
         <div className="relative bg-[hsl(120,20%,15%)] text-white">

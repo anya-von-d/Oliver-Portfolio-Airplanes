@@ -55,20 +55,20 @@ export default function About() {
           <div className="flex-1 bg-[hsl(120,20%,15%)] h-5"></div>
         </div>
         
-        <div className="bg-[hsl(120,20%,15%)] p-8 md:p-12">
+        <div className="p-8 md:p-12">
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="space-y-6 animate-slide-in-left">
-              <p className="text-lg leading-relaxed text-white/90">
+              <p className="text-lg leading-relaxed text-foreground">
                 I'm a graduate student at Stanford University pursuing a Master's in Computer Science with a
                 focus on Artificial Intelligence. My work bridges the gap between cutting-edge AI methodologies
                 and real-world clinical applications.
               </p>
-              <p className="text-lg leading-relaxed text-white/90">
+              <p className="text-lg leading-relaxed text-foreground">
                 With experience at Google and multiple research positions at Stanford, I specialize in developing
                 AI-driven solutions for complex problems in medical imaging, general game playing, and precision
                 healthcare.
               </p>
-              <p className="text-lg leading-relaxed text-white/90">
+              <p className="text-lg leading-relaxed text-foreground">
                 I'm passionate about teaching and mentoring, having served as a Teaching Assistant for multiple
                 courses and as a Math Department tutor, helping students master complex concepts in computer
                 science and mathematics.
@@ -81,7 +81,7 @@ export default function About() {
                   <Badge
                     key={skill}
                     variant="outline"
-                    className="font-mono text-sm px-3 py-1 border-primary/40 text-white hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                    className="font-mono text-sm px-3 py-1 border-primary/40 text-foreground hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
                     data-testid={`badge-skill-${skill.toLowerCase().replace(/\s+/g, '-')}`}
                   >
                     {skill}
@@ -95,13 +95,13 @@ export default function About() {
             {focuses.map((focus, index) => (
               <Card
                 key={focus.title}
-                className="p-6 hover-elevate active-elevate-2 transition-all cursor-default animate-fade-in bg-white/5 border-white/10"
+                className="p-6 hover-elevate active-elevate-2 transition-all cursor-default animate-fade-in bg-white/60 border-primary/20"
                 style={{ animationDelay: `${index * 100}ms` }}
                 data-testid={`card-focus-${focus.title.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 <focus.icon className="w-10 h-10 text-primary mb-4" />
-                <h3 className="font-display font-bold text-xl mb-2 text-white">{focus.title}</h3>
-                <p className="text-white/70 leading-relaxed">{focus.description}</p>
+                <h3 className="font-display font-bold text-xl mb-2 text-foreground">{focus.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{focus.description}</p>
               </Card>
             ))}
           </div>
