@@ -24,6 +24,8 @@ export default function Home() {
         </div>
         <div className="relative bg-gradient-to-b from-[hsl(210,70%,70%)] via-[hsl(210,60%,80%)] via-[hsl(210,50%,85%)] to-[hsl(210,45%,90%)]">
           <Research />
+        </div>
+        <div className="relative bg-gradient-to-b from-[hsl(210,70%,70%)] via-[hsl(210,60%,80%)] via-[hsl(210,50%,85%)] to-[hsl(210,45%,90%)]">
           <Experience />
           <Coursework />
         </div>
