@@ -2,6 +2,7 @@ import ParticleBackground from '@/components/ParticleBackground';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import SkillsBanner from '@/components/SkillsBanner';
+import TechnicalSkillsBanner from '@/components/TechnicalSkillsBanner';
 import About from '@/components/About';
 import Research from '@/components/Research';
 import Education from '@/components/Education';
@@ -29,6 +30,7 @@ export default function Home() {
         <div className="relative bg-gradient-to-b from-[hsl(210,70%,70%)] via-[hsl(210,60%,80%)] via-[hsl(210,50%,85%)] to-[hsl(210,45%,90%)]">
           <Research />
         </div>
+        <TechnicalSkillsBanner />
         <div className="relative bg-gradient-to-b from-[hsl(210,70%,70%)] via-[hsl(210,60%,80%)] via-[hsl(210,50%,85%)] to-[hsl(210,45%,90%)]">
           <Experience />
           <Coursework />
