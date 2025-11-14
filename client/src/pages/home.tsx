@@ -3,6 +3,7 @@ import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import SkillsBanner from '@/components/SkillsBanner';
 import TechnicalSkillsBanner from '@/components/TechnicalSkillsBanner';
+import CallToActionBanner from '@/components/CallToActionBanner';
 import About from '@/components/About';
 import Research from '@/components/Research';
 import Education from '@/components/Education';
@@ -35,6 +36,7 @@ export default function Home() {
           <Experience />
           <Coursework />
         </div>
+        <CallToActionBanner />
         <Contact />
       </main>
       <footer className="py-16 px-6 bg-[#1A1A1A] text-white" data-testid="footer-main">
