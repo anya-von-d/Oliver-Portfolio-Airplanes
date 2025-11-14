@@ -40,26 +40,11 @@ export default function About() {
         </div>
         
         <div>
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="mb-12">
             <div className="space-y-6 animate-slide-in-left">
-              <p className="text-lg leading-relaxed text-foreground">
+              <p className="text-lg leading-relaxed text-foreground max-w-3xl">
                 Graduate student at Stanford pursuing a Master's in Aeronautical and Astronautical Engineering. With experience at Joby Aviation, Gulfstream Aerospace, and Stanford research labs, I specialize in aircraft design, flight test engineering, and aeroacoustics research. Private pilot with hands-on flying experience.
               </p>
-            </div>
-
-            <div className="space-y-4 animate-slide-in-right">
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                  <Badge
-                    key={skill}
-                    variant="outline"
-                    className="font-mono text-sm px-3 py-1 !border-primary text-foreground hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
-                    data-testid={`badge-skill-${skill.toLowerCase().replace(/\s+/g, '-')}`}
-                  >
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
             </div>
           </div>
 
