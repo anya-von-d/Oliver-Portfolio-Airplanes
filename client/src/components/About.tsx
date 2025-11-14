@@ -33,7 +33,7 @@ export default function About() {
   return (
     <section id="about" className="relative py-16 px-6 bg-primary/20" data-testid="section-about">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16">
+        <div className="mb-16 text-center">
           <h2 className="font-mono text-3xl md:text-4xl mb-4" data-testid="heading-about">
             <span className="text-primary">&lt;</span><span className="text-foreground">About</span><span className="text-primary">/&gt;</span>
           </h2>
@@ -41,8 +41,8 @@ export default function About() {
         
         <div>
           <div className="mb-12">
-            <div className="space-y-6 animate-slide-in-left">
-              <p className="text-lg leading-relaxed text-foreground max-w-3xl">
+            <div className="space-y-6 animate-slide-in-left text-center">
+              <p className="text-lg leading-relaxed text-foreground max-w-3xl mx-auto">
                 Graduate student at Stanford pursuing a Master's in Aeronautical and Astronautical Engineering. With experience at Joby Aviation, Gulfstream Aerospace, and Stanford research labs, I specialize in aircraft design, flight test engineering, and aeroacoustics research. Private pilot with hands-on flying experience.
               </p>
             </div>
