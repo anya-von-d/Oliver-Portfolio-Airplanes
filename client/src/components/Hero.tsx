@@ -6,7 +6,7 @@ import CloudsBackground from '@/components/CloudsBackground';
 import ResumeDialog from '@/components/ResumeDialog';
 import resumePdf from '@assets/Oliver Szavuj Resume_1763106094472.pdf';
 
-const profileImage = '';
+const profileImage = '/attached_assets/Screenshot 2025-11-13 at 11.53.05 PM_1763106789672.png';
 
 export default function Hero() {
   const [displayedText, setDisplayedText] = useState('');
