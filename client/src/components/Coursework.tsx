@@ -3,28 +3,32 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
 const courses = [
-  'Machine Learning',
-  'Programming Methodologies',
+  'Aircraft Design',
+  'Applied Aerodynamics',
+  'Flight Mechanics & Controls',
+  'Intermediate Fluid Dynamics',
+  'Feedback Control Design',
+  'Atmospheric Flight',
+  'Space Flight',
+  'Lightweight Structures Design',
   'Programming Abstractions',
-  'Computer Organization & Systems',
-  'Design and Analysis of Algorithms',
-  'Natural Language Processing',
-  'Integral Calculus of Several Variables',
-  'Differential Equations with Linear Algebra',
-  'Fourier Methods',
-  'Vector Calculus',
+  'Robotics and Autonomous Systems',
+  'Operations of Aerospace Systems',
+  'Aerodynamics for Racecars',
 ];
 
 const technicalSkills = [
-  'Machine Learning',
+  'MATLAB',
   'Python',
   'C++',
-  'MATLAB',
-  'Microsoft Excel',
-  'Microsoft Word',
-  'Deep Learning',
-  'Computer Vision',
-  'Medical Imaging',
+  'Java',
+  'Simulink',
+  'Ansys',
+  'SolidWorks',
+  'Siemens NX',
+  'CATIA',
+  'XFOIL',
+  'LaTeX',
 ];
 
 export default function Coursework() {
@@ -38,7 +42,7 @@ export default function Coursework() {
             <svg className="w-full h-full absolute bottom-0" viewBox="0 0 400 80" preserveAspectRatio="none" style={{ display: 'block' }}>
               <path
                 d="M 0,60 Q 20,60 35,40 Q 50,20 75,20 L 325,20 Q 350,20 365,40 Q 380,60 400,60 L 400,80 L 0,80 Z"
-                fill="#1A1A1A"
+                fill="hsl(220, 30%, 15%)"
               />
             </svg>
             <div className="absolute inset-0 flex items-center justify-center pt-6">
@@ -47,10 +51,10 @@ export default function Coursework() {
               </h2>
             </div>
           </div>
-          <div className="flex-1 bg-[#1A1A1A] h-5"></div>
+          <div className="flex-1 bg-[hsl(220,30%,15%)] h-5"></div>
         </div>
 
-        <div className="bg-[#1A1A1A] p-8 md:p-12">
+        <div className="bg-[hsl(220,30%,15%)] p-8 md:p-12">
           <div className="grid md:grid-cols-2 gap-12">
           <div>
             <div className="flex items-center gap-3 mb-6">
@@ -60,7 +64,7 @@ export default function Coursework() {
               {courses.map((course, index) => (
                 <Card
                   key={course}
-                  className={`p-4 hover-elevate active-elevate-2 cursor-default transition-all animate-fade-in bg-white/5 !border-[#1EDF84] ${
+                  className={`p-4 hover-elevate active-elevate-2 cursor-default transition-all animate-fade-in bg-white/5 !border-primary ${
                     hoveredIndex === index ? 'scale-105' : ''
                   }`}
                   style={{ animationDelay: `${index * 50}ms` }}
@@ -68,7 +72,7 @@ export default function Coursework() {
                   onMouseLeave={() => setHoveredIndex(null)}
                   data-testid={`card-course-${index}`}
                 >
-                  <p className="font-mono text-sm leading-relaxed text-[#35B276]">{course}</p>
+                  <p className="font-mono text-sm leading-relaxed text-primary">{course}</p>
                 </Card>
               ))}
             </div>
@@ -97,9 +101,10 @@ export default function Coursework() {
                 <span className="font-display font-semibold text-primary block mb-2">
                   Specialized Expertise
                 </span>
-                Strong foundation in mathematics and computer science with hands-on experience in building
-                production-quality software systems, conducting cutting-edge AI research, and applying
-                advanced machine learning techniques to solve real-world problems in healthcare and beyond.
+                Strong foundation in aerospace engineering with hands-on experience in aircraft design, 
+                flight test engineering, and aeroacoustics research. Proficient in computational fluid dynamics, 
+                structural analysis, and control systems design. Licensed private pilot with experience flying 
+                Cessna 182/172, Kodiak 100/900, and IAR-46 aircraft.
               </p>
             </Card>
           </div>

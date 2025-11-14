@@ -39,7 +39,7 @@ export default function Contact() {
               <span className="text-primary">&lt;</span>Contact<span className="text-primary">/&gt;</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Have any questions? Reach out to me from this contact form and I will get back to you shortly.
+              Interested in aerospace collaboration or have questions? Reach out to me from this contact form and I will get back to you shortly.
             </p>
           </div>
 

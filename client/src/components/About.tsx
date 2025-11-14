@@ -2,48 +2,48 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
 const skills = [
-  'Machine Learning',
+  'CFD Analysis',
+  'MATLAB',
   'Python',
   'C++',
-  'MATLAB',
-  'Deep Learning',
-  'Computer Vision',
-  'NLP',
-  'Medical Imaging',
-  'TypeScript',
-  'HTML/CSS',
+  'Aerodynamics',
+  'Flight Dynamics',
+  'CAD Design',
+  'Simulink',
+  'Ansys',
+  'SolidWorks',
 ];
 
 const focuses = [
   {
-    title: 'AI Research',
-    description: 'Developing contrastive deep learning models and CNN architectures for medical applications',
+    title: 'Aircraft Design',
+    description: 'Developing innovative aircraft configurations and aerodynamic optimization for next-generation aerospace systems',
   },
   {
-    title: 'Software Engineering',
-    description: 'Building high-performance user interfaces and scalable production-quality features',
+    title: 'Flight Test Engineering',
+    description: 'Conducting flight tests for envelope expansion and certification, ensuring safety and performance standards',
   },
   {
-    title: 'Machine Learning',
-    description: 'Applying advanced ML techniques to enhance sequence-to-function predictions',
+    title: 'Aeroacoustics Research',
+    description: 'Applying computational methods to predict and reduce noise profiles for rotor-wing aircraft configurations',
   },
 ];
 
 export default function About() {
   return (
-    <section id="about" className="relative py-16 px-6 bg-[#35B276]" data-testid="section-about">
+    <section id="about" className="relative py-16 px-6 bg-primary/20" data-testid="section-about">
       <div className="max-w-6xl mx-auto">
         <div className="mb-16">
           <h2 className="font-mono text-3xl md:text-4xl mb-4" data-testid="heading-about">
-            <span className="text-[#006B3D]">&lt;</span><span className="text-white">About</span><span className="text-[#006B3D]">/&gt;</span>
+            <span className="text-primary">&lt;</span><span className="text-foreground">About</span><span className="text-primary">/&gt;</span>
           </h2>
         </div>
         
         <div>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="space-y-6 animate-slide-in-left">
-              <p className="text-lg leading-relaxed text-[#1A1A1A]">
-                Graduate student at Stanford pursuing a Master's in Computer Science (AI Track). With experience at Google and Stanford research labs, I develop AI-driven solutions for medical imaging, precision healthcare, and general game playing.
+              <p className="text-lg leading-relaxed text-foreground">
+                Graduate student at Stanford pursuing a Master's in Aeronautical and Astronautical Engineering. With experience at Joby Aviation, Gulfstream Aerospace, and Stanford research labs, I specialize in aircraft design, flight test engineering, and aeroacoustics research. Private pilot with hands-on flying experience.
               </p>
             </div>
 
@@ -53,7 +53,7 @@ export default function About() {
                   <Badge
                     key={skill}
                     variant="outline"
-                    className="font-mono text-sm px-3 py-1 !border-white text-[#1A1A1A] hover:bg-white hover:text-primary transition-colors cursor-default"
+                    className="font-mono text-sm px-3 py-1 !border-primary text-foreground hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
                     data-testid={`badge-skill-${skill.toLowerCase().replace(/\s+/g, '-')}`}
                   >
                     {skill}
@@ -67,12 +67,12 @@ export default function About() {
             {focuses.map((focus, index) => (
               <Card
                 key={focus.title}
-                className="p-6 hover-elevate active-elevate-2 transition-all cursor-default animate-fade-in bg-white/20 border-white/40"
+                className="p-6 hover-elevate active-elevate-2 transition-all cursor-default animate-fade-in bg-white/80 border-primary/20"
                 style={{ animationDelay: `${index * 100}ms` }}
                 data-testid={`card-focus-${focus.title.toLowerCase().replace(/\s+/g, '-')}`}
               >
-                <h3 className="font-display font-bold text-xl mb-2 text-[#1A1A1A]">{focus.title}</h3>
-                <p className="text-[#1A1A1A]/80 leading-relaxed">{focus.description}</p>
+                <h3 className="font-display font-bold text-xl mb-2 text-foreground">{focus.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{focus.description}</p>
               </Card>
             ))}
           </div>

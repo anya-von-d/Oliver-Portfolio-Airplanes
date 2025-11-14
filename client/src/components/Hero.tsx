@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Mail, Linkedin, Download } from 'lucide-react';
+import CloudsBackground from '@/components/CloudsBackground';
 
-const profileImage = '/attached_assets/Screenshot 2025-11-13 at 9.11.00 PM_1763097063110.png';
+const profileImage = '';
 
 export default function Hero() {
   const [displayedText, setDisplayedText] = useState('');
-  const fullText = 'AI Researcher & Computer Scientist';
+  const fullText = 'Aerospace Engineer & Researcher';
   const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
@@ -32,16 +33,17 @@ export default function Hero() {
   }, []);
 
   const scrollToContact = () => {
-    window.open('mailto:anya2025@stanford.edu');
+    window.open('mailto:oliveris@stanford.edu');
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 pt-20" data-testid="section-hero">
-      <div className="max-w-6xl mx-auto w-full">
+    <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative" data-testid="section-hero">
+      <CloudsBackground />
+      <div className="max-w-6xl mx-auto w-full relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h1 className="font-display font-bold text-5xl md:text-7xl tracking-tight" data-testid="text-name">
-              Anya Von Diessl
+              Oliver Szavuj
             </h1>
 
             <div className="h-12">
@@ -54,9 +56,9 @@ export default function Hero() {
             <div className="flex items-center gap-2 font-mono text-sm text-muted-foreground flex-wrap">
               <span>Stanford University</span>
               <span className="text-primary">•</span>
-              <span>MS Computer Science (AI)</span>
+              <span>MS Aeronautics & Astronautics</span>
               <span className="text-primary">•</span>
-              <span>Palo Alto, CA</span>
+              <span>Stanford, CA</span>
             </div>
 
             <div className="flex flex-wrap items-center gap-4 pt-4">
@@ -77,7 +79,7 @@ export default function Hero() {
                 data-testid="button-linkedin"
               >
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/oliver-szavuj/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="gap-2"
@@ -92,8 +94,8 @@ export default function Hero() {
           <div className="flex justify-center md:justify-end">
             <div className="relative animate-float">
               <Avatar className="w-64 h-64 md:w-80 md:h-80 border-4 border-primary/50 shadow-2xl shadow-primary/20 rounded-none">
-                <AvatarImage src={profileImage} alt="Anya Von Diessl" />
-                <AvatarFallback className="text-6xl font-display bg-card">AVD</AvatarFallback>
+                <AvatarImage src={profileImage} alt="Oliver Szavuj" />
+                <AvatarFallback className="text-6xl font-display bg-card">OS</AvatarFallback>
               </Avatar>
               <div className="absolute inset-0 bg-primary/10 animate-glow pointer-events-none" />
             </div>

@@ -3,23 +3,25 @@ import { Card } from '@/components/ui/card';
 const education = [
   {
     abbreviation: 'MS',
-    degree: 'Master of Science, Computer Science (Artificial Intelligence Track)',
+    degree: 'Master of Science, Aeronautical and Astronautical Engineering',
     school: 'Stanford University, Stanford, CA',
-    date: 'Expected March 2026',
+    date: 'Expected 2026',
+    gpa: '4.06 GPA',
     current: true,
   },
   {
     abbreviation: 'BS',
-    degree: 'Bachelor of Science, Mathematics',
+    degree: 'Bachelor of Science, Aeronautical and Astronautical Engineering',
     school: 'Stanford University, Stanford, CA',
-    date: 'June 2025',
+    date: '2025',
+    gpa: '4.01 GPA',
     current: false,
   },
 ];
 
 export default function Education() {
   return (
-    <section id="education" className="py-16 px-6 bg-[hsl(120,20%,15%)]" data-testid="section-education">
+    <section id="education" className="py-16 px-6 bg-[hsl(220,30%,15%)]" data-testid="section-education">
       <div className="max-w-6xl mx-auto">
         <div className="mb-16">
           <h2 className="font-mono text-3xl md:text-4xl mb-4 text-white" data-testid="heading-education">
@@ -50,6 +52,11 @@ export default function Education() {
                   <p className="text-white/70 mb-1" data-testid={`text-school-${index}`}>
                     {edu.school} | {edu.date}
                   </p>
+                  {'gpa' in edu && (
+                    <p className="text-primary/80 text-sm font-mono mb-1">
+                      {edu.gpa}
+                    </p>
+                  )}
                   {edu.current && (
                     <div className="mt-3">
                       <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-mono">

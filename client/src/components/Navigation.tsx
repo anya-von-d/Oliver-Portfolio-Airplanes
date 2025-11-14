@@ -56,7 +56,7 @@ export default function Navigation() {
             className="font-mono font-bold text-xl hover-elevate active-elevate-2 px-2 py-1 rounded-md"
             data-testid="link-home"
           >
-            <span className="text-primary">&lt;AVD/&gt;</span>
+            <span className="text-primary">&lt;OS/&gt;</span>
           </button>
 
           <div className="hidden md:flex items-center gap-1">

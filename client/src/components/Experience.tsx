@@ -5,49 +5,58 @@ import { ChevronDown, ChevronUp, Briefcase, Calendar } from 'lucide-react';
 
 const experiences = [
   {
-    title: 'Machine Learning Researcher',
-    organization: 'Stanford Computer Science Department',
-    location: 'Stanford, CA',
-    period: 'September 2024 - June 2025',
+    title: 'Flight Test Engineering Intern',
+    organization: 'Joby Aviation',
+    location: 'Santa Cruz/Marina, CA',
+    period: 'June 2025 - Present',
     description:
-      'I developed a contrastive deep learning model to identify regulatory differences in chromatin accessibility across normal, tumor, and metastatic states. By leveraging CNN architectures like ChromBPNet, I applied advanced machine learning techniques to enhance the precision of sequence-to-function predictions, with a focus on refining computational models for disease progression, particularly in thyroid cancer.',
-    tags: ['Deep Learning', 'CNN', 'Medical Imaging', 'Python'],
+      'Authoring and executing flight test plans for flutter and envelope expansion in support of FAA certification of the Joby S4 2.1a eVTOL aircraft. Writing and validating automated scripts for strain gauge network configuration in propeller vibration measurement systems.',
+    tags: ['Flight Testing', 'FAA Certification', 'eVTOL', 'Vibration Analysis'],
   },
   {
-    title: 'AI Researcher',
-    organization: 'Stanford Transitional AI Lab',
-    location: 'Stanford, CA',
-    period: 'September 2024 - January 2025',
+    title: 'Flight Dynamics/Control Law Intern',
+    organization: 'Gulfstream Aerospace Corporation',
+    location: 'Savannah, GA',
+    period: 'June 2024 - September 2024',
     description:
-      'At the STAI Lab, I work on interdisciplinary research that bridges AI methodologies with real-world clinical applications, focusing on advancing precision healthcare. My role involves developing AI-driven solutions, particularly in the areas of Computer Vision and Medical Imaging, to address technological gaps in clinical settings.',
-    tags: ['Computer Vision', 'Medical AI', 'Precision Healthcare'],
+      'Developed code in conjunction with Simulink harnesses to validate G400 linear control law models, delivering transfer functions and state-space matrices. Continuously improved and added functionalities to support scripts used for control law analyses. Generated and evaluated data for the G400 Pitch Autopilot and Alternate Mode Linear Analysis Reports. Produced and compiled G400 Alternate and Normal Mode roll mixture scheduling data for loads delivery.',
+    tags: ['Flight Controls', 'Simulink', 'MATLAB', 'Control Systems'],
   },
   {
-    title: 'Software Engineering Intern',
-    organization: 'Google',
+    title: 'Aircraft Engineering Intern',
+    organization: 'Daher-Kodiak Aircraft Company',
+    location: 'Sandpoint, ID',
+    period: 'August 2023 - September 2023',
+    description:
+      'Led the CAD process, material selection, and validation for a fire test lab fixture used to evaluate aircraft materials under 60 Hz vibration, 2000°F flame, and 1.5 bar negative pressure for FAA certification. Assisted with identifying sources of vibration on flight-test airframes through aerodynamics analysis, presenting engineering solutions for landing gear strut and anti-icing panel vibrations. Led engineering and integration of a new charger on the Kodiak-100 for EASA certification.',
+    tags: ['CAD Design', 'Materials Testing', 'Aerodynamics', 'Certification'],
+  },
+  {
+    title: 'Aerospace Innovations Intern',
+    organization: 'DroneUp',
+    location: 'Virginia Beach, VA',
+    period: 'June 2023 - July 2023',
+    description:
+      'Led the development of a Hardware-in-the-Loop Simulator to test drone hardware solutions in a custom-coded environment embedding the native Auterion suite for accelerated testing in zero-trust conditions, reducing hardware downtime post-crash. Developed structural risk mitigation solutions to improve the reliability of parachute deployment in abnormal flight conditions.',
+    tags: ['Drone Systems', 'HITL Simulation', 'Auterion', 'Safety Systems'],
+  },
+  {
+    title: 'Aerospace Engineering Intern',
+    organization: 'WindBorne Systems',
     location: 'Mountain View, CA',
-    period: 'July 2023 - September 2023',
+    period: 'June 2022 - August 2022',
     description:
-      'Developed a high-performance user interface for a fraud detection system within Google Ads, leveraging TypeScript, HTML, and CSS to build scalable, production-quality features. Collaborated with cross-functional teams to translate complex fraud detection workflows into intuitive designs, optimizing both usability and system reliability for a platform handling billions of ad transactions.',
-    tags: ['TypeScript', 'UI/UX', 'Frontend Development', 'Google Ads'],
+      'Led the CAD, development, and CFD optimization of a drone built for low-speed endurance flight. Programmed the associated avionics and aircraft controls interface in C++. Iteratively improved the design following manufacturing feedback, reducing weight. Programmed a simulation environment to test and validate flight characteristics and stability during conceptual design.',
+    tags: ['CFD', 'C++', 'Avionics', 'Aircraft Design'],
   },
   {
-    title: 'Teaching Assistant - CS227b: General Game Playing',
-    organization: 'Stanford Computer Science Department',
+    title: 'Aerodynamics Research Lead',
+    organization: 'Stanford Flight Club & Aircraft Design Lab',
     location: 'Stanford, CA',
-    period: 'March 2024 - June 2024',
+    period: '2022 - Present',
     description:
-      'Assisted in teaching a graduate-level AI course on General Game Playing, focusing on the design of autonomous agents that learn and execute strategies for previously unseen games based solely on formal logic descriptions. Guided students in applying methods from automated reasoning, symbolic knowledge representation, adversarial and heuristic search, and resource-bounded planning, while refining my own expertise in algorithmic game theory and general-purpose intelligence systems.',
-    tags: ['AI', 'Game Theory', 'Teaching', 'Automated Reasoning'],
-  },
-  {
-    title: 'Math Department Tutor',
-    organization: 'Stanford University',
-    location: 'Stanford, CA',
-    period: 'September 2024 - Present',
-    description:
-      "In my role as a tutor for Stanford's Math Department to support students in mastering their math courses. Through drop-in tutoring sessions, I provide personalized academic support, clarify complex concepts, and guide students through challenging coursework and problem-solving techniques. My role extends beyond simply answering questions, I'm dedicated to fostering a deeper understanding of mathematical principles, encouraging independent learning, and enhancing students' confidence in their analytical abilities.",
-    tags: ['Mathematics', 'Teaching', 'Mentoring'],
+      'Club President and Aerodynamics Lead for AIAA Design-Build-Fly competition team, focusing on conceptual aircraft design, aerodynamic analysis, and stability optimization. Developed simulation environment implementing VLM and FEA for aeroelastic study of joined-wing aircraft configurations. Developing methodology using vortex-particle methods and Ffowcs Williams-Hawkings equation to predict aero-acoustic noise profiles for rotor-wing configurations.',
+    tags: ['Aerodynamics', 'VLM', 'FEA', 'Aeroacoustics'],
   },
 ];
 
@@ -66,7 +75,7 @@ export default function Experience() {
             <svg className="w-full h-full absolute bottom-0" viewBox="0 0 350 80" preserveAspectRatio="none" style={{ display: 'block' }}>
               <path
                 d="M 0,60 Q 20,60 35,40 Q 50,20 75,20 L 275,20 Q 300,20 315,40 Q 330,60 350,60 L 350,80 L 0,80 Z"
-                fill="#1A1A1A"
+                fill="hsl(220, 30%, 15%)"
               />
             </svg>
             <div className="absolute inset-0 flex items-center justify-center pt-6">
@@ -75,10 +84,10 @@ export default function Experience() {
               </h2>
             </div>
           </div>
-          <div className="flex-1 bg-[#1A1A1A] h-5"></div>
+          <div className="flex-1 bg-[hsl(220,30%,15%)] h-5"></div>
         </div>
 
-        <div className="bg-[#1A1A1A] p-8 md:p-12">
+        <div className="bg-[hsl(220,30%,15%)] p-8 md:p-12">
           <div className="space-y-6">
             {experiences.map((exp, index) => (
               <Card
