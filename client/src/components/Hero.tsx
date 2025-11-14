@@ -5,7 +5,7 @@ import { Mail, Linkedin, FileText, Download } from 'lucide-react';
 import CloudsBackground from '@/components/CloudsBackground';
 import ResumeDialog from '@/components/ResumeDialog';
 import resumePdf from '@assets/Oliver Szavuj Resume_1763106094472.pdf';
-import profileImageSrc from '@assets/stock_images/professional_headsho_6d1a0ea6.jpg';
+import profileImageSrc from '@assets/generated_images/Professional_aerospace_engineer_headshot_c1b3f78f.png';
 
 const profileImage = profileImageSrc;
 
