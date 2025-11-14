@@ -13,12 +13,12 @@ export default function SkillsBanner() {
   ];
 
   return (
-    <div className="relative w-full bg-white py-8 overflow-hidden" data-testid="banner-skills">
+    <div className="relative w-full bg-white py-3 overflow-hidden" data-testid="banner-skills">
       <div className="flex animate-scroll">
         {[...skills, ...skills, ...skills].map((skill, index) => (
           <div
             key={index}
-            className="flex-shrink-0 mx-3 px-6 py-3 rounded-lg border-2 border-primary/20 bg-background text-foreground font-mono whitespace-nowrap"
+            className="flex-shrink-0 mx-3 px-4 py-2 rounded-lg border-2 border-primary/20 bg-background text-foreground font-mono text-sm whitespace-nowrap"
             data-testid={`skill-${skill.toLowerCase().replace(/\s+/g, '-')}-${index}`}
           >
             {skill}
