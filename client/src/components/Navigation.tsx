@@ -4,8 +4,9 @@ import { Menu, X } from 'lucide-react';
 
 const navItems = [
   { label: 'About', href: '#about' },
-  { label: 'Education', href: '#education' },
+  { label: 'Research', href: '#research' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Education', href: '#education' },
   { label: 'Coursework', href: '#coursework' },
 ];
 

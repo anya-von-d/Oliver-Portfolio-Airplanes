@@ -2,6 +2,7 @@ import ParticleBackground from '@/components/ParticleBackground';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import Research from '@/components/Research';
 import Education from '@/components/Education';
 import Experience from '@/components/Experience';
 import Coursework from '@/components/Coursework';
@@ -19,6 +20,9 @@ export default function Home() {
           <About />
         </div>
         <div className="relative bg-gradient-to-b from-[hsl(210,45%,90%)] via-[hsl(210,40%,92%)] via-[hsl(210,35%,94%)] to-[hsl(210,30%,96%)]">
+          <Research />
+        </div>
+        <div className="relative bg-gradient-to-b from-[hsl(210,30%,96%)] via-[hsl(210,35%,94%)] via-[hsl(210,40%,92%)] to-[hsl(210,45%,90%)]">
           <Experience />
         </div>
         <div className="relative bg-white">
