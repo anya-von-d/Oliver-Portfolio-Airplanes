@@ -92,12 +92,11 @@ export default function Hero() {
           </div>
 
           <div className="flex justify-center md:justify-end">
-            <div className="relative animate-float">
+            <div className="relative">
               <Avatar className="w-64 h-64 md:w-80 md:h-80 border-4 border-primary/50 shadow-2xl shadow-primary/20 rounded-none">
                 <AvatarImage src={profileImage} alt="Oliver Szavuj" />
                 <AvatarFallback className="text-6xl font-display bg-card">OS</AvatarFallback>
               </Avatar>
-              <div className="absolute inset-0 bg-primary/10 animate-glow pointer-events-none" />
             </div>
           </div>
         </div>
