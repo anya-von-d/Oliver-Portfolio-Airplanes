@@ -35,7 +35,7 @@ export default function Coursework() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section id="coursework" className="relative pt-16 pb-32 px-6" data-testid="section-coursework">
+    <section id="coursework" className="relative pt-4 pb-32 px-6" data-testid="section-coursework">
       <div className="relative max-w-6xl mx-auto">
         <div className="relative flex items-end">
           <div className="relative" style={{ width: '400px', height: '80px' }}>
