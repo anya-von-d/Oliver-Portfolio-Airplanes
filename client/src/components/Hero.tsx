@@ -103,7 +103,7 @@ export default function Hero() {
                       className="gap-2"
                     >
                       <Download className="w-4 h-4" />
-                      Download
+                      Download Resume
                     </a>
                   </Button>
                 </div>
