@@ -33,7 +33,10 @@ export default function Hero() {
   }, []);
 
   const scrollToContact = () => {
-    window.open('mailto:oliveris@stanford.edu');
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (

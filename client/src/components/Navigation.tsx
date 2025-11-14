@@ -8,6 +8,7 @@ const navItems = [
   { label: 'Research', href: '#research' },
   { label: 'Experience', href: '#experience' },
   { label: 'Coursework', href: '#coursework' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 export default function Navigation() {

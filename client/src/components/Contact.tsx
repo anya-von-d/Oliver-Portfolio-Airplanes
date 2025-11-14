@@ -41,6 +41,15 @@ export default function Contact() {
             <p className="text-lg text-muted-foreground leading-relaxed">
               Interested in aerospace collaboration or have questions? Reach out to me from this contact form and I will get back to you shortly.
             </p>
+            <div className="pt-2">
+              <a 
+                href="mailto:oliveris@stanford.edu"
+                className="text-primary hover:underline font-mono text-lg"
+                data-testid="link-email-contact"
+              >
+                oliveris@stanford.edu
+              </a>
+            </div>
           </div>
 
           <Card className="p-8 bg-white shadow-lg" data-testid="card-contact-form">
