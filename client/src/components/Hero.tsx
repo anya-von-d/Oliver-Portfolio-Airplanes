@@ -79,7 +79,7 @@ export default function Hero() {
                 data-testid="button-linkedin"
               >
                 <a
-                  href="https://www.linkedin.com/in/oliver-szavuj/"
+                  href="https://www.linkedin.com/in/oliverszavuj/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="gap-2"

@@ -46,7 +46,7 @@ export default function Home() {
                 Graduate student at Stanford University pursuing aerospace engineering with a focus on aircraft design, aerodynamics, and flight test engineering.
               </p>
               <a 
-                href="https://www.linkedin.com/in/oliver-szavuj/" 
+                href="https://www.linkedin.com/in/oliverszavuj/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-block"
