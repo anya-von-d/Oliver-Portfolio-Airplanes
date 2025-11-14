@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import { Mail, Linkedin, FileText } from 'lucide-react';
+import { Mail, Linkedin, FileText, Download } from 'lucide-react';
 import CloudsBackground from '@/components/CloudsBackground';
 import ResumeDialog from '@/components/ResumeDialog';
+import resumePdf from '@assets/Oliver Szavuj Resume_1763106094472.pdf';
 
 const profileImage = '';
 
@@ -66,7 +67,7 @@ export default function Hero() {
               <span>Stanford, CA</span>
             </div>
 
-            <div className="flex flex-wrap items-center gap-4 pt-4">
+            <div className="flex flex-wrap items-start gap-4 pt-4">
               <div className="flex flex-col gap-3">
                 <Button
                   size="lg"
@@ -78,16 +79,34 @@ export default function Hero() {
                   Contact Me
                 </Button>
                 
-                <Button
-                  size="lg"
-                  variant="outline"
-                  onClick={() => setResumeOpen(true)}
-                  className="gap-2"
-                  data-testid="button-resume"
-                >
-                  <FileText className="w-4 h-4" />
-                  View Resume
-                </Button>
+                <div className="flex gap-3">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    onClick={() => setResumeOpen(true)}
+                    className="gap-2"
+                    data-testid="button-resume"
+                  >
+                    <FileText className="w-4 h-4" />
+                    View Resume
+                  </Button>
+                  
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    asChild
+                    data-testid="button-download-resume"
+                  >
+                    <a
+                      href={resumePdf}
+                      download="Oliver_Szavuj_Resume.pdf"
+                      className="gap-2"
+                    >
+                      <Download className="w-4 h-4" />
+                      Download
+                    </a>
+                  </Button>
+                </div>
               </div>
 
               <Button
