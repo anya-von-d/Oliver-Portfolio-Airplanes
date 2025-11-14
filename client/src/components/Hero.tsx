@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import { Mail, Linkedin, Download } from 'lucide-react';
+import { Mail, Linkedin, FileText } from 'lucide-react';
 import CloudsBackground from '@/components/CloudsBackground';
+import ResumeDialog from '@/components/ResumeDialog';
 
 const profileImage = '';
 
@@ -10,6 +11,7 @@ export default function Hero() {
   const [displayedText, setDisplayedText] = useState('');
   const fullText = 'Aerospace Engineer & Researcher';
   const [showCursor, setShowCursor] = useState(true);
+  const [resumeOpen, setResumeOpen] = useState(false);
 
   useEffect(() => {
     let index = 0;
@@ -65,15 +67,28 @@ export default function Hero() {
             </div>
 
             <div className="flex flex-wrap items-center gap-4 pt-4">
-              <Button
-                size="lg"
-                onClick={scrollToContact}
-                className="gap-2"
-                data-testid="button-contact"
-              >
-                <Mail className="w-4 h-4" />
-                Contact Me
-              </Button>
+              <div className="flex flex-col gap-3">
+                <Button
+                  size="lg"
+                  onClick={scrollToContact}
+                  className="gap-2"
+                  data-testid="button-contact"
+                >
+                  <Mail className="w-4 h-4" />
+                  Contact Me
+                </Button>
+                
+                <Button
+                  size="lg"
+                  variant="outline"
+                  onClick={() => setResumeOpen(true)}
+                  className="gap-2"
+                  data-testid="button-resume"
+                >
+                  <FileText className="w-4 h-4" />
+                  View Resume
+                </Button>
+              </div>
 
               <Button
                 size="lg"
@@ -104,6 +119,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
+      <ResumeDialog open={resumeOpen} onOpenChange={setResumeOpen} />
     </section>
   );
 }
