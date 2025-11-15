@@ -1,4 +1,5 @@
 import { Card } from '@/components/ui/card';
+import stanfordLogo from '@assets/stock_images/stanford_university__942a3c9c.jpg';
 
 const education = [
   {
@@ -39,10 +40,12 @@ export default function Education() {
             >
               <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
                 <div className="shrink-0 mx-auto sm:mx-0">
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <span className="font-display font-bold text-2xl md:text-3xl text-primary">
-                      {edu.abbreviation}
-                    </span>
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden bg-white flex items-center justify-center p-1">
+                    <img 
+                      src={stanfordLogo} 
+                      alt="Stanford University Logo" 
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                 </div>
                 <div className="flex-1 min-w-0 text-center sm:text-left">
