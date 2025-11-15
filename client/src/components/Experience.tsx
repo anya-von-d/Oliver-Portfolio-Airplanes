@@ -118,7 +118,7 @@ export default function Experience() {
                       <img 
                         src={exp.logo} 
                         alt={`${exp.organization} logo`}
-                        className="w-12 h-12 sm:w-16 sm:h-16 object-contain rounded-md bg-white/90 p-2 shrink-0"
+                        className="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-md bg-white/90 shrink-0"
                         data-testid={`img-logo-${index}`}
                       />
                       <div className="flex-1 min-w-0">
