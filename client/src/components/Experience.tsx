@@ -71,7 +71,7 @@ export default function Experience() {
     <section id="experience" className="relative pt-16 pb-32 px-4 sm:px-6 overflow-hidden" data-testid="section-experience">
       <div className="relative max-w-6xl mx-auto w-full">
         <div className="relative flex items-end">
-          <div className="relative w-full sm:w-auto" style={{ maxWidth: '350px', height: '80px' }}>
+          <div className="relative" style={{ width: '350px', height: '80px' }}>
             <svg className="w-full h-full absolute bottom-0" viewBox="0 0 350 80" preserveAspectRatio="none" style={{ display: 'block' }}>
               <path
                 d="M 0,60 Q 20,60 35,40 Q 50,20 75,20 L 275,20 Q 300,20 315,40 Q 330,60 350,60 L 350,80 L 0,80 Z"
@@ -79,12 +79,12 @@ export default function Experience() {
               />
             </svg>
             <div className="absolute inset-0 flex items-center justify-center pt-6">
-              <h2 className="font-mono text-lg sm:text-xl md:text-2xl text-white whitespace-nowrap" data-testid="heading-experience">
+              <h2 className="font-mono text-xl md:text-2xl text-white whitespace-nowrap" data-testid="heading-experience">
                 <span className="text-primary">&lt;</span>Experience<span className="text-primary">/&gt;</span>
               </h2>
             </div>
           </div>
-          <div className="hidden sm:block flex-1 bg-[hsl(220,35%,25%)] h-5"></div>
+          <div className="flex-1 bg-[hsl(220,35%,25%)] h-5"></div>
         </div>
 
         <div className="bg-[hsl(220,35%,25%)] p-4 sm:p-8 md:p-12">
