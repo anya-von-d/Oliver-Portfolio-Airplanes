@@ -44,25 +44,25 @@ export default function Research() {
   const selected = researchProjects.find(p => p.id === selectedProject);
 
   return (
-    <section id="research" className="relative py-16 px-6" data-testid="section-research">
-      <div className="relative max-w-6xl mx-auto">
-        <div className="mb-16">
-          <h2 className="font-mono text-3xl md:text-4xl mb-4" data-testid="heading-research">
+    <section id="research" className="relative py-16 px-4 sm:px-6 overflow-hidden" data-testid="section-research">
+      <div className="relative max-w-6xl mx-auto w-full">
+        <div className="mb-16 text-center md:text-left">
+          <h2 className="font-mono text-2xl sm:text-3xl md:text-4xl mb-4" data-testid="heading-research">
             <span className="text-primary">&lt;</span><span className="text-foreground">Research</span><span className="text-primary">/&gt;</span>
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-[300px_1fr] gap-6">
+        <div className="grid md:grid-cols-[300px_1fr] gap-4 sm:gap-6">
           <div className="space-y-3" data-testid="list-research-projects">
             {researchProjects.map((project) => (
               <Button
                 key={project.id}
                 onClick={() => toggleProject(project.id)}
                 variant={selectedProject === project.id ? "default" : "outline"}
-                className="w-full justify-between h-auto py-4 px-5 text-left"
+                className="w-full justify-between h-auto py-3 sm:py-4 px-4 sm:px-5 text-left"
                 data-testid={`button-project-${project.id}`}
               >
-                <span className="font-mono text-sm truncate">
+                <span className="font-mono text-xs sm:text-sm truncate">
                   {project.title}
                 </span>
                 {selectedProject === project.id ? (
@@ -76,20 +76,20 @@ export default function Research() {
 
           <div>
             {selected ? (
-              <Card className="p-8 animate-fade-in" data-testid="card-research-detail">
-                <h3 className="font-display font-bold text-2xl text-foreground mb-2" data-testid="text-project-title">
+              <Card className="p-6 sm:p-8 animate-fade-in" data-testid="card-research-detail">
+                <h3 className="font-display font-bold text-xl sm:text-2xl text-foreground mb-2" data-testid="text-project-title">
                   {selected.title}
                 </h3>
-                <p className="font-mono text-sm text-primary mb-6" data-testid="text-project-subtitle">
+                <p className="font-mono text-xs sm:text-sm text-primary mb-4 sm:mb-6" data-testid="text-project-subtitle">
                   {selected.subtitle}
                 </p>
-                <p className="text-muted-foreground leading-relaxed" data-testid="text-project-description">
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed" data-testid="text-project-description">
                   {selected.description}
                 </p>
               </Card>
             ) : (
-              <Card className="p-8 flex items-center justify-center h-64 bg-muted/30" data-testid="card-research-empty">
-                <p className="text-muted-foreground font-mono text-sm">
+              <Card className="p-6 sm:p-8 flex items-center justify-center h-48 sm:h-64 bg-muted/30" data-testid="card-research-empty">
+                <p className="text-muted-foreground font-mono text-xs sm:text-sm text-center">
                   Select a research project to view details
                 </p>
               </Card>

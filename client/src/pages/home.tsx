@@ -14,35 +14,35 @@ import { Button } from '@/components/ui/button';
 
 export default function Home() {
   return (
-    <div className="relative">
+    <div className="relative overflow-x-hidden">
       <ParticleBackground />
       <Navigation />
-      <main>
-        <div className="relative bg-gradient-to-b from-[hsl(210,70%,70%)] via-[hsl(210,60%,80%)] via-[hsl(210,50%,85%)] to-[hsl(210,45%,90%)]">
+      <main className="overflow-x-hidden">
+        <div className="relative bg-gradient-to-b from-[hsl(210,70%,70%)] via-[hsl(210,60%,80%)] via-[hsl(210,50%,85%)] to-[hsl(210,45%,90%)] overflow-x-hidden">
           <Hero />
         </div>
         <SkillsBanner />
-        <div className="relative bg-gradient-to-b from-[hsl(210,70%,70%)] via-[hsl(210,60%,80%)] via-[hsl(210,50%,85%)] to-[hsl(210,45%,90%)]">
+        <div className="relative bg-gradient-to-b from-[hsl(210,70%,70%)] via-[hsl(210,60%,80%)] via-[hsl(210,50%,85%)] to-[hsl(210,45%,90%)] overflow-x-hidden">
           <About />
         </div>
-        <div className="relative bg-white">
+        <div className="relative bg-white overflow-x-hidden">
           <Education />
         </div>
-        <div className="relative bg-gradient-to-b from-[hsl(210,70%,70%)] via-[hsl(210,60%,80%)] via-[hsl(210,50%,85%)] to-[hsl(210,45%,90%)]">
+        <div className="relative bg-gradient-to-b from-[hsl(210,70%,70%)] via-[hsl(210,60%,80%)] via-[hsl(210,50%,85%)] to-[hsl(210,45%,90%)] overflow-x-hidden">
           <Research />
         </div>
         <TechnicalSkillsBanner />
-        <div className="relative bg-gradient-to-b from-[hsl(210,70%,70%)] via-[hsl(210,60%,80%)] via-[hsl(210,50%,85%)] to-[hsl(210,45%,90%)]">
+        <div className="relative bg-gradient-to-b from-[hsl(210,70%,70%)] via-[hsl(210,60%,80%)] via-[hsl(210,50%,85%)] to-[hsl(210,45%,90%)] overflow-x-hidden">
           <Experience />
           <Coursework />
         </div>
         <CallToActionBanner />
         <Contact />
       </main>
-      <footer className="py-16 px-6 bg-[#1A1A1A] text-white" data-testid="footer-main">
-        <div className="max-w-6xl mx-auto">
+      <footer className="py-16 px-4 sm:px-6 bg-[#1A1A1A] text-white overflow-x-hidden" data-testid="footer-main">
+        <div className="max-w-6xl mx-auto w-full">
           <div className="grid md:grid-cols-4 gap-8 mb-12">
-            <div className="md:col-span-2">
+            <div className="md:col-span-2 text-center md:text-left">
               <h3 className="font-display text-2xl font-bold mb-4 text-white">Oliver Szavuj</h3>
               <p className="text-white/70 leading-relaxed mb-6">
                 Graduate student at Stanford University pursuing aerospace engineering with a focus on aircraft design, aerodynamics, and flight test engineering.
@@ -63,7 +63,7 @@ export default function Home() {
               </a>
             </div>
             
-            <div>
+            <div className="text-center md:text-left">
               <h4 className="font-mono text-sm font-bold mb-4 text-primary">Location</h4>
               <p className="text-white/70">
                 Stanford, CA<br />
@@ -71,7 +71,7 @@ export default function Home() {
               </p>
             </div>
             
-            <div>
+            <div className="text-center md:text-left">
               <h4 className="font-mono text-sm font-bold mb-4 text-primary">Email</h4>
               <a 
                 href="mailto:oliveris@stanford.edu" 

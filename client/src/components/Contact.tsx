@@ -31,20 +31,20 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-32 px-6 bg-white" data-testid="section-contact">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div className="space-y-6">
-            <h2 className="font-mono text-3xl md:text-4xl text-foreground" data-testid="heading-contact">
+    <section id="contact" className="py-16 sm:py-32 px-4 sm:px-6 bg-white overflow-hidden" data-testid="section-contact">
+      <div className="max-w-6xl mx-auto w-full">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-start">
+          <div className="space-y-6 text-center md:text-left">
+            <h2 className="font-mono text-2xl sm:text-3xl md:text-4xl text-foreground" data-testid="heading-contact">
               <span className="text-primary">&lt;</span>Contact<span className="text-primary">/&gt;</span>
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
               Interested in aerospace collaboration or have questions? Reach out to me from this contact form and I will get back to you shortly.
             </p>
             <div className="pt-2">
               <a 
                 href="mailto:oliveris@stanford.edu"
-                className="text-primary hover:underline font-mono text-lg"
+                className="text-primary hover:underline font-mono text-base sm:text-lg"
                 data-testid="link-email-contact"
               >
                 oliveris@stanford.edu
@@ -52,7 +52,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <Card className="p-8 bg-white shadow-lg" data-testid="card-contact-form">
+          <Card className="p-6 sm:p-8 bg-white shadow-lg" data-testid="card-contact-form">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Input

@@ -44,23 +44,23 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative" data-testid="section-hero">
+    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 relative overflow-hidden" data-testid="section-hero">
       <CloudsBackground />
       <div className="max-w-6xl mx-auto w-full relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <h1 className="font-display font-bold text-5xl md:text-7xl tracking-tight" data-testid="text-name">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="space-y-6 text-center md:text-left">
+            <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-7xl tracking-tight" data-testid="text-name">
               Oliver Szavuj
             </h1>
 
             <div className="h-12">
-              <p className="font-mono text-xl md:text-2xl text-primary" data-testid="text-role">
+              <p className="font-mono text-lg sm:text-xl md:text-2xl text-primary" data-testid="text-role">
                 {displayedText}
                 <span className={`inline-block w-0.5 h-6 ml-1 bg-primary ${showCursor ? 'opacity-100' : 'opacity-0'}`} />
               </p>
             </div>
 
-            <div className="flex items-center gap-2 font-mono text-sm text-muted-foreground flex-wrap">
+            <div className="flex items-center justify-center md:justify-start gap-2 font-mono text-xs sm:text-sm text-muted-foreground flex-wrap">
               <span>Stanford University</span>
               <span className="text-primary">•</span>
               <span>MS Aeronautics & Astronautics</span>
@@ -68,46 +68,44 @@ export default function Hero() {
               <span>Stanford, CA</span>
             </div>
 
-            <div className="flex flex-wrap items-start gap-4 pt-4">
-              <div className="flex flex-col gap-3">
+            <div className="flex flex-col items-center md:items-start gap-3 pt-4">
+              <Button
+                size="lg"
+                onClick={scrollToContact}
+                className="gap-2 w-full sm:w-auto"
+                data-testid="button-contact"
+              >
+                <Mail className="w-4 h-4" />
+                Contact Me
+              </Button>
+              
+              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
                 <Button
                   size="lg"
-                  onClick={scrollToContact}
-                  className="gap-2"
-                  data-testid="button-contact"
+                  variant="outline"
+                  onClick={() => setResumeOpen(true)}
+                  className="gap-2 w-full sm:w-auto"
+                  data-testid="button-resume"
                 >
-                  <Mail className="w-4 h-4" />
-                  Contact Me
+                  <FileText className="w-4 h-4" />
+                  View Resume
                 </Button>
                 
-                <div className="flex gap-3">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    onClick={() => setResumeOpen(true)}
-                    className="gap-2"
-                    data-testid="button-resume"
+                <Button
+                  size="lg"
+                  variant="outline"
+                  asChild
+                  data-testid="button-download-resume"
+                >
+                  <a
+                    href={resumePdf}
+                    download="Oliver_Szavuj_Resume.pdf"
+                    className="gap-2 w-full sm:w-auto"
                   >
-                    <FileText className="w-4 h-4" />
-                    View Resume
-                  </Button>
-                  
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    asChild
-                    data-testid="button-download-resume"
-                  >
-                    <a
-                      href={resumePdf}
-                      download="Oliver_Szavuj_Resume.pdf"
-                      className="gap-2"
-                    >
-                      <Download className="w-4 h-4" />
-                      Download Resume
-                    </a>
-                  </Button>
-                </div>
+                    <Download className="w-4 h-4" />
+                    Download Resume
+                  </a>
+                </Button>
               </div>
 
               <Button
@@ -120,7 +118,7 @@ export default function Hero() {
                   href="https://www.linkedin.com/in/oliverszavuj/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="gap-2"
+                  className="gap-2 w-full sm:w-auto"
                 >
                   <Linkedin className="w-4 h-4" />
                   LinkedIn
@@ -131,7 +129,7 @@ export default function Hero() {
 
           <div className="flex justify-center md:justify-end">
             <div className="relative">
-              <Avatar className="w-64 h-64 md:w-80 md:h-80 border-4 border-primary/50 shadow-2xl shadow-primary/20 rounded-none">
+              <Avatar className="w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 border-4 border-primary/50 shadow-2xl shadow-primary/20 rounded-none">
                 <AvatarImage src={profileImage} alt="Oliver Szavuj" />
                 <AvatarFallback className="text-6xl font-display bg-card">OS</AvatarFallback>
               </Avatar>
