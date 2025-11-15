@@ -2,6 +2,12 @@ import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ChevronDown, ChevronUp, Briefcase, Calendar } from 'lucide-react';
+import jobyLogo from '@assets/stock_images/joby_aviation_compan_e86a13d8.jpg';
+import gulfstreamLogo from '@assets/stock_images/gulfstream_aerospace_574b113d.jpg';
+import daherLogo from '@assets/stock_images/daher_kodiak_aircraf_4a1addd7.jpg';
+import droneUpLogo from '@assets/stock_images/droneup_company_logo_d5428b41.jpg';
+import windborneLogo from '@assets/stock_images/windborne_systems_co_433fc509.jpg';
+import stanfordLogo from '@assets/stock_images/stanford_university__0c9a65b3.jpg';
 
 const experiences = [
   {
@@ -12,6 +18,7 @@ const experiences = [
     description:
       'Authoring and executing flight test plans for flutter and envelope expansion in support of FAA certification of the Joby S4 2.1a eVTOL aircraft. Writing and validating automated scripts for strain gauge network configuration in propeller vibration measurement systems.',
     tags: ['Flight Testing', 'FAA Certification', 'eVTOL', 'Vibration Analysis'],
+    logo: jobyLogo,
   },
   {
     title: 'Flight Dynamics/Control Law Intern',
@@ -21,6 +28,7 @@ const experiences = [
     description:
       'Developed code in conjunction with Simulink harnesses to validate G400 linear control law models, delivering transfer functions and state-space matrices. Continuously improved and added functionalities to support scripts used for control law analyses. Generated and evaluated data for the G400 Pitch Autopilot and Alternate Mode Linear Analysis Reports. Produced and compiled G400 Alternate and Normal Mode roll mixture scheduling data for loads delivery.',
     tags: ['Flight Controls', 'Simulink', 'MATLAB', 'Control Systems'],
+    logo: gulfstreamLogo,
   },
   {
     title: 'Aircraft Engineering Intern',
@@ -30,6 +38,7 @@ const experiences = [
     description:
       'Led the CAD process, material selection, and validation for a fire test lab fixture used to evaluate aircraft materials under 60 Hz vibration, 2000°F flame, and 1.5 bar negative pressure for FAA certification. Assisted with identifying sources of vibration on flight-test airframes through aerodynamics analysis, presenting engineering solutions for landing gear strut and anti-icing panel vibrations. Led engineering and integration of a new charger on the Kodiak-100 for EASA certification.',
     tags: ['CAD Design', 'Materials Testing', 'Aerodynamics', 'Certification'],
+    logo: daherLogo,
   },
   {
     title: 'Aerospace Innovations Intern',
@@ -39,6 +48,7 @@ const experiences = [
     description:
       'Led the development of a Hardware-in-the-Loop Simulator to test drone hardware solutions in a custom-coded environment embedding the native Auterion suite for accelerated testing in zero-trust conditions, reducing hardware downtime post-crash. Developed structural risk mitigation solutions to improve the reliability of parachute deployment in abnormal flight conditions.',
     tags: ['Drone Systems', 'HITL Simulation', 'Auterion', 'Safety Systems'],
+    logo: droneUpLogo,
   },
   {
     title: 'Aerospace Engineering Intern',
@@ -48,6 +58,7 @@ const experiences = [
     description:
       'Led the CAD, development, and CFD optimization of a drone built for low-speed endurance flight. Programmed the associated avionics and aircraft controls interface in C++. Iteratively improved the design following manufacturing feedback, reducing weight. Programmed a simulation environment to test and validate flight characteristics and stability during conceptual design.',
     tags: ['CFD', 'C++', 'Avionics', 'Aircraft Design'],
+    logo: windborneLogo,
   },
   {
     title: 'Aerodynamics Research Lead',
@@ -57,6 +68,7 @@ const experiences = [
     description:
       'Club President and Aerodynamics Lead for AIAA Design-Build-Fly competition team, focusing on conceptual aircraft design, aerodynamic analysis, and stability optimization. Developed simulation environment implementing VLM and FEA for aeroelastic study of joined-wing aircraft configurations. Developing methodology using vortex-particle methods and Ffowcs Williams-Hawkings equation to predict aero-acoustic noise profiles for rotor-wing configurations.',
     tags: ['Aerodynamics', 'VLM', 'FEA', 'Aeroacoustics'],
+    logo: stanfordLogo,
   },
 ];
 
@@ -102,17 +114,25 @@ export default function Experience() {
                   data-testid={`button-expand-${index}`}
                 >
                   <div className="flex items-start justify-between gap-4">
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-mono text-base sm:text-lg md:text-xl mb-3 text-white" data-testid={`text-title-${index}`}>
-                        <span className="text-primary">&lt;</span>
-                        {exp.title.toUpperCase()}
-                        <span className="text-primary">/&gt;</span>
-                      </h3>
-                      <p className="text-sm sm:text-base text-white/70 mb-2" data-testid={`text-org-${index}`}>
-                        {exp.organization}
-                      </p>
-                      <div className="flex items-center gap-2 text-xs sm:text-sm text-primary font-mono">
-                        <span>{exp.period}</span>
+                    <div className="flex items-start gap-4 flex-1 min-w-0">
+                      <img 
+                        src={exp.logo} 
+                        alt={`${exp.organization} logo`}
+                        className="w-12 h-12 sm:w-16 sm:h-16 object-contain rounded-md bg-white/90 p-2 shrink-0"
+                        data-testid={`img-logo-${index}`}
+                      />
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-mono text-base sm:text-lg md:text-xl mb-3 text-white" data-testid={`text-title-${index}`}>
+                          <span className="text-primary">&lt;</span>
+                          {exp.title.toUpperCase()}
+                          <span className="text-primary">/&gt;</span>
+                        </h3>
+                        <p className="text-sm sm:text-base text-white/70 mb-2" data-testid={`text-org-${index}`}>
+                          {exp.organization}
+                        </p>
+                        <div className="flex items-center gap-2 text-xs sm:text-sm text-primary font-mono">
+                          <span>{exp.period}</span>
+                        </div>
                       </div>
                     </div>
                     <div className="shrink-0">
