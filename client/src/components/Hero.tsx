@@ -43,6 +43,13 @@ export default function Hero() {
     }
   };
 
+  const scrollToResearch = () => {
+    const researchSection = document.getElementById('research');
+    if (researchSection) {
+      researchSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 relative overflow-hidden" data-testid="section-hero">
       <CloudsBackground />
@@ -109,22 +116,34 @@ export default function Hero() {
                 </Button>
               </div>
 
-              <Button
-                size="lg"
-                variant="outline"
-                asChild
-                data-testid="button-linkedin"
-              >
-                <a
-                  href="https://www.linkedin.com/in/oliverszavuj/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="gap-2 w-full sm:w-auto"
+              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  asChild
+                  data-testid="button-linkedin"
                 >
-                  <Linkedin className="w-4 h-4" />
-                  LinkedIn
-                </a>
-              </Button>
+                  <a
+                    href="https://www.linkedin.com/in/oliverszavuj/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="gap-2 w-full sm:w-auto"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                    LinkedIn
+                  </a>
+                </Button>
+
+                <Button
+                  size="lg"
+                  variant="outline"
+                  onClick={scrollToResearch}
+                  className="gap-2 w-full sm:w-auto"
+                  data-testid="button-research"
+                >
+                  Research
+                </Button>
+              </div>
             </div>
           </div>
 
