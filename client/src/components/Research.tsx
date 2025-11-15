@@ -53,7 +53,7 @@ export default function Research() {
         </div>
 
         <div className="grid md:grid-cols-[300px_1fr] gap-4 sm:gap-6">
-          <div className="space-y-3" data-testid="list-research-projects">
+          <div className="space-y-3 mx-auto md:mx-0 w-full max-w-md md:max-w-none" data-testid="list-research-projects">
             {researchProjects.map((project) => (
               <Button
                 key={project.id}
@@ -74,7 +74,7 @@ export default function Research() {
             ))}
           </div>
 
-          <div>
+          <div className="mx-auto md:mx-0 w-full max-w-md md:max-w-none">
             {selected ? (
               <Card className="p-6 sm:p-8 animate-fade-in" data-testid="card-research-detail">
                 <h3 className="font-display font-bold text-xl sm:text-2xl text-foreground mb-2" data-testid="text-project-title">

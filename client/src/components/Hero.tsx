@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import { Mail, Linkedin, FileText, Download } from 'lucide-react';
+import { Mail, Linkedin, FileText, ExternalLink } from 'lucide-react';
 import CloudsBackground from '@/components/CloudsBackground';
 import ResumeDialog from '@/components/ResumeDialog';
 import resumePdf from '@assets/Oliver Szavuj Resume_1763106094472.pdf';
@@ -95,15 +95,16 @@ export default function Hero() {
                   size="lg"
                   variant="outline"
                   asChild
-                  data-testid="button-download-resume"
+                  data-testid="button-portfolio"
                 >
                   <a
-                    href={resumePdf}
-                    download="Oliver_Szavuj_Resume.pdf"
+                    href="https://adl.stanford.edu/people/juan-j-alonso"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="gap-2 w-full sm:w-auto"
                   >
-                    <Download className="w-4 h-4" />
-                    Download Resume
+                    <ExternalLink className="w-4 h-4" />
+                    Engineering Portfolio
                   </a>
                 </Button>
               </div>
