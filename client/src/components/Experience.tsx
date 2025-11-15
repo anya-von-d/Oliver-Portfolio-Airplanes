@@ -75,7 +75,7 @@ export default function Experience() {
             <svg className="w-full h-full absolute bottom-0" viewBox="0 0 350 80" preserveAspectRatio="none" style={{ display: 'block' }}>
               <path
                 d="M 0,60 Q 20,60 35,40 Q 50,20 75,20 L 275,20 Q 300,20 315,40 Q 330,60 350,60 L 350,80 L 0,80 Z"
-                fill="#6E4624"
+                fill="#623A17"
               />
             </svg>
             <div className="absolute inset-0 flex items-center justify-center pt-6">
@@ -84,10 +84,10 @@ export default function Experience() {
               </h2>
             </div>
           </div>
-          <div className="flex-1 bg-[#6E4624] h-5"></div>
+          <div className="flex-1 bg-[#623A17] h-5"></div>
         </div>
 
-        <div className="bg-[#6E4624] p-4 sm:p-8 md:p-12">
+        <div className="bg-[#623A17] p-4 sm:p-8 md:p-12">
           <div className="space-y-4 sm:space-y-6">
             {experiences.map((exp, index) => (
               <Card
