@@ -6,8 +6,10 @@ import CloudsBackground from '@/components/CloudsBackground';
 import ResumeDialog from '@/components/ResumeDialog';
 import resumePdf from '@assets/Oliver Szavuj Resume_1763106094472.pdf';
 import profileImageSrc from '@assets/generated_images/Professional_aerospace_engineer_headshot_c1b3f78f.png';
+import profileImageSrc2 from '@assets/generated_images/Second_professional_headshot_70c93d7a.png';
 
 const profileImage = profileImageSrc;
+const profileImage2 = profileImageSrc2;
 
 export default function Hero() {
   const [displayedText, setDisplayedText] = useState('');
@@ -148,10 +150,14 @@ export default function Hero() {
           </div>
 
           <div className="flex justify-center md:justify-end">
-            <div className="relative">
-              <Avatar className="w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 border-4 border-primary/50 shadow-2xl shadow-primary/20 rounded-none">
+            <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80">
+              <Avatar className="absolute bottom-0 right-0 w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 border-4 border-primary/50 shadow-2xl shadow-primary/20 rounded-none">
                 <AvatarImage src={profileImage} alt="Oliver Szavuj" />
                 <AvatarFallback className="text-6xl font-display bg-card">OS</AvatarFallback>
+              </Avatar>
+              <Avatar className="absolute top-0 left-0 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 border-4 border-primary/50 shadow-2xl shadow-primary/20 rounded-none z-10">
+                <AvatarImage src={profileImage2} alt="Oliver Szavuj" />
+                <AvatarFallback className="text-4xl font-display bg-card">OS</AvatarFallback>
               </Avatar>
             </div>
           </div>
