@@ -59,8 +59,8 @@ export default function Education() {
                   )}
                   {edu.current && (
                     <div className="mt-3 flex justify-center sm:justify-start">
-                      <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-mono">
-                        <span className="w-2 h-2 rounded-full bg-primary animate-glow" />
+                      <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-destructive/10 text-destructive text-sm font-mono">
+                        <span className="w-2 h-2 rounded-full bg-destructive animate-glow" />
                         In Progress
                       </span>
                     </div>
