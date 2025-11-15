@@ -40,11 +40,11 @@ export default function Education() {
             >
               <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
                 <div className="shrink-0 mx-auto sm:mx-0">
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden bg-white flex items-center justify-center p-1">
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden bg-white">
                     <img 
                       src={stanfordLogo} 
                       alt="Stanford University Logo" 
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
