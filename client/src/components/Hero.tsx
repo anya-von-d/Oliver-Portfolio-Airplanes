@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import { Mail, Linkedin, FileText, ExternalLink } from 'lucide-react';
+import { Mail, Linkedin, FileText, ExternalLink, FlaskConical } from 'lucide-react';
 import CloudsBackground from '@/components/CloudsBackground';
 import ResumeDialog from '@/components/ResumeDialog';
 import resumePdf from '@assets/Oliver Szavuj Resume_1763106094472.pdf';
@@ -77,23 +77,23 @@ export default function Hero() {
               <span>Stanford, CA</span>
             </div>
 
-            <div className="flex flex-col items-center md:items-start gap-3 pt-4">
+            <div className="flex flex-col items-center md:items-start gap-3 pt-4 w-full sm:w-auto sm:max-w-md">
               <Button
                 size="lg"
                 onClick={scrollToContact}
-                className="gap-2 w-full sm:w-auto"
+                className="gap-2 w-full"
                 data-testid="button-contact"
               >
                 <Mail className="w-4 h-4" />
                 Contact Me
               </Button>
               
-              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row gap-3 w-full">
                 <Button
                   size="lg"
                   variant="outline"
                   onClick={() => setResumeOpen(true)}
-                  className="gap-2 w-full sm:w-auto"
+                  className="gap-2 w-full sm:flex-1"
                   data-testid="button-resume"
                 >
                   <FileText className="w-4 h-4" />
@@ -105,12 +105,13 @@ export default function Hero() {
                   variant="outline"
                   asChild
                   data-testid="button-portfolio"
+                  className="w-full sm:flex-1"
                 >
                   <a
                     href="https://adl.stanford.edu/people/juan-j-alonso"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="gap-2 w-full sm:w-auto"
+                    className="gap-2"
                   >
                     <ExternalLink className="w-4 h-4" />
                     Engineering Portfolio
@@ -118,18 +119,19 @@ export default function Hero() {
                 </Button>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row gap-3 w-full">
                 <Button
                   size="lg"
                   variant="outline"
                   asChild
                   data-testid="button-linkedin"
+                  className="w-full sm:flex-1"
                 >
                   <a
                     href="https://www.linkedin.com/in/oliverszavuj/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="gap-2 w-full sm:w-auto"
+                    className="gap-2"
                   >
                     <Linkedin className="w-4 h-4" />
                     LinkedIn
@@ -140,9 +142,10 @@ export default function Hero() {
                   size="lg"
                   variant="outline"
                   onClick={scrollToResearch}
-                  className="gap-2 w-full sm:w-auto"
+                  className="gap-2 w-full sm:flex-1"
                   data-testid="button-research"
                 >
+                  <FlaskConical className="w-4 h-4" />
                   Research
                 </Button>
               </div>
