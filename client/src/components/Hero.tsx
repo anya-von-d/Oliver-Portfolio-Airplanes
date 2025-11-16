@@ -92,12 +92,18 @@ export default function Hero() {
                 <Button
                   size="lg"
                   variant="outline"
-                  onClick={() => setResumeOpen(true)}
-                  className="gap-2"
+                  asChild
                   data-testid="button-resume"
                 >
-                  <FileText className="w-4 h-4" />
-                  View Resume
+                  <a
+                    href="https://drive.google.com/file/d/1JOPlQZGwhMgmwlhrdwb-BwdyY9OKqlK8/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="gap-2"
+                  >
+                    <FileText className="w-4 h-4" />
+                    View Resume
+                  </a>
                 </Button>
                 
                 <Button
