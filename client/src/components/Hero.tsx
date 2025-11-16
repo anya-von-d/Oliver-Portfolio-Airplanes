@@ -88,12 +88,12 @@ export default function Hero() {
                 Contact Me
               </Button>
               
-              <div className="flex flex-col sm:flex-row gap-3 w-full">
+              <div className="grid grid-cols-2 gap-3 w-full">
                 <Button
                   size="lg"
                   variant="outline"
                   onClick={() => setResumeOpen(true)}
-                  className="gap-2 w-full sm:flex-1"
+                  className="gap-2"
                   data-testid="button-resume"
                 >
                   <FileText className="w-4 h-4" />
@@ -105,7 +105,6 @@ export default function Hero() {
                   variant="outline"
                   asChild
                   data-testid="button-portfolio"
-                  className="w-full sm:flex-1"
                 >
                   <a
                     href="https://adl.stanford.edu/people/juan-j-alonso"
@@ -119,13 +118,12 @@ export default function Hero() {
                 </Button>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 w-full">
+              <div className="grid grid-cols-2 gap-3 w-full">
                 <Button
                   size="lg"
                   variant="outline"
                   asChild
                   data-testid="button-linkedin"
-                  className="w-full sm:flex-1"
                 >
                   <a
                     href="https://www.linkedin.com/in/oliverszavuj/"
@@ -142,7 +140,7 @@ export default function Hero() {
                   size="lg"
                   variant="outline"
                   onClick={scrollToResearch}
-                  className="gap-2 w-full sm:flex-1"
+                  className="gap-2"
                   data-testid="button-research"
                 >
                   <FlaskConical className="w-4 h-4" />
