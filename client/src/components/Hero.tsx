@@ -162,7 +162,7 @@ export default function Hero() {
                 <AvatarImage src={profileImage} alt="Oliver Szavuj" />
                 <AvatarFallback className="text-6xl font-display bg-card">OS</AvatarFallback>
               </Avatar>
-              <div className="absolute bottom-0 left-0 w-36 h-14 sm:w-44 sm:h-18 md:w-52 md:h-20 border-3 border-primary/50 shadow-xl shadow-primary/20 z-10 overflow-hidden bg-card">
+              <div className="absolute -bottom-4 left-0 w-36 h-14 sm:w-44 sm:h-18 md:w-52 md:h-20 border-3 border-primary/50 shadow-xl shadow-primary/20 z-10 overflow-hidden bg-card">
                 <img src={profileImage2} alt="Aircraft" className="w-full h-full object-cover" />
               </div>
             </div>
