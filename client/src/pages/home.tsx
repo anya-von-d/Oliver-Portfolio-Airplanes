@@ -1,4 +1,3 @@
-import ParticleBackground from '@/components/ParticleBackground';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import SkillsBanner from '@/components/SkillsBanner';
@@ -15,7 +14,6 @@ import { Button } from '@/components/ui/button';
 export default function Home() {
   return (
     <div className="relative overflow-x-hidden">
-      <ParticleBackground />
       <Navigation />
       <main className="overflow-x-hidden">
         <div className="relative bg-gradient-to-b from-[hsl(210,70%,70%)] via-[hsl(210,60%,80%)] via-[hsl(210,50%,85%)] to-[hsl(210,45%,90%)] overflow-x-hidden">
