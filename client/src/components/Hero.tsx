@@ -5,7 +5,7 @@ import { Mail, Linkedin, FileText, ExternalLink, FlaskConical } from 'lucide-rea
 import CloudsBackground from '@/components/CloudsBackground';
 import ResumeDialog from '@/components/ResumeDialog';
 import resumePdf from '@assets/Oliver Szavuj Resume_1763106094472.pdf';
-import profileImageSrc from '@assets/generated_images/Professional_aerospace_engineer_headshot_c1b3f78f.png';
+import profileImageSrc from '@assets/Screenshot_2026-01-03_at_10.15.23_AM_1767428130615.png';
 import profileImageSrc2 from '@assets/generated_images/Second_professional_headshot_70c93d7a.png';
 
 const profileImage = profileImageSrc;
