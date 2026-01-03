@@ -6,7 +6,7 @@ import CloudsBackground from '@/components/CloudsBackground';
 import ResumeDialog from '@/components/ResumeDialog';
 import resumePdf from '@assets/Oliver Szavuj Resume_1763106094472.pdf';
 import profileImageSrc from '@assets/Screenshot_2026-01-03_at_10.15.23_AM_1767428130615.png';
-import profileImageSrc2 from '@assets/generated_images/Second_professional_headshot_70c93d7a.png';
+import profileImageSrc2 from '@assets/Screenshot_2026-01-03_at_10.17.38_AM_1767428264725.png';
 
 const profileImage = profileImageSrc;
 const profileImage2 = profileImageSrc2;
@@ -162,10 +162,9 @@ export default function Hero() {
                 <AvatarImage src={profileImage} alt="Oliver Szavuj" />
                 <AvatarFallback className="text-6xl font-display bg-card">OS</AvatarFallback>
               </Avatar>
-              <Avatar className="absolute top-4 left-4 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 border-4 border-primary/50 shadow-2xl shadow-primary/20 rounded-none z-10">
-                <AvatarImage src={profileImage2} alt="Oliver Szavuj" />
-                <AvatarFallback className="text-4xl font-display bg-card">OS</AvatarFallback>
-              </Avatar>
+              <div className="absolute top-4 left-4 w-48 h-20 sm:w-56 sm:h-24 md:w-72 md:h-28 border-4 border-primary/50 shadow-2xl shadow-primary/20 z-10 overflow-hidden bg-card">
+                <img src={profileImage2} alt="Aircraft" className="w-full h-full object-cover" />
+              </div>
             </div>
           </div>
         </div>
