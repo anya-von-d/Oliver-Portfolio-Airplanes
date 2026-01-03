@@ -7,7 +7,7 @@ import gulfstreamLogo from '@assets/2_1767427907738.png';
 import daherLogo from '@assets/3_1767427934755.png';
 import droneUpLogo from '@assets/4_1767427956941.png';
 import windborneLogo from '@assets/5_1767427971609.png';
-import stanfordLogo from '@assets/stock_images/stanford_university__0c9a65b3.jpg';
+import stanfordLogo from '@assets/6_1767427983374.png';
 
 const experiences = [
   {
