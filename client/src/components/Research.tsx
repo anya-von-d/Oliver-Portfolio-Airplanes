@@ -3,7 +3,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { X, Plus } from 'lucide-react';
 import aeroacousticImage from '@assets/generated_images/Aeroacoustic_noise_prediction_visualization_ead306d8.png';
-import aeroelasticImage from '@assets/generated_images/Joined-wing_aeroelastic_analysis_434787dd.png';
+import aeroelasticImage from '@assets/joinedwing_1767445040512.png';
 import flightDynamicsImage from '@assets/generated_images/Low-speed_flight_CFD_analysis_cf0c04f9.png';
 import vibrationImage from '@assets/generated_images/Propeller_vibration_measurement_system_57d4a3e0.png';
 
