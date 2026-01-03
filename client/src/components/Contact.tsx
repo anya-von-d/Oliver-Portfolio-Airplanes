@@ -16,12 +16,18 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    // Create mailto link with form data
+    const recipient = 'oliveris@stanford.edu';
+    const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+    const body = encodeURIComponent(`From: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+    const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
     
     toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you shortly.",
+      title: "Email client opened!",
+      description: "Please send the email from your email application.",
     });
     
     setName('');
