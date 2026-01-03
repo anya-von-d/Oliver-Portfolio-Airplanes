@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ChevronDown, ChevronUp, Briefcase, Calendar } from 'lucide-react';
-import jobyLogo from '@assets/Screenshot_2026-01-03_at_10.03.55_AM_1767427438220.png';
+import jobyLogo from '@assets/1_1767427882546.png';
 import gulfstreamLogo from '@assets/stock_images/gulfstream_aerospace_574b113d.jpg';
 import daherLogo from '@assets/stock_images/daher_kodiak_aircraf_4a1addd7.jpg';
 import droneUpLogo from '@assets/stock_images/droneup_company_logo_d5428b41.jpg';
