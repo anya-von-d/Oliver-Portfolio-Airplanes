@@ -1,5 +1,5 @@
 import { Card } from '@/components/ui/card';
-import stanfordLogo from '@assets/stock_images/stanford_university__942a3c9c.jpg';
+import stanfordLogo from '@assets/Screenshot_2026-01-03_at_12.14.30_PM_1767435273950.png';
 
 const education = [
   {
