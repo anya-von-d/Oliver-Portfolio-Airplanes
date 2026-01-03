@@ -150,7 +150,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="flex justify-center md:justify-end">
+          <div className="flex justify-center md:justify-end pb-8 sm:pb-6 md:pb-0">
             <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-96 md:h-96">
               <Avatar className="absolute bottom-0 right-0 w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 border-4 border-primary/50 shadow-2xl shadow-primary/20 rounded-none">
                 <AvatarImage src={profileImage} alt="Oliver Szavuj" />
