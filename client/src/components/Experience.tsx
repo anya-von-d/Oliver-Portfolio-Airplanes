@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { ChevronDown, ChevronUp, Briefcase, Calendar } from 'lucide-react';
 import jobyLogo from '@assets/1_1767427882546.png';
 import gulfstreamLogo from '@assets/2_1767427907738.png';
-import daherLogo from '@assets/stock_images/daher_kodiak_aircraf_4a1addd7.jpg';
+import daherLogo from '@assets/3_1767427934755.png';
 import droneUpLogo from '@assets/stock_images/droneup_company_logo_d5428b41.jpg';
 import windborneLogo from '@assets/stock_images/windborne_systems_co_433fc509.jpg';
 import stanfordLogo from '@assets/stock_images/stanford_university__0c9a65b3.jpg';
