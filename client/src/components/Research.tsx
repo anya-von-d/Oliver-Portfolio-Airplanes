@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { X, Plus } from 'lucide-react';
 import aeroacousticImage from '@assets/noise_1767445098926.png';
 import aeroelasticImage from '@assets/joinedwing_1767445040512.png';
-import flightDynamicsImage from '@assets/lowspeedendurance_1767445071910.png';
+import flightDynamicsImage from '@assets/lowspeedendurance_1767445209284.png';
 import vibrationImage from '@assets/propellervibrationmeasures_1767445140891.png';
 
 const researchProjects = [
