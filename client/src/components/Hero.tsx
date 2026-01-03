@@ -3,19 +3,13 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Mail, Linkedin, FileText, ExternalLink, FlaskConical } from 'lucide-react';
 import CloudsBackground from '@/components/CloudsBackground';
-import ResumeDialog from '@/components/ResumeDialog';
-import resumePdf from '@assets/Oliver Szavuj Resume_1763106094472.pdf';
-import profileImageSrc from '@assets/Screenshot_2026-01-03_at_10.15.23_AM_1767428130615.png';
-import profileImageSrc2 from '@assets/Screenshot_2026-01-03_at_10.17.38_AM_1767428264725.png';
-
-const profileImage = profileImageSrc;
-const profileImage2 = profileImageSrc2;
+import profileImage from '@assets/Screenshot_2026-01-03_at_10.15.23_AM_1767428130615.png';
+import profileImage2 from '@assets/Screenshot_2026-01-03_at_10.17.38_AM_1767428264725.png';
 
 export default function Hero() {
   const [displayedText, setDisplayedText] = useState('');
   const fullText = 'Aerospace Engineer & Researcher';
   const [showCursor, setShowCursor] = useState(true);
-  const [resumeOpen, setResumeOpen] = useState(false);
 
   useEffect(() => {
     let index = 0;
@@ -169,7 +163,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <ResumeDialog open={resumeOpen} onOpenChange={setResumeOpen} />
     </section>
   );
 }
