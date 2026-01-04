@@ -3,10 +3,10 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
 const courses = [
-  'Aircraft Design',
   'Applied Aerodynamics',
-  'Flight Mechanics & Controls',
   'Intermediate Fluid Dynamics',
+  'Flight Mechanics & Controls',
+  'Aircraft Design',
   'Feedback Control Design',
   'Atmospheric Flight',
   'Space Flight',
@@ -14,6 +14,7 @@ const courses = [
   'Programming Abstractions',
   'Robotics and Autonomous Systems',
   'Operations of Aerospace Systems',
+  'Engineering of Systems',
   'Aerodynamics for Racecars',
 ];
 
