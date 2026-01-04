@@ -4,13 +4,13 @@ import { Badge } from '@/components/ui/badge';
 
 const courses = [
   'Applied Aerodynamics',
-  'Intermediate Fluid Dynamics',
-  'Flight Mechanics & Controls',
-  'Aircraft Design',
-  'Feedback Control Design',
-  'Atmospheric Flight',
   'Compressible Flow',
   'Numerical Methods for Compressible Flows',
+  'Feedback Control Design',
+  'Flight Mechanics & Controls',
+  'Aircraft Design',
+  'Intermediate Fluid Dynamics',
+  'Atmospheric Flight',
   'Lightweight Structures Design',
   'Programming Abstractions',
   'Robotics and Autonomous Systems',
