@@ -34,10 +34,10 @@ const researchProjects = [
   },
   {
     id: 'vibration',
-    title: 'Propeller Vibration Measurement',
-    subtitle: 'Joby Aviation | 2025',
+    title: 'AIAA Design-Build-Fly',
+    subtitle: 'Chief Engineer and Aerodynamics Lead | Stanford Flight Club | 2022-Present',
     description:
-      'Developing automated scripts for strain gauge network configuration in propeller vibration measurement systems for eVTOL aircraft. Contributing to flutter analysis and envelope expansion testing in support of FAA certification requirements for the Joby S4 2.1a aircraft.',
+      'Leading the aerodynamic and technical development of Stanford\'s AIAA Design-Build-Fly aircraft using a range of CFD and vortex-based analysis tools. Employing custom-scripts implementing vortex lattice methods (VLM), unsteady vortex particle methods (VPM), and RANS-based CFD to predict aerodynamic performance, stability characteristics, and flow-field behavior across the flight envelope. Guiding design iteration and optimization from early conceptual studies through flight-test, integrating simulation results with experimental data while mentoring team members in aerodynamic modeling best practices.',
     image: vibrationImage,
   },
 ];
