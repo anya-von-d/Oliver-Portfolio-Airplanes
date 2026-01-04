@@ -153,7 +153,7 @@ export default function Hero() {
           <div className="flex justify-center md:justify-end pb-10 sm:pb-8 md:pb-0">
             <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-[28rem] md:h-[28rem]">
               <Avatar className="absolute bottom-0 right-0 w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 border-4 border-primary/50 shadow-2xl shadow-primary/20 rounded-none">
-                <AvatarImage src={profileImage} alt="Oliver Szavuj" />
+                <AvatarImage src={profileImage} alt="Oliver Szavuj" className="object-cover object-top" />
                 <AvatarFallback className="text-6xl font-display bg-card">OS</AvatarFallback>
               </Avatar>
               <div className="absolute -bottom-4 left-0 w-44 h-18 sm:w-52 sm:h-20 md:w-64 md:h-24 border-3 border-primary/50 shadow-xl shadow-primary/20 z-10 overflow-hidden bg-card">
