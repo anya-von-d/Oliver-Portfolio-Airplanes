@@ -36,8 +36,11 @@ const researchProjects = [
     id: 'flight-dynamics',
     title: 'Low-Speed Endurance Flight Research',
     subtitle: 'WindBorne Systems | Summer 2022',
-    description:
-      'Developed aerodynamic and flight-performance analyses for a long-endurance, low-speed aerial platform. Named inventor on a patented wind-shear–based lift and endurance system, led vehicle sizing, mission-level trade studies, manufacturing and flight-test support, with an emphasis on aerodynamic efficiency, stability, and endurance optimization under operational constraints. Developed a simulation environment to test the performance of the system using aerodynamic data.',
+    description: (
+      <>
+        Developed aerodynamic and flight-performance analyses for a long-endurance, low-speed aerial platform. Named inventor on a <a href="https://data.uspto.gov/patent-file-wrapper/search/details/18780159/assignments" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">patented</a> wind-shear–based lift and endurance system, led vehicle sizing, mission-level trade studies, manufacturing and flight-test support, with an emphasis on aerodynamic efficiency, stability, and endurance optimization under operational constraints. Developed a simulation environment to test the performance of the system using aerodynamic data.
+      </>
+    ),
     image: flightDynamicsImage,
   },
 ];
