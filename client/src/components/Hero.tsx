@@ -149,8 +149,8 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="flex justify-center md:justify-end">
-            <Avatar className="w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 border-4 border-primary/50 shadow-2xl shadow-primary/20 rounded-none">
+          <div className="flex justify-center md:justify-start">
+            <Avatar className="w-64 h-64 sm:w-72 sm:h-72 md:w-96 md:h-96 border-4 border-primary/50 shadow-2xl shadow-primary/20 rounded-none">
               <AvatarImage src={profileImage} alt="Oliver Szavuj" className="object-cover object-top" />
               <AvatarFallback className="text-6xl font-display bg-card">OS</AvatarFallback>
             </Avatar>
