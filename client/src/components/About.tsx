@@ -21,7 +21,7 @@ const focuses = [
   },
   {
     title: 'Aeroacoustics & Unsteady Aerodynamics',
-    description: 'Developing and implementing high-fidelity modeling tools for evaluating unsteady aerodynamic and aeroacoustic phenomena using vortex-based methods, with applications for rotor-wing interactions, electric propulsion, and noise-constrained aircraft design.',
+    description: 'Developing and implementing high-fidelity modeling tools for evaluating the unsteady aerodynamic and aeroacoustic performance of rotor-wing systems and noise-constrained aircraft design.',
   },
   {
     title: 'Flight Test Engineering',
