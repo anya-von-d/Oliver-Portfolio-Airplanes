@@ -1,15 +1,23 @@
 export default function SkillsBanner() {
   const skills = [
-    "CFD Analysis",
     "MATLAB",
     "Python",
     "C++",
-    "Aerodynamics",
-    "Flight Dynamics",
-    "CAD Design",
+    "Java",
     "Simulink",
-    "Ansys",
-    "SolidWorks"
+    "ANSYS Fluent",
+    "Luminary Cloud",
+    "FUN3D",
+    "SU2",
+    "OVERFLOW",
+    "XFOIL",
+    "AVL",
+    "FLOWUnsteady",
+    "SolidWorks",
+    "Fusion 360",
+    "Siemens NX",
+    "CATIA",
+    "LaTeX"
   ];
 
   return (
