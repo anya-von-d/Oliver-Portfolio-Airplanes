@@ -29,7 +29,7 @@ const researchProjects = [
     title: 'Low-Speed Endurance Flight Research',
     subtitle: 'WindBorne Systems | Summer 2022',
     description:
-      'Led CFD optimization of drone design for low-speed endurance flight applications. Programmed simulation environment to test and validate flight characteristics and stability during conceptual design phase. Developed avionics and aircraft controls interface in C++ for autonomous flight operations.',
+      'Developed aerodynamic and flight-performance analyses for a long-endurance, low-speed aerial platform. Named inventor on a patented wind-shear–based lift and endurance system, led vehicle sizing, mission-level trade studies, manufacturing and flight-test support, with an emphasis on aerodynamic efficiency, stability, and endurance optimization under operational constraints. Developed a simulation environment to test the performance of the system using aerodynamic data.',
     image: flightDynamicsImage,
   },
   {
