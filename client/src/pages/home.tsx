@@ -83,7 +83,7 @@ export default function Home() {
           
           <div className="pt-8 border-t border-white/10 text-center">
             <p className="text-white/50 font-mono text-sm">
-              © 2025 Oliver Szavuj. All rights reserved.
+              © 2026 Oliver Szavuj. All rights reserved.
             </p>
           </div>
         </div>
