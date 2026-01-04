@@ -16,7 +16,7 @@ const experiences = [
     location: 'Santa Cruz, CA',
     period: 'June 2025 - Present',
     description:
-      'Authored flutter and envelope-expansion test plans for the Joby S4-2.1a to verify simulation data, directly supporting certification efforts. Worked on developing a more accurate return-to-base battery estimate based on existing flight data and mission profiles. Built and validated automated scripts for configuring strain-gauge networks in propeller-vibration measurement systems.',
+      'Developed flutter and envelope-expansion test plans for the Joby S4-2.1A to verify simulation data, directly supporting certification efforts. Written and prepared load-validation and on-wheel test plans; post-processed flight data; and assessed aeroelastic and flight-dynamics behavior to inform real-time test decisions. Verified control law schedules using simulation testing. Built and validated automated scripts for configuring strain-gauge networks in propeller-vibration measurement systems.',
     tags: ['Flight Testing', 'FAA Certification', 'eVTOL', 'Vibration Analysis'],
     logo: jobyLogo,
   },
