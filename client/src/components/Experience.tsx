@@ -66,7 +66,7 @@ const experiences = [
     location: 'Mountain View, CA',
     period: 'June 2022 - August 2022',
     description:
-      'Conceptually designed and manufactured an autonomous drone optimized for flying at low airspeeds. Listed as inventor on patent. Using the CFD data I accumulated based on my design\'s sizing, I developed a parametrized simulation environment to validate the drone\'s flight properties. I generated the individual components for the aircraft\'s assembly in CAD. I iteratively improved the design based on manufacturing feedback to converge on an optimal solution.',
+      <>Conceptually designed and manufactured an autonomous drone optimized for flying at low airspeeds. Listed as inventor on <a href="https://data.uspto.gov/patent-file-wrapper/search/details/18780159/assignments" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">patent</a>. Using the CFD data I accumulated based on my design's sizing, I developed a parametrized simulation environment to validate the drone's flight properties. I generated the individual components for the aircraft's assembly in CAD. I iteratively improved the design based on manufacturing feedback to converge on an optimal solution.</>,
     tags: ['CFD', 'CAD', 'Patent', 'Aircraft Design'],
     logo: windborneLogo,
   },
