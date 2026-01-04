@@ -25,20 +25,20 @@ const researchProjects = [
     image: aeroelasticImage,
   },
   {
-    id: 'flight-dynamics',
-    title: 'Low-Speed Endurance Flight Research',
-    subtitle: 'WindBorne Systems | Summer 2022',
-    description:
-      'Developed aerodynamic and flight-performance analyses for a long-endurance, low-speed aerial platform. Named inventor on a patented wind-shear–based lift and endurance system, led vehicle sizing, mission-level trade studies, manufacturing and flight-test support, with an emphasis on aerodynamic efficiency, stability, and endurance optimization under operational constraints. Developed a simulation environment to test the performance of the system using aerodynamic data.',
-    image: flightDynamicsImage,
-  },
-  {
     id: 'vibration',
     title: 'AIAA Design-Build-Fly',
     subtitle: 'Chief Engineer and Aerodynamics Lead | Stanford Flight Club | 2022-Present',
     description:
       'Leading the aerodynamic and technical development of Stanford\'s AIAA Design-Build-Fly aircraft using a range of CFD and vortex-based analysis tools. Employing custom-scripts implementing vortex lattice methods (VLM), unsteady vortex particle methods (VPM), and RANS-based CFD to predict aerodynamic performance, stability characteristics, and flow-field behavior across the flight envelope. Guiding design iteration and optimization from early conceptual studies through flight-test, integrating simulation results with experimental data while mentoring team members in aerodynamic modeling best practices.',
     image: vibrationImage,
+  },
+  {
+    id: 'flight-dynamics',
+    title: 'Low-Speed Endurance Flight Research',
+    subtitle: 'WindBorne Systems | Summer 2022',
+    description:
+      'Developed aerodynamic and flight-performance analyses for a long-endurance, low-speed aerial platform. Named inventor on a patented wind-shear–based lift and endurance system, led vehicle sizing, mission-level trade studies, manufacturing and flight-test support, with an emphasis on aerodynamic efficiency, stability, and endurance optimization under operational constraints. Developed a simulation environment to test the performance of the system using aerodynamic data.',
+    image: flightDynamicsImage,
   },
 ];
 
