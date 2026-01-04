@@ -90,7 +90,7 @@ export default function Hero() {
                   data-testid="button-resume"
                 >
                   <a
-                    href="https://drive.google.com/file/d/1JOPlQZGwhMgmwlhrdwb-BwdyY9OKqlK8/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1Ba2PgvDpsNK5xRxR4i3Y2HMTwlhbkB67/view"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="gap-2"
