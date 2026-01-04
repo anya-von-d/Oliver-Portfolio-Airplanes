@@ -107,7 +107,7 @@ export default function Hero() {
                   data-testid="button-portfolio"
                 >
                   <a
-                    href="https://adl.stanford.edu/people/juan-j-alonso"
+                    href="https://drive.google.com/file/d/1stEKSm_UL1dYMgG4_Z50YwDeRoLlRC1F/view"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="gap-2"
