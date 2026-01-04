@@ -43,7 +43,7 @@ export default function About() {
           <div className="mb-12">
             <div className="space-y-6 animate-slide-in-left text-center">
               <p className="text-base sm:text-lg leading-relaxed text-foreground max-w-3xl mx-auto">
-                Graduate student at Stanford pursuing a Master's in Aeronautical and Astronautical Engineering. With experience at Joby Aviation, Gulfstream Aerospace, and Stanford research labs, I specialize in aircraft design, flight test engineering, and aeroacoustics research. Private pilot with hands-on flying experience.
+                Graduate student at Stanford University pursuing a Master's degree in Aeronautical and Astronautical Engineering. Significant research experience within Stanford's Aerospace Design Laboratory and Aircraft Aerodynamics and Design Laboratory, complemented by industry experience at Joby Aviation, Gulfstream Aerospace, and others. Specializing in conceptual aircraft design, aerodynamics, and flight testing, with hands-on experience as a private pilot.
               </p>
             </div>
           </div>
