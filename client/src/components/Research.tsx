@@ -19,9 +19,9 @@ const researchProjects = [
   {
     id: 'aeroelastic',
     title: 'Joined-Wing Aeroelastic Analysis',
-    subtitle: 'Stanford Flight Club | 2022 - 2024',
+    subtitle: 'Aircraft Aerodynamics and Design Laboratory | 2023 – 2025',
     description:
-      'Developed simulation environment implementing Vortex Lattice Method (VLM) and Finite Element Analysis (FEA) for aeroelastic study of joined-wing aircraft configurations. Investigated structural coupling effects and developed optimization frameworks for conceptual aircraft design in AIAA Design-Build-Fly competition.',
+      'Developed a coupled aerodynamic-structural analysis framework for joined-wing aircraft configurations, integrating vortex-based aerodynamic models with finite-element structural wingbox representations. Conducted a parametric investigation of aerodynamic performance and load redistribution, informing subsequent multidisciplinary, gradient-based optimization for cruise performance. Results highlighted aerodynamic and structural performance advantages over conventional designs.',
     image: aeroelasticImage,
   },
   {
