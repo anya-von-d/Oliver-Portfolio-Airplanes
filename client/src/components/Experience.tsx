@@ -13,12 +13,22 @@ const experiences = [
   {
     title: 'Flight Test Engineering Intern',
     organization: 'Joby Aviation',
-    location: 'Santa Cruz/Marina, CA',
+    location: 'Santa Cruz, CA',
     period: 'June 2025 - Present',
     description:
-      'Authoring and executing flight test plans for flutter and envelope expansion in support of FAA certification of the Joby S4 2.1a eVTOL aircraft. Writing and validating automated scripts for strain gauge network configuration in propeller vibration measurement systems.',
+      'Authored flutter and envelope-expansion test plans for the Joby S4-2.1a to verify simulation data, directly supporting certification efforts. Worked on developing a more accurate return-to-base battery estimate based on existing flight data and mission profiles. Built and validated automated scripts for configuring strain-gauge networks in propeller-vibration measurement systems.',
     tags: ['Flight Testing', 'FAA Certification', 'eVTOL', 'Vibration Analysis'],
     logo: jobyLogo,
+  },
+  {
+    title: 'Course Assistant: AA146A/B – Aircraft Design',
+    organization: 'Stanford University',
+    location: 'Stanford, CA',
+    period: 'September 2024 - March 2025',
+    description:
+      'As the sole TA, I developed a suite of scripts that integrated flight dynamics and control theory, providing students with course material to aid them in designing a dynamic-soaring vehicle. I also guided students to refine their decision-making skills through practical application.',
+    tags: ['Teaching', 'Flight Dynamics', 'Control Theory', 'Aircraft Design'],
+    logo: stanfordLogo,
   },
   {
     title: 'Flight Dynamics/Control Law Intern',
@@ -26,18 +36,18 @@ const experiences = [
     location: 'Savannah, GA',
     period: 'June 2024 - September 2024',
     description:
-      'Developed code in conjunction with Simulink harnesses to validate G400 linear control law models, delivering transfer functions and state-space matrices. Continuously improved and added functionalities to support scripts used for control law analyses. Generated and evaluated data for the G400 Pitch Autopilot and Alternate Mode Linear Analysis Reports. Produced and compiled G400 Alternate and Normal Mode roll mixture scheduling data for loads delivery.',
+      'Developed code as well as SIMULINK models to validate G400 CLAW linear models for first flight - delivered associated transfer functions and state-space matrices. Improved the analysis scripts by implementing a model to identify the aircraft\'s current flight envelope based on flight conditions and key operational parameters. Wrote the G400 Pitch AP and Alternate Mode Linear Analysis Reports for the FAA. Also produced roll mixture scheduling data for the Alternate Mode flight envelope.',
     tags: ['Flight Controls', 'Simulink', 'MATLAB', 'Control Systems'],
     logo: gulfstreamLogo,
   },
   {
     title: 'Aircraft Engineering Intern',
-    organization: 'Daher-Kodiak Aircraft Company',
+    organization: 'Daher–Kodiak Aircraft Company',
     location: 'Sandpoint, ID',
     period: 'August 2023 - September 2023',
     description:
-      'Led the CAD process, material selection, and validation for a fire test lab fixture used to evaluate aircraft materials under 60 Hz vibration, 2000°F flame, and 1.5 bar negative pressure for FAA certification. Assisted with identifying sources of vibration on flight-test airframes through aerodynamics analysis, presenting engineering solutions for landing gear strut and anti-icing panel vibrations. Led engineering and integration of a new charger on the Kodiak-100 for EASA certification.',
-    tags: ['CAD Design', 'Materials Testing', 'Aerodynamics', 'Certification'],
+      'Used CAD to develop a fire-lab fixture for certifying coupons under 60-Hz vibration, 2000 F flame, and pressure. Subsequently, I created the component schematics and communicated with suppliers to have articles manufactured. Additionally, I assisted with aerodynamic analysis to reduce vibrations of the landing strut assembly\'s anti-icing panels for the Kodiak-900. Finally, I worked on validating the latest update for the Garmin NXi G1000 flight deck and integrated the software into the production line.',
+    tags: ['CAD Design', 'Aerodynamics', 'Certification', 'Avionics'],
     logo: daherLogo,
   },
   {
@@ -46,8 +56,8 @@ const experiences = [
     location: 'Virginia Beach, VA',
     period: 'June 2023 - July 2023',
     description:
-      'Led the development of a Hardware-in-the-Loop Simulator to test drone hardware solutions in a custom-coded environment embedding the native Auterion suite for accelerated testing in zero-trust conditions, reducing hardware downtime post-crash. Developed structural risk mitigation solutions to improve the reliability of parachute deployment in abnormal flight conditions.',
-    tags: ['Drone Systems', 'HITL Simulation', 'Auterion', 'Safety Systems'],
+      'Developed a Hardware-in-the-Loop modular test bench for the Watts PRISM Sky 3 drone. The test bench I created determines the operational status of individual components in zero-trust environments after drone crashes. I used the open-source JMAVSim simulation environment to custom-code a solution that utilizes the PX4 suite to enable integration for simulated flights within the company\'s native Auterion Mission Control software. Additionally, I developed risk-mitigation techniques for the parachute recovery system.',
+    tags: ['Drone Systems', 'HITL Simulation', 'Auterion', 'PX4'],
     logo: droneUpLogo,
   },
   {
@@ -56,19 +66,9 @@ const experiences = [
     location: 'Mountain View, CA',
     period: 'June 2022 - August 2022',
     description:
-      'Led the CAD, development, and CFD optimization of a drone built for low-speed endurance flight. Programmed the associated avionics and aircraft controls interface in C++. Iteratively improved the design following manufacturing feedback, reducing weight. Programmed a simulation environment to test and validate flight characteristics and stability during conceptual design.',
-    tags: ['CFD', 'C++', 'Avionics', 'Aircraft Design'],
+      'Conceptually designed and manufactured an autonomous drone optimized for flying at low airspeeds. Listed as inventor on patent. Using the CFD data I accumulated based on my design\'s sizing, I developed a parametrized simulation environment to validate the drone\'s flight properties. I generated the individual components for the aircraft\'s assembly in CAD. I iteratively improved the design based on manufacturing feedback to converge on an optimal solution.',
+    tags: ['CFD', 'CAD', 'Patent', 'Aircraft Design'],
     logo: windborneLogo,
-  },
-  {
-    title: 'Aerodynamics Research Lead',
-    organization: 'Stanford Flight Club & Aircraft Design Lab',
-    location: 'Stanford, CA',
-    period: '2022 - Present',
-    description:
-      'Club President and Aerodynamics Lead for AIAA Design-Build-Fly competition team, focusing on conceptual aircraft design, aerodynamic analysis, and stability optimization. Developed simulation environment implementing VLM and FEA for aeroelastic study of joined-wing aircraft configurations. Developing methodology using vortex-particle methods and Ffowcs Williams-Hawkings equation to predict aero-acoustic noise profiles for rotor-wing configurations.',
-    tags: ['Aerodynamics', 'VLM', 'FEA', 'Aeroacoustics'],
-    logo: stanfordLogo,
   },
 ];
 
