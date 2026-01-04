@@ -17,15 +17,15 @@ const skills = [
 const focuses = [
   {
     title: 'Aircraft Design',
-    description: 'Developing innovative aircraft configurations and aerodynamic optimization for next-generation aerospace systems',
+    description: 'Focused on optimizing novel aircraft configurations, emphasizing aerodynamic performance and multidisciplinary design optimization through gradient-based methods and AI approaches.',
+  },
+  {
+    title: 'Aeroacoustics & Unsteady Aerodynamics',
+    description: 'Developing and implementing high-fidelity modeling tools for evaluating unsteady aerodynamic and aeroacoustic phenomena using vortex-based methods, with applications for rotor-wing interactions, electric propulsion, and noise-constrained aircraft design.',
   },
   {
     title: 'Flight Test Engineering',
-    description: 'Conducting flight tests for envelope expansion and certification, ensuring safety and performance standards',
-  },
-  {
-    title: 'Aeroacoustics Research',
-    description: 'Applying computational methods to predict and reduce noise profiles for rotor-wing aircraft configurations',
+    description: 'Experience in conducting flight-test campaigns for envelope expansion and certification, with a focus on engineering validation, performance quantification, and data-driven decision-making.',
   },
 ];
 
