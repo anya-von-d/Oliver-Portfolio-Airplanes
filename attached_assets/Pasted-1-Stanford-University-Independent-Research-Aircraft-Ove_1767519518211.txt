@@ -1,0 +1,75 @@
+1. Stanford University — Independent Research - Aircraft Overfly Noise Mitigation
+Location: Stanford, CA
+ Dates: 12/2022 – 04/2023
+ Position: AA190 - Independent Research
+ Principal Investigator: Dr. Ilan Kroo
+ Hours/Week: 15
+MIT (50 words):
+Researched turbofan noise mitigation techniques to reduce Effective Perceived Noise Level (EPNL) for aircraft pass-by. Developed a dynamic model to predict takeoff noise across a spatial mesh for a variety of engine families based on climb performance. Findings highlighted how procedural changes and aircraft configuration reshape community noise exposure.
+Stanford/GT (550 char):
+Researched turbofan noise mitigation techniques to reduce Effective Perceived Noise Level (EPNL) for aircraft pass-by. Developed a dynamic model to predict takeoff acoustic pollution across a spatial mesh based on climb performance profiles. Findings highlighted how procedural changes, aircraft configuration, and engine characteristics reshape community noise exposure. Prototyped ways to integrate findings to inform noise-abatement strategies.
+2. Aircraft Aerodynamics and Design Group - Joined-Wing Aircraft
+Location: Stanford, CA
+ Dates: 09/2023 – 06/2025
+ Position: Undergraduate Researcher
+ Principal Investigator: Dr. Ilan Kroo
+ Hours/Week: 15
+Description:
+MIT (50 words):
+Coded a vortex-lattice model coupled with a finite element method to investigate joined-wing aircraft. Performed parameter sweeps with structural and trim constraints, to explore the design space. I subsequently implemented a gradient-based optimizer to refine geometry and improve cruise performance, demonstrating the interconnected load-sharing and wing-wing interaction benefits.
+Stanford/GT (550 char):
+Coded a vortex-lattice model coupled with a finite element method to investigate joined-wing aircraft. After performing a parameter sweep with structural and trim constraints, I applied a gradient-based optimizer to refine geometry for cruise conditions, revealing strong load-sharing characteristics and wing-wing interaction benefits. The study demonstrated how joint placement, wing-to-tail area, and span ratios, among others, directly influence overall aerodynamic and structural performance.
+
+
+
+3. Aerospace Design Laboratory - AAM Aero Performance & Noise
+Location: Stanford, CA
+ Dates: 09/2025 –
+ Position: Graduate Researcher
+ Principal Investigator: Dr. Juan Alonso
+ Hours/Week: 20
+Description:
+MIT (50 words):
+Developing a multi-fidelity workflow that uses a viscous vortex particle method to capture unsteady velocity and pressure fields for rotor-wing configurations. These fields drive a Ffowcs Williams-Hawkings solver to predict far-field acoustic propagation. Generated datasets train a surrogate model to deliver rapid predictions for aerodynamic performance and noise.
+Stanford/GT (550 char):
+Developing a multi-fidelity workflow that uses a viscous vortex particle method to capture unsteady velocity and pressure fields for a large dataset of rotor-wing configurations. These flow fields drive a Ffowcs Williams-Hawkings solver to predict far-field acoustics. The generated data trains a surrogate model to deliver rapid and physically accurate noise predictions, allowing for the exploration of design spaces that would otherwise be computationally prohibitive or time consuming.
+
+
+4. Stanford Flight Club - AIAA Design-Build-Fly Aerodynamics Member
+Location: Stanford, CA
+ Dates: 09/2022 – 06/2023
+ Position: President; AIAA Design-Build-Fly Aerodynamics Member
+ Principal Investigator: Dr. Juan Alonso
+ Hours/Week: 15
+Description:
+MIT (50 words):
+Implemented CFD and custom VLM scripts to inform the design and aerodynamic configuration of the 2022-2023 challenge aircraft. Utilized flight test data to improve solutions iteratively. Led systems integration, ensuring collaboration across subsystems during the design process to produce a cohesive competition aircraft.
+Stanford/GT (550 char):
+Implemented CFD and custom VLM scripts to inform the design and aerodynamic configuration of the 2022-2023 challenge aircraft. Utilized flight test data to improve solutions iteratively. Led systems integration, ensuring collaboration across subsystems during the design process to produce a cohesive competition aircraft.
+5. Stanford Flight Club - AIAA Design-Build-Fly Chief Engineer
+University Contact Person - Chair of the Department of Aeronautics & Astronautics
+Location: Stanford, CA
+ Dates: 09/2023 – 06/2024
+ Position: AIAA Design-Build-Fly Chief Engineer
+ Principal Investigator: Dr. Juan Alonso
+ Hours/Week: 20
+Description:
+MIT (50 words):
+Led the 2023-2024 DBF team. Informed the wing and fuselage design for aerodynamics and stability using low/high-fidelity methods: VLMs, XFOIL, Luminary Cloud, and Ansys Fluent. Used FEM for structural analysis. Ran a masterclass series to teach students how to design aircraft and apply numerical solvers to improve designs. 
+Stanford/GT (550 char):
+Led the 2023-2024 DBF team. Informed the wing and fuselage design using a combination of low- and high-fidelity methods, including VLMs, XFOIL, Luminary Cloud, and Ansys Fluent. Used FEM for structural analysis of aircraft, integrated testing to improve design, leading to novel build techniques in the club. Led a thorough flight-testing campaign to validate designs.  Organized and delivered a masterclass series to teach students how to approach aircraft sizing, aerodynamics, and iterative design using numerical solvers. 
+
+6. Stanford Flight Club - AIAA Design-Build-Fly Aerodynamics Lead, President
+Location: Stanford, CA
+ Dates: 09/2024 – 
+ Position: President; AIAA Design-Build-Fly Aero Lead
+ Principal Investigator: Dr. Juan Alonso
+ Hours/Week: 20
+Description:
+MIT (50 words):
+As Aerodynamics Lead, I oversee the conceptual design and guide the aerodynamic optimization of our competition aircraft. Implemented refined layup techniques to extract additional performance gains from our optimized design. As President, I manage cross-disciplinary engineering workflows, secure manufacturing support, and determine the direction of our many projects.
+Stanford/GT (550 char):
+In my role as Aerodynamics Lead, I oversee the conceptual design process, run aerodynamic trade studies, and coordinate with structures, controls, and manufacturing to optimize the competition aircraft. I also implemented innovative manufacturing methods, such as refined layup techniques and improved mold fabrication, to extract full performance from our aerodynamic design. As President, I manage cross-disciplinary engineering workflows, secure manufacturing support, and determine the direction of our many projects.
+
+
+
