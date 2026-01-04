@@ -3,7 +3,7 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Mail, Linkedin, FileText, ExternalLink, FlaskConical } from 'lucide-react';
 import CloudsBackground from '@/components/CloudsBackground';
-import profileImage from '@assets/Screenshot_2026-01-03_at_10.15.23_AM_1767428130615.png';
+import profileImage from '@assets/Screenshot_2026-01-03_at_19.39.57_1767520967230.png';
 import profileImage2 from '@assets/Screenshot_2026-01-03_at_10.17.38_AM_1767428264725.png';
 
 export default function Hero() {
