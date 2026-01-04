@@ -10,10 +10,10 @@ import vibrationImage from '@assets/propellervibrationmeasures_1767445140891.png
 const researchProjects = [
   {
     id: 'aeroacoustics',
-    title: 'Aeroacoustic Noise Prediction',
-    subtitle: 'Stanford Aircraft Design Lab | 2023 - Present',
+    title: 'Aero-Acoustic Performance using AI',
+    subtitle: 'Stanford Aerospace Design Lab | 2025 - Present',
     description:
-      'Developing methodology using vortex-particle methods and Ffowcs Williams-Hawkings equation to predict aero-acoustic noise profiles for rotor-wing configurations. Implementing computational methods to analyze noise generation mechanisms in urban air mobility vehicles and optimize rotor designs for reduced acoustic signatures.',
+      'Developing surrogate modeling frameworks to predict and optimize aerodynamic performance and far-field acoustic propagation for advanced aircraft configurations. This work couples high-fidelity unsteady aerodynamic simulations with machine-learning-based surrogates, enabling rapid aero-acoustic design space exploration within gradient-based optimization loops. Emphasis is placed on rotor-wing interaction and the direct integration of acoustic metrics into multidisciplinary aircraft design workflows.',
     image: aeroacousticImage,
   },
   {
