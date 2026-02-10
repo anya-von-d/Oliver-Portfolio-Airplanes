@@ -16,7 +16,7 @@ export default function Home() {
     <div className="relative overflow-x-hidden">
       <Navigation />
       <main className="overflow-x-hidden">
-        <div className="relative bg-gradient-to-b from-[hsl(210,70%,70%)] via-[hsl(210,60%,80%)] via-[hsl(210,50%,85%)] to-[hsl(210,45%,90%)] overflow-x-hidden">
+        <div className="relative w-full min-w-full bg-gradient-to-b from-[hsl(210,70%,70%)] via-[hsl(210,60%,80%)] via-[hsl(210,50%,85%)] to-[hsl(210,45%,90%)]">
           <Hero />
         </div>
         <SkillsBanner />
