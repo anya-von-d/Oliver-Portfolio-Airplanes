@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Mail, Linkedin, FileText, ExternalLink, FlaskConical } from 'lucide-react';
-import CloudsBackground from '@/components/CloudsBackground';
 import profileImage from '@assets/Screenshot_2026-01-03_at_19.39.57_1767520967230.png';
 
 export default function Hero() {
@@ -47,26 +46,25 @@ export default function Hero() {
 
   return (
     <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 relative overflow-hidden" data-testid="section-hero">
-      <CloudsBackground />
       <div className="max-w-6xl mx-auto w-full relative z-10">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="space-y-6 text-center md:text-left">
-            <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-7xl tracking-tight" data-testid="text-name">
+            <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-7xl tracking-tight text-white drop-shadow-lg" data-testid="text-name">
               Oliver Szavuj
             </h1>
 
             <div className="h-12">
-              <p className="font-mono text-lg sm:text-xl md:text-2xl text-primary" data-testid="text-role">
+              <p className="font-mono text-lg sm:text-xl md:text-2xl text-white/90 drop-shadow-md" data-testid="text-role">
                 {displayedText}
-                <span className={`inline-block w-0.5 h-6 ml-1 bg-primary ${showCursor ? 'opacity-100' : 'opacity-0'}`} />
+                <span className={`inline-block w-0.5 h-6 ml-1 bg-white ${showCursor ? 'opacity-100' : 'opacity-0'}`} />
               </p>
             </div>
 
-            <div className="flex items-center justify-center md:justify-start gap-2 font-mono text-xs sm:text-sm text-muted-foreground flex-wrap">
+            <div className="flex items-center justify-center md:justify-start gap-2 font-mono text-xs sm:text-sm text-white/80 flex-wrap drop-shadow-sm">
               <span>Stanford University</span>
-              <span className="text-primary">•</span>
+              <span className="text-white/60">|</span>
               <span>MS Aeronautics & Astronautics</span>
-              <span className="text-primary">•</span>
+              <span className="text-white/60">|</span>
               <span>Stanford, CA</span>
             </div>
 
@@ -74,18 +72,19 @@ export default function Hero() {
               <Button
                 size="lg"
                 onClick={scrollToContact}
-                className="gap-2 w-full"
+                className="gap-2 w-full bg-primary hover:bg-primary/90"
                 data-testid="button-contact"
               >
                 <Mail className="w-4 h-4" />
                 Contact Me
               </Button>
-              
+
               <div className="grid grid-cols-2 gap-3 w-full">
                 <Button
                   size="lg"
                   variant="outline"
                   asChild
+                  className="bg-white/20 border-white/40 text-white hover:bg-white/30 backdrop-blur-sm"
                   data-testid="button-resume"
                 >
                   <a
@@ -98,11 +97,12 @@ export default function Hero() {
                     View Resume
                   </a>
                 </Button>
-                
+
                 <Button
                   size="lg"
                   variant="outline"
                   asChild
+                  className="bg-white/20 border-white/40 text-white hover:bg-white/30 backdrop-blur-sm"
                   data-testid="button-portfolio"
                 >
                   <a
@@ -122,6 +122,7 @@ export default function Hero() {
                   size="lg"
                   variant="outline"
                   asChild
+                  className="bg-white/20 border-white/40 text-white hover:bg-white/30 backdrop-blur-sm"
                   data-testid="button-linkedin"
                 >
                   <a
@@ -139,7 +140,7 @@ export default function Hero() {
                   size="lg"
                   variant="outline"
                   onClick={scrollToResearch}
-                  className="gap-2"
+                  className="gap-2 bg-white/20 border-white/40 text-white hover:bg-white/30 backdrop-blur-sm"
                   data-testid="button-research"
                 >
                   <FlaskConical className="w-4 h-4" />
@@ -150,7 +151,7 @@ export default function Hero() {
           </div>
 
           <div className="flex justify-center">
-            <Avatar className="w-64 h-64 sm:w-72 sm:h-72 md:w-96 md:h-96 border-4 border-primary/50 shadow-2xl shadow-primary/20 rounded-none">
+            <Avatar className="w-64 h-64 sm:w-72 sm:h-72 md:w-96 md:h-96 border-4 border-white/50 shadow-2xl shadow-black/20 rounded-none">
               <AvatarImage src={profileImage} alt="Oliver Szavuj" className="object-cover object-top" />
               <AvatarFallback className="text-6xl font-display bg-card">OS</AvatarFallback>
             </Avatar>

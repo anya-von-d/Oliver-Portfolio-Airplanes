@@ -19,7 +19,7 @@ const researchProjects = [
   {
     id: 'aeroelastic',
     title: 'Joined-Wing Aeroelastic Analysis',
-    subtitle: 'Aircraft Aerodynamics and Design Laboratory | 2023 – 2025',
+    subtitle: 'Aircraft Aerodynamics and Design Laboratory | 2023 \u2013 2025',
     description:
       'Developed a coupled aerodynamic-structural analysis framework for joined-wing aircraft configurations, integrating vortex-based aerodynamic models with finite-element structural wingbox representations. Conducted a parametric investigation of aerodynamic performance and load redistribution, informing subsequent multidisciplinary, gradient-based optimization for cruise performance. Results highlighted aerodynamic and structural performance advantages over conventional designs.',
     image: aeroelasticImage,
@@ -38,7 +38,7 @@ const researchProjects = [
     subtitle: 'WindBorne Systems | Summer 2022',
     description: (
       <>
-        Developed aerodynamic and flight-performance analyses for a long-endurance, low-speed aerial platform. Named inventor on a <a href="https://data.uspto.gov/patent-file-wrapper/search/details/18780159/assignments" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">patented</a> wind-shear–based lift and endurance system, led vehicle sizing, mission-level trade studies, manufacturing and flight-test support, with an emphasis on aerodynamic efficiency, stability, and endurance optimization under operational constraints. Developed a simulation environment to test the performance of the system using aerodynamic data.
+        Developed aerodynamic and flight-performance analyses for a long-endurance, low-speed aerial platform. Named inventor on a <a href="https://data.uspto.gov/patent-file-wrapper/search/details/18780159/assignments" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">patented</a> wind-shear&#8211;based lift and endurance system, led vehicle sizing, mission-level trade studies, manufacturing and flight-test support, with an emphasis on aerodynamic efficiency, stability, and endurance optimization under operational constraints. Developed a simulation environment to test the performance of the system using aerodynamic data.
       </>
     ),
     image: flightDynamicsImage,
@@ -58,8 +58,8 @@ export default function Research() {
     <section id="research" className="relative py-16 px-4 sm:px-6 overflow-hidden" data-testid="section-research">
       <div className="relative max-w-6xl mx-auto w-full">
         <div className="mb-16 text-center md:text-left">
-          <h2 className="font-mono text-2xl sm:text-3xl md:text-4xl mb-4" data-testid="heading-research">
-            <span className="text-primary">&lt;</span><span className="text-foreground">Research</span><span className="text-primary">/&gt;</span>
+          <h2 className="font-mono text-2xl sm:text-3xl md:text-4xl mb-4 text-white" data-testid="heading-research">
+            <span className="text-primary">&lt;</span>Research<span className="text-primary">/&gt;</span>
           </h2>
         </div>
 
@@ -70,7 +70,11 @@ export default function Research() {
                 key={project.id}
                 onClick={() => toggleProject(project.id)}
                 variant={selectedProject === project.id ? "default" : "outline"}
-                className="w-full justify-between h-auto py-3 sm:py-4 px-4 sm:px-5 text-left"
+                className={`w-full justify-between h-auto py-3 sm:py-4 px-4 sm:px-5 text-left ${
+                  selectedProject === project.id
+                    ? 'bg-primary text-white'
+                    : 'bg-white/10 border-white/20 text-white hover:bg-white/20'
+                }`}
                 data-testid={`button-project-${project.id}`}
               >
                 <span className="font-mono text-xs sm:text-sm truncate">
@@ -87,26 +91,26 @@ export default function Research() {
 
           <div className="mx-auto md:mx-0 w-full max-w-md md:max-w-none">
             {selected ? (
-              <Card className="p-6 sm:p-8 animate-fade-in" data-testid="card-research-detail">
-                <h3 className="font-display font-bold text-xl sm:text-2xl text-foreground mb-2" data-testid="text-project-title">
+              <Card className="p-6 sm:p-8 animate-fade-in bg-white/5 border-white/10" data-testid="card-research-detail">
+                <h3 className="font-display font-bold text-xl sm:text-2xl text-white mb-2" data-testid="text-project-title">
                   {selected.title}
                 </h3>
                 <p className="font-mono text-xs sm:text-sm text-primary mb-4 sm:mb-6" data-testid="text-project-subtitle">
                   {selected.subtitle}
                 </p>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6" data-testid="text-project-description">
+                <p className="text-sm sm:text-base text-white/70 leading-relaxed mb-6" data-testid="text-project-description">
                   {selected.description}
                 </p>
-                <img 
-                  src={selected.image} 
+                <img
+                  src={selected.image}
                   alt={selected.title}
                   className="w-full rounded-lg"
                   data-testid="img-research-project"
                 />
               </Card>
             ) : (
-              <Card className="p-6 sm:p-8 flex items-center justify-center h-48 sm:h-64 bg-muted/30" data-testid="card-research-empty">
-                <p className="text-muted-foreground font-mono text-xs sm:text-sm text-center">
+              <Card className="p-6 sm:p-8 flex items-center justify-center h-48 sm:h-64 bg-white/5 border-white/10" data-testid="card-research-empty">
+                <p className="text-white/50 font-mono text-xs sm:text-sm text-center">
                   Select a research project to view details
                 </p>
               </Card>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ChevronDown, ChevronUp, Briefcase, Calendar } from 'lucide-react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import jobyLogo from '@assets/1_1767427882546.png';
 import gulfstreamLogo from '@assets/2_1767427907738.png';
 import daherLogo from '@assets/3_1767427934755.png';
@@ -21,7 +21,7 @@ const experiences = [
     logo: jobyLogo,
   },
   {
-    title: 'Course Assistant: AA146A/B – Aircraft Design',
+    title: 'Course Assistant: AA146A/B \u2013 Aircraft Design',
     organization: 'Stanford University',
     location: 'Stanford, CA',
     period: 'September 2024 - March 2025',
@@ -42,7 +42,7 @@ const experiences = [
   },
   {
     title: 'Aircraft Engineering Intern',
-    organization: 'Daher–Kodiak Aircraft Company',
+    organization: 'Daher\u2013Kodiak Aircraft Company',
     location: 'Sandpoint, ID',
     period: 'August 2023 - September 2023',
     description:
@@ -80,93 +80,80 @@ export default function Experience() {
   };
 
   return (
-    <section id="experience" className="relative pt-16 pb-32 px-4 sm:px-6 overflow-hidden" data-testid="section-experience">
+    <section id="experience" className="relative py-16 px-4 sm:px-6 overflow-hidden" data-testid="section-experience">
       <div className="relative max-w-6xl mx-auto w-full">
-        <div className="relative flex items-end">
-          <div className="relative" style={{ width: '350px', height: '80px' }}>
-            <svg className="w-full h-full absolute bottom-0" viewBox="0 0 350 80" preserveAspectRatio="none" style={{ display: 'block' }}>
-              <path
-                d="M 0,60 Q 20,60 35,40 Q 50,20 75,20 L 275,20 Q 300,20 315,40 Q 330,60 350,60 L 350,80 L 0,80 Z"
-                fill="#623A17"
-              />
-            </svg>
-            <div className="absolute inset-0 flex items-center justify-center pt-6">
-              <h2 className="font-mono text-xl md:text-2xl text-white whitespace-nowrap" data-testid="heading-experience">
-                <span className="text-primary">&lt;</span>Experience<span className="text-primary">/&gt;</span>
-              </h2>
-            </div>
-          </div>
-          <div className="flex-1 bg-[#623A17] h-5"></div>
+        <div className="mb-16 text-center md:text-left">
+          <h2 className="font-mono text-2xl sm:text-3xl md:text-4xl mb-4 text-[#171511]" data-testid="heading-experience">
+            <span className="text-primary">&lt;</span>Experience<span className="text-primary">/&gt;</span>
+          </h2>
         </div>
 
-        <div className="bg-[#623A17] p-4 sm:p-8 md:p-12">
-          <div className="space-y-4 sm:space-y-6">
-            {experiences.map((exp, index) => (
-              <Card
-                key={index}
-                className="overflow-hidden transition-all duration-300 bg-white/5 hover-elevate active-elevate-2 animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
-                data-testid={`card-experience-${index}`}
+        <div className="space-y-4 sm:space-y-6">
+          {experiences.map((exp, index) => (
+            <Card
+              key={index}
+              className="overflow-hidden transition-all duration-300 bg-white/40 hover-elevate active-elevate-2 animate-fade-in border-[#b8b3ae]"
+              style={{ animationDelay: `${index * 100}ms` }}
+              data-testid={`card-experience-${index}`}
+            >
+              <button
+                onClick={() => toggleExpand(index)}
+                className="w-full p-4 sm:p-6 text-left transition-all"
+                data-testid={`button-expand-${index}`}
               >
-                <button
-                  onClick={() => toggleExpand(index)}
-                  className="w-full p-4 sm:p-6 text-left transition-all"
-                  data-testid={`button-expand-${index}`}
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex items-start gap-4 flex-1 min-w-0">
-                      <img 
-                        src={exp.logo} 
-                        alt={`${exp.organization} logo`}
-                        className="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-md bg-white/90 shrink-0"
-                        data-testid={`img-logo-${index}`}
-                      />
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-mono text-base sm:text-lg md:text-xl mb-3 text-white" data-testid={`text-title-${index}`}>
-                          <span className="text-primary">&lt;</span>
-                          {exp.title.toUpperCase()}
-                          <span className="text-primary">/&gt;</span>
-                        </h3>
-                        <p className="text-sm sm:text-base text-white/70 mb-2" data-testid={`text-org-${index}`}>
-                          {exp.organization}
-                        </p>
-                        <div className="flex items-center gap-2 text-xs sm:text-sm text-primary font-mono">
-                          <span>{exp.period}</span>
-                        </div>
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-start gap-4 flex-1 min-w-0">
+                    <img
+                      src={exp.logo}
+                      alt={`${exp.organization} logo`}
+                      className="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-md bg-white/90 shrink-0"
+                      data-testid={`img-logo-${index}`}
+                    />
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-mono text-base sm:text-lg md:text-xl mb-3 text-[#171511]" data-testid={`text-title-${index}`}>
+                        <span className="text-primary">&lt;</span>
+                        {exp.title.toUpperCase()}
+                        <span className="text-primary">/&gt;</span>
+                      </h3>
+                      <p className="text-sm sm:text-base text-[#171511]/70 mb-2" data-testid={`text-org-${index}`}>
+                        {exp.organization}
+                      </p>
+                      <div className="flex items-center gap-2 text-xs sm:text-sm text-primary font-mono">
+                        <span>{exp.period}</span>
                       </div>
                     </div>
-                    <div className="shrink-0">
-                      {expandedIndex === index ? (
-                        <ChevronUp className="w-5 h-5 text-primary" />
-                      ) : (
-                        <ChevronDown className="w-5 h-5 text-white/60" />
-                      )}
-                    </div>
                   </div>
-                </button>
+                  <div className="shrink-0">
+                    {expandedIndex === index ? (
+                      <ChevronUp className="w-5 h-5 text-primary" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-[#171511]/40" />
+                    )}
+                  </div>
+                </div>
+              </button>
 
-                {expandedIndex === index && (
-                  <div className="px-4 sm:px-6 pb-4 sm:pb-6 animate-accordion-down" data-testid={`content-experience-${index}`}>
-                    <div className="pt-4 border-t border-white/10">
-                      <p className="text-sm sm:text-base text-white/70 leading-relaxed mb-4">{exp.description}</p>
-                      <div className="flex flex-wrap gap-2">
-                        {exp.tags.map((tag) => (
-                          <Badge
-                            key={tag}
-                            variant="secondary"
-                            className="font-mono text-xs bg-white/10 text-white border-white/20"
-                            data-testid={`badge-tag-${tag.toLowerCase().replace(/\s+/g, '-')}`}
-                          >
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
+              {expandedIndex === index && (
+                <div className="px-4 sm:px-6 pb-4 sm:pb-6 animate-accordion-down" data-testid={`content-experience-${index}`}>
+                  <div className="pt-4 border-t border-[#b8b3ae]">
+                    <p className="text-sm sm:text-base text-[#171511]/70 leading-relaxed mb-4">{exp.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {exp.tags.map((tag) => (
+                        <Badge
+                          key={tag}
+                          variant="secondary"
+                          className="font-mono text-xs bg-primary/10 text-primary border-primary/20"
+                          data-testid={`badge-tag-${tag.toLowerCase().replace(/\s+/g, '-')}`}
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
-                )}
-              </Card>
-            ))}
-          </div>
+                </div>
+              )}
+            </Card>
+          ))}
         </div>
       </div>
     </section>

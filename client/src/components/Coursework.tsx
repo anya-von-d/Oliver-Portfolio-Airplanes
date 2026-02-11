@@ -44,36 +44,24 @@ export default function Coursework() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section id="coursework" className="relative pt-4 pb-32 px-4 sm:px-6 overflow-hidden" data-testid="section-coursework">
+    <section id="coursework" className="relative py-16 px-4 sm:px-6 overflow-hidden" data-testid="section-coursework">
       <div className="relative max-w-6xl mx-auto w-full">
-        <div className="relative flex items-end">
-          <div className="relative" style={{ width: '400px', height: '80px' }}>
-            <svg className="w-full h-full absolute bottom-0" viewBox="0 0 400 80" preserveAspectRatio="none" style={{ display: 'block' }}>
-              <path
-                d="M 0,60 Q 20,60 35,40 Q 50,20 75,20 L 325,20 Q 350,20 365,40 Q 380,60 400,60 L 400,80 L 0,80 Z"
-                fill="#623A17"
-              />
-            </svg>
-            <div className="absolute inset-0 flex items-center justify-center pt-6">
-              <h2 className="font-mono text-xl md:text-2xl text-white whitespace-nowrap" data-testid="heading-coursework">
-                <span className="text-primary">&lt;</span>Coursework & Skills<span className="text-primary">/&gt;</span>
-              </h2>
-            </div>
-          </div>
-          <div className="flex-1 bg-[#623A17] h-5"></div>
+        <div className="mb-16 text-center md:text-left">
+          <h2 className="font-mono text-2xl sm:text-3xl md:text-4xl mb-4 text-[#171511]" data-testid="heading-coursework">
+            <span className="text-primary">&lt;</span>Coursework & Skills<span className="text-primary">/&gt;</span>
+          </h2>
         </div>
 
-        <div className="bg-[#623A17] p-4 sm:p-8 md:p-12">
-          <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
           <div>
             <div className="flex items-center gap-3 mb-6 justify-center md:justify-start">
-              <h3 className="font-display font-bold text-xl sm:text-2xl text-white">Relevant Courses</h3>
+              <h3 className="font-display font-bold text-xl sm:text-2xl text-[#171511]">Relevant Courses</h3>
             </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {courses.map((course, index) => (
                 <Card
                   key={course}
-                  className={`p-3 sm:p-4 hover-elevate active-elevate-2 cursor-default transition-all animate-fade-in bg-white/5 !border-primary ${
+                  className={`p-3 sm:p-4 hover-elevate active-elevate-2 cursor-default transition-all animate-fade-in bg-white/60 !border-primary/30 ${
                     hoveredIndex === index ? 'scale-105' : ''
                   }`}
                   style={{ animationDelay: `${index * 50}ms` }}
@@ -89,14 +77,14 @@ export default function Coursework() {
 
           <div>
             <div className="flex items-center gap-3 mb-6 justify-center md:justify-start">
-              <h3 className="font-display font-bold text-xl sm:text-2xl text-white">Technical Skills</h3>
+              <h3 className="font-display font-bold text-xl sm:text-2xl text-[#171511]">Technical Skills</h3>
             </div>
             <div className="flex flex-wrap gap-2 sm:gap-3 justify-center md:justify-start">
               {technicalSkills.map((skill, index) => (
                 <Badge
                   key={skill}
                   variant="outline"
-                  className="font-mono px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm !border-white text-white hover:bg-primary hover:text-primary-foreground transition-all cursor-default animate-fade-in"
+                  className="font-mono px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm !border-[#171511]/30 text-[#171511] hover:bg-primary hover:text-primary-foreground transition-all cursor-default animate-fade-in"
                   style={{ animationDelay: `${index * 50}ms` }}
                   data-testid={`badge-tech-${skill.toLowerCase().replace(/\s+/g, '-')}`}
                 >
@@ -105,20 +93,19 @@ export default function Coursework() {
               ))}
             </div>
 
-            <Card className="mt-8 p-4 sm:p-6 border-primary/30 bg-white/5">
-              <p className="text-sm sm:text-base text-white/70 leading-relaxed">
+            <Card className="mt-8 p-4 sm:p-6 border-primary/30 bg-white/60">
+              <p className="text-sm sm:text-base text-[#171511]/70 leading-relaxed">
                 <span className="font-display font-semibold text-primary block mb-2">
                   Specialized Expertise
                 </span>
-                Strong foundation in aerospace engineering with hands-on experience in aircraft design, 
-                flight test engineering, and aeroacoustics research. Proficient in computational fluid dynamics, 
-                structural analysis, and control systems design. Licensed private pilot with experience flying 
+                Strong foundation in aerospace engineering with hands-on experience in aircraft design,
+                flight test engineering, and aeroacoustics research. Proficient in computational fluid dynamics,
+                structural analysis, and control systems design. Licensed private pilot with experience flying
                 Cessna 182/172, Kodiak 100/900, and IAR-46 aircraft.
               </p>
             </Card>
           </div>
         </div>
-      </div>
       </div>
     </section>
   );

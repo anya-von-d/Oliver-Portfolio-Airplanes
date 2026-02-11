@@ -22,7 +22,7 @@ const education = [
 
 export default function Education() {
   return (
-    <section id="education" className="py-16 px-4 sm:px-6 bg-[hsl(220,35%,25%)] overflow-hidden" data-testid="section-education">
+    <section id="education" className="py-16 px-4 sm:px-6 overflow-hidden" data-testid="section-education">
       <div className="max-w-6xl mx-auto w-full">
         <div className="mb-16 text-center md:text-left">
           <h2 className="font-mono text-2xl sm:text-3xl md:text-4xl mb-4 text-white" data-testid="heading-education">
@@ -41,9 +41,9 @@ export default function Education() {
               <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
                 <div className="shrink-0 mx-auto sm:mx-0">
                   <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden bg-white">
-                    <img 
-                      src={stanfordLogo} 
-                      alt="Stanford University Logo" 
+                    <img
+                      src={stanfordLogo}
+                      alt="Stanford University Logo"
                       className="w-full h-full object-cover"
                     />
                   </div>

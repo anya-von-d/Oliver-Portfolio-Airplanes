@@ -47,7 +47,7 @@ export default function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/80 backdrop-blur-md border-b border-border' : ''
+        isScrolled ? 'bg-[#D0CBC7]/80 backdrop-blur-md border-b border-[#b8b3ae]' : ''
       }`}
       data-testid="nav-main"
     >
@@ -69,7 +69,7 @@ export default function Navigation() {
                 className={`px-4 py-2 rounded-md text-sm font-mono transition-colors hover-elevate active-elevate-2 ${
                   activeSection === item.href.substring(1)
                     ? 'text-primary'
-                    : 'text-muted-foreground'
+                    : 'text-[#171511]/60'
                 }`}
                 data-testid={`link-${item.label.toLowerCase()}`}
               >
@@ -98,7 +98,7 @@ export default function Navigation() {
                 className={`px-4 py-3 rounded-md text-left font-mono hover-elevate active-elevate-2 ${
                   activeSection === item.href.substring(1)
                     ? 'bg-primary/10 text-primary'
-                    : 'text-muted-foreground'
+                    : 'text-[#171511]/60'
                 }`}
                 data-testid={`link-mobile-${item.label.toLowerCase()}`}
               >
