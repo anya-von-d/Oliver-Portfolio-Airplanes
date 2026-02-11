@@ -215,49 +215,61 @@ function setupAnimation(model: THREE.Object3D) {
 
   let delay = 0;
 
+  // 1. Hero → Skills: sweep left across screen
   tl.to('.scroll-cta', { duration: 0.25, opacity: 0 }, delay);
-  tl.to(plane.position, { x: -10, ease: 'power1.in' }, delay);
+  tl.to(plane.rotation, { x: tau * 0.01, y: tau * -0.2, z: -tau * 0.06, ease: 'power1.inOut' }, delay);
+  tl.to(plane.position, { x: -100, y: -20, z: -50, ease: 'power1.inOut' }, delay);
   delay += sectionDuration;
 
-  tl.to(plane.rotation, { x: tau * 0.02, y: tau * -0.15, z: -tau * 0.04, ease: 'power1.inOut' }, delay);
-  tl.to(plane.position, { x: -40, y: 5, z: -50, ease: 'power1.inOut' }, delay);
+  // 2. Skills → About: bank right, sweep across to far right
+  tl.to(plane.rotation, { x: tau * -0.02, y: tau * -0.1, z: tau * 0.06, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: 120, y: 0, z: -40, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  tl.to(plane.rotation, { x: tau * 0.01, y: tau * -0.1, z: tau * 0.04, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: 40, y: -5, z: -40, ease: 'power2.inOut' }, delay);
+  // 3. About → Education: sweep back left, climb slightly
+  tl.to(plane.rotation, { x: tau * 0.02, y: tau * -0.22, z: -tau * 0.05, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: -110, y: 10, z: -30, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  tl.to(plane.rotation, { x: tau * 0.02, y: tau * -0.2, z: -tau * 0.03, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: -30, y: 0, z: -20, ease: 'power2.inOut' }, delay);
+  // 4. Education: cross to right through blueprint
+  tl.to(plane.rotation, { x: tau * -0.01, y: tau * -0.08, z: tau * 0.04, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: 100, y: -10, z: -20, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  tl.to(plane.rotation, { x: tau * -0.01, y: tau * -0.05, z: tau * 0.02, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: 20, y: -10, z: 10, ease: 'power2.inOut' }, delay);
+  // 5. Research: sweep left again
+  tl.to(plane.rotation, { x: tau * 0.02, y: tau * -0.18, z: -tau * 0.05, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: -90, y: 5, z: -35, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  tl.to(plane.rotation, { x: tau * 0.01, y: tau * -0.15, z: -tau * 0.02, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: -20, y: 5, z: -10, ease: 'power2.inOut' }, delay);
+  // 6. Technical Skills: cross right
+  tl.to(plane.rotation, { x: tau * -0.01, y: tau * -0.12, z: tau * 0.06, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: 110, y: -5, z: -25, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  tl.to(plane.rotation, { x: tau * 0.02, y: tau * -0.1, z: tau * 0.05, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: 35, y: -5, z: -30, ease: 'power2.inOut' }, delay);
+  // 7. Experience: sweep left, descend
+  tl.to(plane.rotation, { x: tau * 0.03, y: tau * -0.2, z: -tau * 0.04, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: -80, y: -15, z: -30, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  tl.to(plane.rotation, { x: tau * -0.01, y: tau * -0.2, z: -tau * 0.04, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: -25, y: 0, z: -20, ease: 'power2.inOut' }, delay);
+  // 8. Coursework: cross to right, level out
+  tl.to(plane.rotation, { x: tau * -0.01, y: tau * -0.1, z: tau * 0.03, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: 90, y: 0, z: -20, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  tl.to(plane.rotation, { x: tau * 0.03, y: tau * -0.08, z: tau * 0.03, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { z: -60, x: 30, y: 15, ease: 'power2.inOut' }, delay);
+  // 9. CTA → Contact: center up, pull back for the approach
+  tl.to(plane.rotation, { x: tau * 0.02, y: tau * -0.15, z: 0, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: 0, y: 10, z: -80, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  tl.to(plane.rotation, { x: tau * -0.02, y: tau * -0.12, z: 0, ease: 'power1.in' }, delay);
-  tl.to(plane.position, { z: -200, x: 0, y: 30, ease: 'power1.in' }, delay);
+  // 10. Contact: turn to face the viewer (y rotation → 0.5 = 180°)
+  tl.to(plane.rotation, { x: tau * 0.02, y: tau * 0.25, z: 0, ease: 'power2.in' }, delay);
+  tl.to(plane.position, { x: 0, y: -5, z: -40, ease: 'power2.in' }, delay);
   delay += sectionDuration;
 
-  tl.to(plane.rotation, { duration: sectionDuration, x: tau * -0.03, y: tau * -0.15, z: tau * 0.01, ease: 'none' }, delay);
-  tl.to(plane.position, { duration: sectionDuration, x: 0, y: 40, z: -400, ease: 'power1.in' }, delay);
-  tl.to(scene.light.position, { duration: sectionDuration, x: 0, y: 0, z: 0 }, delay);
+  // 11. Footer: fly straight towards the viewer, getting huge
+  tl.to(plane.rotation, { duration: sectionDuration, x: 0, y: tau * 0.25, z: 0, ease: 'none' }, delay);
+  tl.to(plane.position, { duration: sectionDuration, x: 0, y: 0, z: 300, ease: 'power2.in' }, delay);
+  tl.to(scene.light.position, { duration: sectionDuration, x: 0, y: 10, z: 200 }, delay);
 
   return scene;
 }
