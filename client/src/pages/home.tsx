@@ -1,5 +1,7 @@
+import { useState, useCallback } from 'react';
 import Navigation from '@/components/Navigation';
 import AirplaneScene from '@/components/AirplaneScene';
+import SplashScreen from '@/components/SplashScreen';
 import Hero from '@/components/Hero';
 import SkillsBanner from '@/components/SkillsBanner';
 import About from '@/components/About';
@@ -13,8 +15,13 @@ import Contact from '@/components/Contact';
 import { Button } from '@/components/ui/button';
 
 export default function Home() {
+  const [splashDone, setSplashDone] = useState(false);
+  const handleSplashComplete = useCallback(() => setSplashDone(true), []);
+
   return (
     <div className="relative overflow-x-hidden">
+      {!splashDone && <SplashScreen onComplete={handleSplashComplete} />}
+
       <div className="loading">
         <p>Loading...</p>
       </div>
