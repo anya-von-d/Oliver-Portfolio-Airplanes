@@ -263,20 +263,20 @@ function setupAnimation(model: THREE.Object3D) {
   tl.to(plane.position, { x: 5, y: 0, z: -35, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  // 9. CTA → Contact: bank into a turn, nose angling toward viewer
-  // Like the CodePen — the plane banks and starts sweeping toward the camera
-  // at an angle (coming from the right side). y rotates toward 0 (nose → +Z)
-  // but offset so the approach is diagonal, not dead-center.
-  tl.to(plane.rotation, { x: tau * -0.02, y: tau * -0.08, z: tau * -0.04, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: -40, y: 15, z: -20, ease: 'power2.inOut' }, delay);
+  // 9. CTA → Contact: plane stays visible, gentle bank as it approaches
+  // Like the CodePen — the plane cruises nicely on-screen, turning slightly
+  // so its nose starts angling toward the camera. Stays centered and visible.
+  tl.to(plane.rotation, { x: tau * 0.005, y: tau * -0.15, z: tau * -0.02, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: 20, y: 0, z: -30, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  // 10. Contact → Footer: fly past the viewer at an angle — cinematic flyby
-  // The plane sweeps from left to right and above, accelerating toward and
-  // past the camera. Slight nose-up pitch and continued bank sell the motion.
-  tl.to(plane.rotation, { duration: sectionDuration * 2, x: tau * -0.03, y: tau * -0.05, z: tau * -0.06, ease: 'power1.in' }, delay);
-  tl.to(plane.position, { duration: sectionDuration * 2, x: 80, y: 40, z: 350, ease: 'power2.in' }, delay);
-  tl.to(scene.light.position, { duration: sectionDuration * 2, x: 30, y: 30, z: 250 }, delay);
+  // 10. Contact → Footer: accelerate toward the viewer at an angle
+  // The plane banks and flies toward and past the camera — getting bigger
+  // and bigger until it whooshes past slightly off-center. Matches the
+  // CodePen's dramatic ending flyby.
+  tl.to(plane.rotation, { duration: sectionDuration * 1.5, x: tau * -0.01, y: tau * -0.05, z: tau * -0.04, ease: 'power1.in' }, delay);
+  tl.to(plane.position, { duration: sectionDuration * 1.5, x: 40, y: 20, z: 280, ease: 'power2.in' }, delay);
+  tl.to(scene.light.position, { duration: sectionDuration * 1.5, x: 20, y: 15, z: 200 }, delay);
 
   return scene;
 }
