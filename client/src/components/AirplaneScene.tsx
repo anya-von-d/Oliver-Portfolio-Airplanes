@@ -144,7 +144,7 @@ function setupAnimation(model: THREE.Object3D) {
   const tau = Math.PI * 2;
   plane.scale.set(0.7, 0.7, 0.7);
   gsap.set(plane.rotation, { y: tau * -0.25 });
-  gsap.set(plane.position, { x: 80, y: -32, z: -60 });
+  gsap.set(plane.position, { x: 60, y: -65, z: -60 });
   scene.render();
 
   const sectionDuration = 1;
