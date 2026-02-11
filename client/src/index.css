@@ -247,7 +247,7 @@ body {
 
 /* ===== HERO SKY ===== */
 .hero-sky {
-  background: transparent;
+  background: linear-gradient(180deg, #4a90d9 0%, #6ab0f3 30%, #87CEEB 60%, #b0d4f1 85%, #D0CBC7 100%);
   min-height: 100vh;
   position: relative;
   overflow: hidden;
