@@ -60,46 +60,46 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
 
         // Start off-screen left, fly across to off-screen right
         const tau = Math.PI * 2;
-        group.rotation.y = tau * -0.25; // facing away
-        group.rotation.z = tau * -0.015; // slight bank
-        group.position.set(-200, 0, -50);
+        group.rotation.y = tau * 0.25; // nose pointing right (+X direction)
+        group.rotation.z = tau * -0.01; // very slight bank
+        group.position.set(-250, 0, -50);
         scene.add(group);
 
-        // Animate: render loop + fly-by
+        // Animate: render loop + fly-by (slower)
         let animId: number;
         const startTime = Date.now();
-        const flyDuration = 2400; // ms for the fly-by
+        const flyDuration = 3500; // slower fly-by
 
         function animate() {
           if (disposed) return;
           const elapsed = Date.now() - startTime;
           const t = Math.min(elapsed / flyDuration, 1);
 
-          // Ease: cubic ease-in-out
+          // Ease: smooth ease-in-out
           const ease = t < 0.5
-            ? 4 * t * t * t
-            : 1 - Math.pow(-2 * t + 2, 3) / 2;
+            ? 2 * t * t
+            : 1 - Math.pow(-2 * t + 2, 2) / 2;
 
-          // Fly from left (-200) to right (+200)
-          group.position.x = -200 + ease * 400;
-          // Slight arc upward in the middle
-          group.position.y = Math.sin(t * Math.PI) * 15;
-          // Bank into and out of the arc
-          group.rotation.z = tau * -0.015 + Math.sin(t * Math.PI) * tau * -0.01;
+          // Fly from left (-250) to right (+250), nose first
+          group.position.x = -250 + ease * 500;
+          // Gentle arc upward in the middle
+          group.position.y = Math.sin(t * Math.PI) * 12;
+          // Subtle bank into the arc
+          group.rotation.z = tau * -0.01 + Math.sin(t * Math.PI) * tau * -0.008;
 
           renderer.render(scene, camera);
           animId = requestAnimationFrame(animate);
         }
         animate();
 
-        // After 2.5s start fading, at 3s call onComplete
+        // After 3.5s start fading, at 4.2s call onComplete
         setTimeout(() => {
           if (!disposed) setFading(true);
-        }, 2500);
+        }, 3500);
 
         setTimeout(() => {
           if (!disposed) onComplete();
-        }, 3200);
+        }, 4200);
 
         // Cleanup
         return () => {
