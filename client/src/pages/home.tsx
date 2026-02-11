@@ -1,6 +1,7 @@
 import Navigation from '@/components/Navigation';
 import AirplaneScene from '@/components/AirplaneScene';
 import Hero from '@/components/Hero';
+import CloudsBackground from '@/components/CloudsBackground';
 import SkillsBanner from '@/components/SkillsBanner';
 import About from '@/components/About';
 import Education from '@/components/Education';
@@ -34,15 +35,14 @@ export default function Home() {
         <div className="trigger"></div>
 
         <div className="section hero-sky w-full min-w-full">
-          <div className="hero-cloud hero-cloud-1"></div>
-          <div className="hero-cloud hero-cloud-2"></div>
-          <div className="hero-cloud hero-cloud-3"></div>
+          <CloudsBackground />
           <Hero />
         </div>
 
         <SkillsBanner />
 
         <div className="ground-container section section-beige">
+          <CloudsBackground />
           <div className="clouds"></div>
           <div className="ground"></div>
           <div className="relative z-10">
