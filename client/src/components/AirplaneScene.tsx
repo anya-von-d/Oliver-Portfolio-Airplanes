@@ -264,17 +264,20 @@ function setupAnimation(model: THREE.Object3D) {
   delay += sectionDuration;
 
   // 9. CTA → Contact: pull away from viewer, center perfectly
-  tl.to(plane.rotation, { x: tau * -0.005, y: tau * -0.25, z: 0, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: 0, y: 0, z: -80, ease: 'power2.inOut' }, delay);
+  tl.to(plane.rotation, { x: 0, y: tau * -0.25, z: 0, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: 0, y: 0, z: -100, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  // 10. Contact: smooth 180° turn to face the viewer head-on
-  tl.to(plane.rotation, { x: 0, y: tau * 0.25, z: 0, ease: 'power3.inOut' }, delay);
-  tl.to(plane.position, { x: 0, y: 0, z: -80, ease: 'power2.inOut' }, delay);
+  // 10. Contact: 180° turn — rotate THROUGH -0.75 tau (not +0.25)
+  // so the nose sweeps forward continuously instead of going sideways.
+  // -0.25 tau → -0.75 tau is the same final facing as +0.25 tau
+  // but GSAP interpolates the short way around (nose keeps turning forward).
+  tl.to(plane.rotation, { x: 0, y: tau * -0.75, z: 0, ease: 'power3.inOut' }, delay);
+  tl.to(plane.position, { x: 0, y: 0, z: -100, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  // 11. Footer: fly straight at the viewer, filling the screen
-  tl.to(plane.rotation, { duration: sectionDuration, x: 0, y: tau * 0.25, z: 0, ease: 'none' }, delay);
+  // 11. Footer: fly straight head-on at the viewer, filling the screen
+  tl.to(plane.rotation, { duration: sectionDuration, x: 0, y: tau * -0.75, z: 0, ease: 'none' }, delay);
   tl.to(plane.position, { duration: sectionDuration, x: 0, y: 0, z: 300, ease: 'power2.in' }, delay);
   tl.to(scene.light.position, { duration: sectionDuration, x: 0, y: 10, z: 200 }, delay);
 
