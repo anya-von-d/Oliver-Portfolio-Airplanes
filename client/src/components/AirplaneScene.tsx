@@ -275,9 +275,9 @@ export default function AirplaneScene() {
         object.traverse((child) => {
           if ((child as THREE.Mesh).isMesh) {
             const mat = new THREE.MeshPhongMaterial({
-              color: 0xeeeeee,
+              color: 0xc0c0c0,
               specular: 0xffffff,
-              shininess: 120,
+              shininess: 150,
               flatShading: true,
             });
             (child as THREE.Mesh).material = mat;
