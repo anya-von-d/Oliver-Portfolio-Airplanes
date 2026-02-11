@@ -263,15 +263,14 @@ function setupAnimation(model: THREE.Object3D) {
   tl.to(plane.position, { x: 5, y: 0, z: -35, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  // 9. CTA → Contact: level out, center, fly straight
-  tl.to(plane.rotation, { x: 0, y: tau * -0.25, z: 0, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: 0, y: 0, z: -40, ease: 'power2.inOut' }, delay);
+  // 9. CTA → Contact: center up, rotate nose toward the camera (y → 0)
+  // At y=0 the model's nose points along +Z, directly at the viewer.
+  tl.to(plane.rotation, { x: 0, y: 0, z: 0, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: 0, y: 0, z: -60, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  // 10. Contact → Footer: no turn — plane keeps same heading and
-  // just flies straight toward the camera. Perspective makes the
-  // nose come right at the viewer as z increases past the camera.
-  tl.to(plane.rotation, { duration: sectionDuration * 2, x: 0, y: tau * -0.25, z: 0, ease: 'none' }, delay);
+  // 10. Contact → Footer: fly nose-first straight at the viewer
+  tl.to(plane.rotation, { duration: sectionDuration * 2, x: 0, y: 0, z: 0, ease: 'none' }, delay);
   tl.to(plane.position, { duration: sectionDuration * 2, x: 0, y: 0, z: 300, ease: 'power2.in' }, delay);
   tl.to(scene.light.position, { duration: sectionDuration * 2, x: 0, y: 10, z: 200 }, delay);
 
