@@ -222,58 +222,56 @@ function setupAnimation(model: THREE.Object3D) {
   // Pitch (x) tilts nose down when descending, up when climbing.
   // At the very end the plane turns to face the viewer and flies head-on.
 
-  // 1. Hero → Skills: gentle descent, slight nose-down pitch
+  // Plane starts at y:-65 (low on screen) and progressively climbs
+  // toward the top of the screen as the user scrolls down.
+
+  // 1. Hero → Skills: climb up, slight nose-up pitch
   tl.to('.scroll-cta', { duration: 0.25, opacity: 0 }, delay);
-  tl.to(plane.rotation, { x: tau * 0.02, y: tau * -0.25, z: tau * -0.01, ease: 'power1.inOut' }, delay);
-  tl.to(plane.position, { x: 30, y: -35, z: -55, ease: 'power1.inOut' }, delay);
+  tl.to(plane.rotation, { x: tau * -0.01, y: tau * -0.25, z: tau * -0.01, ease: 'power1.inOut' }, delay);
+  tl.to(plane.position, { x: 30, y: -40, z: -55, ease: 'power1.inOut' }, delay);
   delay += sectionDuration;
 
-  // 2. Skills → About: bank right, cruise across
-  tl.to(plane.rotation, { x: tau * 0.005, y: tau * -0.2, z: tau * -0.03, ease: 'power2.inOut' }, delay);
+  // 2. Skills → About: bank right, continue climbing
+  tl.to(plane.rotation, { x: tau * -0.005, y: tau * -0.2, z: tau * -0.03, ease: 'power2.inOut' }, delay);
   tl.to(plane.position, { x: 50, y: -15, z: -50, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  // 3. About → Education: bank left, sweep toward left side
-  tl.to(plane.rotation, { x: tau * 0.01, y: tau * -0.3, z: tau * 0.03, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: -30, y: 0, z: -45, ease: 'power2.inOut' }, delay);
+  // 3. About → Education: bank left, sweep left while climbing
+  tl.to(plane.rotation, { x: tau * -0.005, y: tau * -0.3, z: tau * 0.03, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: -30, y: 10, z: -45, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  // 4. Education: level wings, fly straight through blueprint
-  tl.to(plane.rotation, { x: tau * 0.005, y: tau * -0.25, z: 0, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: 0, y: -5, z: -40, ease: 'power2.inOut' }, delay);
+  // 4. Education: level wings, fly straight through blueprint, higher up
+  tl.to(plane.rotation, { x: tau * -0.005, y: tau * -0.25, z: 0, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: 0, y: 25, z: -40, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  // 5. Research: gentle bank right
-  tl.to(plane.rotation, { x: 0, y: tau * -0.22, z: tau * -0.025, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: 35, y: 5, z: -38, ease: 'power2.inOut' }, delay);
+  // 5. Research: gentle bank right, climbing further
+  tl.to(plane.rotation, { x: tau * -0.01, y: tau * -0.22, z: tau * -0.025, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: 35, y: 40, z: -38, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  // 6. Technical Skills: bank left, climb slightly
+  // 6. Technical Skills: bank left, near the top now
   tl.to(plane.rotation, { x: tau * -0.01, y: tau * -0.28, z: tau * 0.025, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: -25, y: 10, z: -35, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: -25, y: 55, z: -35, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  // 7. Experience: bank right, gentle descent
-  tl.to(plane.rotation, { x: tau * 0.015, y: tau * -0.22, z: tau * -0.02, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: 30, y: -10, z: -32, ease: 'power2.inOut' }, delay);
+  // 7. Experience: bank right, at the top of screen
+  tl.to(plane.rotation, { x: tau * -0.005, y: tau * -0.22, z: tau * -0.02, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: 30, y: 65, z: -32, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  // 8. Coursework: level out, center up, wings level
+  // 8. Coursework: level out at the top, wings level
   tl.to(plane.rotation, { x: 0, y: tau * -0.25, z: 0, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: 5, y: 0, z: -35, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: 5, y: 70, z: -35, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  // 9. CTA → Contact: plane stays visible, gentle bank as it approaches
-  // Like the CodePen — the plane cruises nicely on-screen, turning slightly
-  // so its nose starts angling toward the camera. Stays centered and visible.
+  // 9. CTA → Contact: gentle bank, still at the top
   tl.to(plane.rotation, { x: tau * 0.005, y: tau * -0.15, z: tau * -0.02, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: 20, y: 0, z: -30, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: 20, y: 70, z: -30, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
   // 10. Contact → Footer: accelerate toward the viewer at an angle
-  // The plane banks and flies toward and past the camera — getting bigger
-  // and bigger until it whooshes past slightly off-center. Matches the
-  // CodePen's dramatic ending flyby.
   tl.to(plane.rotation, { duration: sectionDuration * 1.5, x: tau * -0.01, y: tau * -0.05, z: tau * -0.04, ease: 'power1.in' }, delay);
   tl.to(plane.position, { duration: sectionDuration * 1.5, x: 40, y: 20, z: 280, ease: 'power2.in' }, delay);
   tl.to(scene.light.position, { duration: sectionDuration * 1.5, x: 20, y: 15, z: 200 }, delay);
