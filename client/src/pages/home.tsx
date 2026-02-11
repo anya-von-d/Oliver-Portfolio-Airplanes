@@ -75,9 +75,8 @@ export default function Home() {
           <Coursework />
         </div>
 
-        <CallToActionBanner />
-
         <div className="sunset">
+          <CallToActionBanner />
           <div className="section">
             <Contact />
           </div>

@@ -56,7 +56,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <Card className="p-6 sm:p-8 bg-white/10 backdrop-blur-md border-white/20" data-testid="card-contact-form">
+          <Card className="p-6 sm:p-8 bg-black/20 backdrop-blur-md border-white/20 shadow-2xl" data-testid="card-contact-form">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Input
