@@ -215,60 +215,62 @@ function setupAnimation(model: THREE.Object3D) {
 
   let delay = 0;
 
-  // Plane flies forward (away from viewer) the whole time.
-  // y rotation stays near -0.25 tau (nose pointing away) with very slight turns.
-  // Gentle altitude and position shifts give life without unrealistic sideways motion.
-  // At the very end, the plane turns 180° and flies head-on at the viewer.
+  // Natural cruising flight like the original CodePen:
+  // Plane is seen from a 3/4 angle, smoothly banking through turns.
+  // When the plane moves left, it banks left (z > 0) and turns its nose left (y rotates).
+  // When moving right, it banks right (z < 0) and turns nose right.
+  // Pitch (x) tilts nose down when descending, up when climbing.
+  // At the very end the plane turns to face the viewer and flies head-on.
 
-  // 1. Hero → Skills: begin descent, nose dips slightly
+  // 1. Hero → Skills: gentle descent, slight nose-down pitch
   tl.to('.scroll-cta', { duration: 0.25, opacity: 0 }, delay);
-  tl.to(plane.rotation, { x: tau * 0.015, y: tau * -0.25, z: tau * -0.008, ease: 'power1.inOut' }, delay);
-  tl.to(plane.position, { x: 40, y: -30, z: -55, ease: 'power1.inOut' }, delay);
+  tl.to(plane.rotation, { x: tau * 0.02, y: tau * -0.25, z: tau * -0.01, ease: 'power1.inOut' }, delay);
+  tl.to(plane.position, { x: 30, y: -35, z: -55, ease: 'power1.inOut' }, delay);
   delay += sectionDuration;
 
-  // 2. Skills → About: level out, drift slightly right
-  tl.to(plane.rotation, { x: tau * -0.005, y: tau * -0.245, z: tau * 0.01, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: 25, y: -10, z: -50, ease: 'power2.inOut' }, delay);
+  // 2. Skills → About: bank right, cruise across
+  tl.to(plane.rotation, { x: tau * 0.005, y: tau * -0.2, z: tau * -0.03, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: 50, y: -15, z: -50, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  // 3. About → Education: gentle left bank, descend into blueprint
-  tl.to(plane.rotation, { x: tau * 0.01, y: tau * -0.255, z: tau * -0.015, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: -15, y: 5, z: -45, ease: 'power2.inOut' }, delay);
+  // 3. About → Education: bank left, sweep toward left side
+  tl.to(plane.rotation, { x: tau * 0.01, y: tau * -0.3, z: tau * 0.03, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: -30, y: 0, z: -45, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  // 4. Education: fly straight and level through blueprint
+  // 4. Education: level wings, fly straight through blueprint
   tl.to(plane.rotation, { x: tau * 0.005, y: tau * -0.25, z: 0, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: 10, y: -5, z: -40, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: 0, y: -5, z: -40, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  // 5. Research: gentle right bank
-  tl.to(plane.rotation, { x: tau * -0.005, y: tau * -0.245, z: tau * 0.012, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: 30, y: 0, z: -38, ease: 'power2.inOut' }, delay);
+  // 5. Research: gentle bank right
+  tl.to(plane.rotation, { x: 0, y: tau * -0.22, z: tau * -0.025, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: 35, y: 5, z: -38, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  // 6. Technical Skills: wings level, slight climb
-  tl.to(plane.rotation, { x: tau * -0.01, y: tau * -0.25, z: 0, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: 15, y: 10, z: -35, ease: 'power2.inOut' }, delay);
+  // 6. Technical Skills: bank left, climb slightly
+  tl.to(plane.rotation, { x: tau * -0.01, y: tau * -0.28, z: tau * 0.025, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: -25, y: 10, z: -35, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  // 7. Experience: gentle left bank, descend
-  tl.to(plane.rotation, { x: tau * 0.01, y: tau * -0.255, z: tau * -0.012, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: -20, y: -10, z: -32, ease: 'power2.inOut' }, delay);
+  // 7. Experience: bank right, gentle descent
+  tl.to(plane.rotation, { x: tau * 0.015, y: tau * -0.22, z: tau * -0.02, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: 30, y: -10, z: -32, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  // 8. Coursework: level out, center up
-  tl.to(plane.rotation, { x: tau * 0.005, y: tau * -0.25, z: tau * 0.005, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: 5, y: 0, z: -30, ease: 'power2.inOut' }, delay);
-  delay += sectionDuration;
-
-  // 9. CTA → Contact: pull back and center, prepare for the turn
+  // 8. Coursework: level out, center up, wings level
   tl.to(plane.rotation, { x: 0, y: tau * -0.25, z: 0, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: 0, y: 0, z: -60, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: 5, y: 0, z: -35, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
-  // 10. Contact: turn 180° to face the viewer head-on
-  tl.to(plane.rotation, { x: 0, y: tau * 0.25, z: 0, ease: 'power2.inOut' }, delay);
-  tl.to(plane.position, { x: 0, y: 0, z: -60, ease: 'power2.inOut' }, delay);
+  // 9. CTA → Contact: pull away from viewer, center perfectly
+  tl.to(plane.rotation, { x: tau * -0.005, y: tau * -0.25, z: 0, ease: 'power2.inOut' }, delay);
+  tl.to(plane.position, { x: 0, y: 0, z: -80, ease: 'power2.inOut' }, delay);
+  delay += sectionDuration;
+
+  // 10. Contact: smooth 180° turn to face the viewer head-on
+  tl.to(plane.rotation, { x: 0, y: tau * 0.25, z: 0, ease: 'power3.inOut' }, delay);
+  tl.to(plane.position, { x: 0, y: 0, z: -80, ease: 'power2.inOut' }, delay);
   delay += sectionDuration;
 
   // 11. Footer: fly straight at the viewer, filling the screen
@@ -292,9 +294,9 @@ export default function AirplaneScene() {
         object.traverse((child) => {
           if ((child as THREE.Mesh).isMesh) {
             const mat = new THREE.MeshPhongMaterial({
-              color: 0x171511,
-              specular: 0xD0CBC7,
-              shininess: 100,
+              color: 0x444444,
+              specular: 0x888888,
+              shininess: 80,
               flatShading: true,
             });
             (child as THREE.Mesh).material = mat;
