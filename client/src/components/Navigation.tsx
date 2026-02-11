@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 
 const navItems = [
@@ -13,7 +12,7 @@ const navItems = [
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
@@ -36,78 +35,98 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close menu on escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsMenuOpen(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isMenuOpen]);
+
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
+      setIsMenuOpen(false);
     }
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[#D0CBC7]/80 backdrop-blur-md border-b border-[#b8b3ae]' : ''
-      }`}
-      data-testid="nav-main"
-    >
-      <div className="max-w-7xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+    <>
+      {/* Top bar: logo + hamburger */}
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled && !isMenuOpen ? 'bg-[#D0CBC7]/60 backdrop-blur-md' : ''
+        }`}
+        data-testid="nav-main"
+      >
+        <div className="px-6 py-4 flex items-center justify-between">
           <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="font-mono font-bold text-xl hover-elevate active-elevate-2 px-2 py-1 rounded-md"
+            onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setIsMenuOpen(false); }}
+            className="font-mono font-bold text-xl px-2 py-1 rounded-md relative z-[60]"
             data-testid="link-home"
           >
-            <span className="text-primary">&lt;OS/&gt;</span>
+            <span className={isMenuOpen ? 'text-white' : 'text-primary'}>&lt;OS/&gt;</span>
           </button>
 
-          <div className="hidden md:flex items-center gap-1">
-            {navItems.map((item) => (
-              <button
-                key={item.href}
-                onClick={() => scrollToSection(item.href)}
-                className={`px-4 py-2 rounded-md text-sm font-mono transition-colors hover-elevate active-elevate-2 ${
-                  activeSection === item.href.substring(1)
-                    ? 'text-primary'
-                    : 'text-[#171511]/60'
-                }`}
-                data-testid={`link-${item.label.toLowerCase()}`}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="w-10 h-10 flex items-center justify-center rounded-md relative z-[60]"
             data-testid="button-menu-toggle"
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           >
-            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </Button>
+            {isMenuOpen ? (
+              <X className="w-6 h-6 text-white" />
+            ) : (
+              <Menu className={`w-6 h-6 ${isScrolled ? 'text-[#171511]' : 'text-[#171511]'}`} />
+            )}
+          </button>
         </div>
+      </nav>
 
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 flex flex-col gap-2 animate-fade-in">
-            {navItems.map((item) => (
-              <button
-                key={item.href}
-                onClick={() => scrollToSection(item.href)}
-                className={`px-4 py-3 rounded-md text-left font-mono hover-elevate active-elevate-2 ${
-                  activeSection === item.href.substring(1)
-                    ? 'bg-primary/10 text-primary'
-                    : 'text-[#171511]/60'
-                }`}
-                data-testid={`link-mobile-${item.label.toLowerCase()}`}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-        )}
+      {/* Fullscreen overlay menu */}
+      <div
+        className={`fixed inset-0 z-[55] transition-all duration-500 ${
+          isMenuOpen
+            ? 'opacity-100 pointer-events-auto'
+            : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        {/* Dark overlay background */}
+        <div className="absolute inset-0 bg-[#171511]/95 backdrop-blur-lg" />
+
+        {/* Menu content */}
+        <div className="relative z-10 h-full flex flex-col items-center justify-center gap-2">
+          {navItems.map((item, i) => (
+            <button
+              key={item.href}
+              onClick={() => scrollToSection(item.href)}
+              className={`text-2xl sm:text-3xl font-mono py-3 px-6 rounded-lg transition-all duration-300 ${
+                isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+              } ${
+                activeSection === item.href.substring(1)
+                  ? 'text-primary'
+                  : 'text-white/70 hover:text-white'
+              }`}
+              style={{ transitionDelay: isMenuOpen ? `${i * 60}ms` : '0ms' }}
+              data-testid={`link-${item.label.toLowerCase()}`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
       </div>
-    </nav>
+    </>
   );
 }
