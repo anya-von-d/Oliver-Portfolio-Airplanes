@@ -416,16 +416,15 @@ body {
 .sunset {
   background: linear-gradient(
     180deg,
-    #1a0a2e 0%,
-    #2d1b4e 8%,
-    #5c2d6e 18%,
-    #b44a3b 32%,
-    #e06830 42%,
-    #f0943a 52%,
-    #f5b840 62%,
-    #fad06a 72%,
-    #fce38a 82%,
-    #fff4c2 95%
+    #c84e2b 0%,
+    #d95e30 15%,
+    #e87a38 30%,
+    #f09440 45%,
+    #f5ad42 58%,
+    #f8c44e 70%,
+    #fad96a 82%,
+    #fce88a 92%,
+    #fff4c2 100%
   );
   position: relative;
   min-height: 100vh;
