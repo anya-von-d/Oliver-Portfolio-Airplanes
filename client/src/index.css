@@ -225,32 +225,66 @@ canvas {
 }
 
 .section-light {
-  background-color: #E8E4E0;
+  background-color: rgba(232, 228, 224, 0.85);
 }
 
 .section-beige {
-  background-color: #D0CBC7;
+  background-color: transparent;
 }
 
 .section-cream {
-  background-color: #F0EDEA;
+  background-color: rgba(240, 237, 234, 0.85);
+}
+
+/* ===== AERIAL MAP BACKGROUND (FIXED) ===== */
+body {
+  background-image: url('/background.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 /* ===== HERO SKY ===== */
 .hero-sky {
-  background: linear-gradient(180deg, #4a90d9 0%, #6ab0f3 30%, #87CEEB 60%, #b0d4f1 85%, #D0CBC7 100%);
+  background: transparent;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
 }
 
-/* Clouds are rendered via CloudsBackground component */
+/* ===== REALISTIC CLOUDS ===== */
+.clouds-layer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-image: url('/clouds.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.clouds-hero {
+  top: 0;
+  height: 100%;
+  opacity: 0.9;
+}
+
+.clouds-about {
+  top: 0;
+  height: 60%;
+  opacity: 0.85;
+  background-position: center bottom;
+}
 
 /* ===== GROUND & CLOUDS PARALLAX ===== */
 .ground-container {
   position: relative;
   overflow: hidden;
   min-height: 100vh;
+  background: transparent;
 }
 
 .ground {
@@ -259,10 +293,11 @@ canvas {
   left: 0;
   right: 0;
   height: 120%;
-  background-image: url('https://assets.codepen.io/557388/ground.png');
+  background-image: url('/background.jpg');
   background-size: cover;
   background-position: center top;
   z-index: 0;
+  opacity: 0.6;
 }
 
 .clouds {
@@ -271,7 +306,7 @@ canvas {
   left: 0;
   right: 0;
   height: 60%;
-  background-image: url('https://assets.codepen.io/557388/clouds.png');
+  background-image: url('/clouds.png');
   background-size: cover;
   background-position: center bottom;
   z-index: 0;
@@ -310,16 +345,10 @@ canvas {
 
 /* ===== SUNSET SECTION ===== */
 .sunset {
-  background: linear-gradient(180deg,
-    #D0CBC7 0%,
-    #C4A882 15%,
-    #D4956B 30%,
-    #C47A5A 45%,
-    #8B5E6B 60%,
-    #5A4575 75%,
-    #2A2040 90%,
-    #1A1A2E 100%
-  );
+  background-image: url('/sunset.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
 }
 
