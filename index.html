@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mesh for Teams</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Logo (blend-mode, fixed far-left) -->
+  <a href="#" class="brand" aria-label="Mesh home">
+    <svg viewBox="0 0 40 24" width="40" height="24" aria-hidden="true">
+      <circle cx="6" cy="6" r="3.4"></circle>
+      <circle cx="20" cy="6" r="3.4"></circle>
+      <circle cx="34" cy="6" r="3.4"></circle>
+      <circle cx="13" cy="18" r="3.4"></circle>
+      <circle cx="27" cy="18" r="3.4"></circle>
+      <path d="M6 6 L20 6 L34 6 M6 6 L13 18 L20 6 L27 18 L34 6 M13 18 L27 18"
+            stroke-width="1.4" fill="none"></path>
+    </svg>
+    <span class="brand-word">mesh</span>
+  </a>
+
+  <!-- Floating glass nav pill -->
+  <header class="nav" id="nav">
+    <nav class="nav-inner" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#education">Education</a></li>
+        <li><a class="nav-link" href="#experience">Experience</a></li>
+        <li><a class="nav-link" href="#projects">Projects</a></li>
+        <li><a class="nav-link" href="#entrepreneurship">Entrepreneurship</a></li>
+        <li><a class="nav-link" href="#community">Community Outreach</a></li>
+      </ul>
+      <a href="#get-started" class="btn-cta nav-cta">Get Started</a>
+    </nav>
+  </header>
+
+  <!-- Hamburger button -->
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span class="ham-icon" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </span>
+  </button>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-panel">
+      <nav class="m-flatlist" aria-label="Primary (mobile)">
+        <a class="m-flatlink" href="#about">About</a>
+        <a class="m-flatlink" href="#education">Education</a>
+        <a class="m-flatlink" href="#experience">Experience</a>
+        <a class="m-flatlink" href="#projects">Projects</a>
+        <a class="m-flatlink" href="#entrepreneurship">Entrepreneurship</a>
+        <a class="m-flatlink" href="#community">Community Outreach</a>
+      </nav>
+      <a href="#get-started" class="btn-cta mobile-cta">Get in touch</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="about">
+      <div class="dot-grid" aria-hidden="true"></div>
+      <span class="accent-dot accent-blue" aria-hidden="true"></span>
+      <span class="accent-dot accent-orange" aria-hidden="true"></span>
+      <span class="accent-dot accent-yellow" aria-hidden="true"></span>
+
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">Portfolio</p>
+          <h1 class="hero-name">Anya von Diessl</h1>
+          <p class="hero-subtitle">Math BS &amp; Computer Science MS Graduate</p>
+          <a href="#get-started" class="btn-cta hero-cta glow">Get In Touch</a>
+        </div>
+        <div class="hero-photo">
+          <img src="AnyaHeadshot.png" alt="Portrait of Anya von Diessl" />
+        </div>
+      </div>
+    </section>
+
+    <!-- BIO / ACHIEVEMENTS -->
+    <section class="bio-section">
+      <div class="container bio-inner">
+        <p class="eyebrow bio-eyebrow">About Me</p>
+        <h2 class="bio-statement">I build systems at the intersection of mathematics, machine learning, and real-world decision-making &mdash; from probabilistic research at Stanford to low-latency trading infrastructure.</h2>
+        <p class="bio-text">Currently completing a Master&rsquo;s in Computer Science after a Bachelor&rsquo;s in Mathematics, both at Stanford, where I split my time between research, teaching, and mentoring.</p>
+      </div>
+    </section>
+
+    <!-- Education (pricing-style cards) -->
+    <div class="container edu" id="education">
+      <h2 class="edu-title">Education</h2>
+      <div class="edu-grid">
+        <div class="card edu-card">
+          <p class="edu-eyebrow">Undergraduate</p>
+          <p class="edu-degree">Bachelors of Science, Mathematics</p>
+          <p class="edu-school">Stanford University, Stanford, CA</p>
+          <p class="edu-dates">September 2021 &ndash; June 2025</p>
+        </div>
+        <div class="card edu-card">
+          <p class="edu-eyebrow">Graduate</p>
+          <p class="edu-degree">Masters of Science, Computer Science <span class="edu-track">(Artificial Intelligence Track)</span></p>
+          <p class="edu-school">Stanford University, Stanford, CA</p>
+          <p class="edu-dates">September 2025 &ndash; June 2026</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- floating product card -->
+    <div class="container" id="experience">
+        <h2 class="edu-title">Experience</h2>
+        <p class="body-text block-sub center exp-subtitle">A timeline of research, teaching, and engineering roles across Stanford and industry.</p>
+        <div class="card hero-card">
+          <div class="timeline" id="timeline">
+            <div class="tl-track">
+
+              <div class="tl-row">
+                <span class="tl-icon tl-green" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="13" height="13"><path d="M7 3v3M17 3v3M4 9h16M5 6h14a1 1 0 011 1v12a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </span>
+                <div class="tl-body">
+                  <p class="tl-line"><strong>Statistical Modeling &amp; Inference Researcher</strong> <span class="tl-verb">at</span> <a href="#" class="tl-link">Stanford</a></p>
+                  <p class="tl-desc">Conducted research on latent-variable and probabilistic models for uncertainty quantification in high-dimensional, noisy datasets. Developed and implemented Bayesian inference frameworks and variational optimization algorithms to uncover hidden structure and mitigate estimation bias in predictive modeling. Leveraged stochastic process theory, information-theoretic measures, and causal inference techniques to enhance model identifiability, interpretability, and robustness in complex real-world systems.</p>
+                </div>
+                <span class="tl-date">Jun&ndash;Sep 2025</span>
+              </div>
+
+              <div class="tl-row">
+                <span class="tl-icon tl-green" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="13" height="13"><path d="M7 3v3M17 3v3M4 9h16M5 6h14a1 1 0 011 1v12a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </span>
+                <div class="tl-body">
+                  <p class="tl-line"><strong>Machine Learning Researcher</strong> <span class="tl-verb">at</span> <a href="#" class="tl-link">Stanford CS Department</a></p>
+                  <p class="tl-desc">Developed a contrastive deep learning model to identify regulatory differences in chromatin accessibility across normal, tumor, and metastatic states. By leveraging CNN architectures like ChromBPNet, applied advanced machine learning techniques to enhance the precision of sequence-to-function predictions, with a focus on refining computational models for disease progression, particularly in thyroid cancer.</p>
+                </div>
+                <span class="tl-date">Sep 2024&ndash;Jun 2025</span>
+              </div>
+
+              <div class="tl-row">
+                <span class="tl-icon tl-indigo" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="13" height="13"><path d="M12 4L2 9l10 5 10-5-10-5zM6 11v4.5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5V11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                </span>
+                <div class="tl-body">
+                  <p class="tl-line"><strong>Teaching Assistant, CS227b: General Game Playing</strong> <span class="tl-verb">at</span> <a href="#" class="tl-link">Stanford CS Department</a></p>
+                  <p class="tl-desc">Assisted in teaching a graduate-level AI course on the design of autonomous agents capable of strategic reasoning in novel environments. Guided students in applying methods from automated reasoning, symbolic knowledge representation, adversarial and heuristic search, resource-bounded planning, and algorithmic game theory to develop general-purpose intelligence systems that learn and execute strategies from formal game descriptions.</p>
+                </div>
+                <span class="tl-date">Mar&ndash;Jun 2025</span>
+              </div>
+
+              <div class="tl-row">
+                <span class="tl-icon tl-green" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="13" height="13"><path d="M7 3v3M17 3v3M4 9h16M5 6h14a1 1 0 011 1v12a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </span>
+                <div class="tl-body">
+                  <p class="tl-line"><strong>Computational Modeling Researcher</strong> <span class="tl-verb">at</span> <a href="#" class="tl-link">Stanford Translational AI Lab</a></p>
+                  <p class="tl-desc">Conducted interdisciplinary research uniting artificial intelligence, probabilistic modeling, and computational medicine. Developed and deployed deep learning architectures for computer vision and medical imaging, integrating probabilistic inference to quantify uncertainty and extract high-fidelity biomarkers. Leveraged Bayesian and data-driven modeling frameworks to improve diagnostic prediction, enhance model interpretability, and advance precision healthcare through statistically robust AI systems.</p>
+                </div>
+                <span class="tl-date">Sep&ndash;Dec 2024</span>
+              </div>
+
+              <div class="tl-collapse">
+                <button class="tl-toggle" id="tlToggle" aria-expanded="false" aria-label="Show earlier roles">
+                  <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M5 6l3-3 3 3M5 10l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <span class="tl-collapse-label">1 Earlier Role &middot; Industry</span>
+              </div>
+
+              <div class="tl-hidden">
+                <div class="tl-row">
+                  <span class="tl-icon tl-purple" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="13" height="13"><path d="M9 8l-4 4 4 4M15 8l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <div class="tl-body">
+                    <p class="tl-line"><strong>Google Ads SWE Intern</strong> <span class="tl-verb">at</span> <a href="#" class="tl-link">Google</a></p>
+                    <p class="tl-desc">Developed a high-performance, production-scale interface for a real-time fraud detection platform within Google Ads, leveraging TypeScript, HTML, and CSS to engineer modular, scalable, and latency-optimized components. Collaborated with cross-functional teams to translate complex fraud analytics pipelines and anomaly detection workflows into intuitive, data-rich visual systems, enhancing usability, reliability, and decision speed across a platform processing billions of ad transactions daily.</p>
+                  </div>
+                  <span class="tl-date">Jul&ndash;Sep 2023</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- PROJECTS -->
+    <section class="block container" id="projects">
+      <p class="eyebrow muted">Projects</p>
+      <h2 class="block-head">A look at what I&rsquo;ve been building.</h2>
+      <p class="body-text block-sub">A few recent projects across quantitative trading and machine learning &mdash; opened, naturally, in my editor.</p>
+
+      <div class="code-window wide-card">
+        <!-- macOS app menu bar -->
+        <div class="cw-menubar" aria-hidden="true">
+          <span class="cw-menu-logo">
+            <svg viewBox="0 0 24 24" width="13" height="13"><path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21l2-7.5L2 9h7z" fill="currentColor"/></svg>
+          </span>
+          <span class="cw-menu-app">Portfolio</span>
+          <span class="cw-menu-item">File</span>
+          <span class="cw-menu-item">Edit</span>
+          <span class="cw-menu-item">Selection</span>
+          <span class="cw-menu-item">View</span>
+          <span class="cw-menu-item">Go</span>
+          <span class="cw-menu-item">Run</span>
+          <span class="cw-menu-item">Terminal</span>
+          <span class="cw-menu-item">Window</span>
+          <span class="cw-menu-item">Help</span>
+        </div>
+
+        <!-- title bar -->
+        <div class="cw-titlebar">
+          <div class="cw-traffic" aria-hidden="true"><span class="tl-red"></span><span class="tl-yellow"></span><span class="tl-green"></span></div>
+          <span class="cw-title">PROJECTS.md — Portfolio (Workspace)</span>
+        </div>
+
+        <div class="cw-body">
+          <!-- sidebar -->
+          <div class="cw-sidebar">
+            <div class="cw-explorer-head">
+              <span>PORTFOLIO (WORKSPA&hellip;</span>
+              <span class="cw-explorer-actions" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M3 7h6l2 2h10v10H3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 10-2.9 6.2M20 6v6h-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+            <div class="cw-tree">
+              <div class="cw-folder"><span class="cw-chev">›</span>.git</div>
+              <div class="cw-folder"><span class="cw-chev">›</span>.vscode</div>
+              <div class="cw-folder"><span class="cw-chev">›</span>node_modules</div>
+              <div class="cw-folder"><span class="cw-chev">›</span>legacy</div>
+              <div class="cw-folder open"><span class="cw-chev">⌄</span>src<span class="cw-gitdot" aria-hidden="true"></span></div>
+              <a class="cw-file"><span class="md-ic">M<span>&#8595;</span></span>ABOUT.md</a>
+              <a class="cw-file"><span class="md-ic">M<span>&#8595;</span></span>EDUCATION.md</a>
+              <a class="cw-file"><span class="md-ic">M<span>&#8595;</span></span>EXPERIENCE.md</a>
+              <a class="cw-file active"><span class="md-ic">M<span>&#8595;</span></span>PROJECTS.md</a>
+              <a class="cw-file"><span class="md-ic">M<span>&#8595;</span></span>COMMUNITY.md<span class="cw-modbadge">M</span></a>
+              <a class="cw-file cw-file-cfg"><span class="cfg-ic cfg-env"></span>.env<span class="cw-modbadge">U</span></a>
+              <a class="cw-file cw-file-cfg"><span class="cfg-ic cfg-git"></span>.gitignore</a>
+              <a class="cw-file cw-file-cfg"><span class="cfg-ic cfg-lint"></span>.prettierignore</a>
+              <a class="cw-file cw-file-cfg"><span class="ts-ic">TS</span>build.ts</a>
+            </div>
+          </div>
+
+          <!-- main -->
+          <div class="cw-main">
+            <div class="cw-tabs">
+              <span class="cw-tab"><span class="md-ic">M<span>&#8595;</span></span>ABOUT.md</span>
+              <span class="cw-tab"><span class="md-ic">M<span>&#8595;</span></span>EXPERIENCE.md</span>
+              <span class="cw-tab active"><span class="md-ic">M<span>&#8595;</span></span>PROJECTS.md<span class="cw-x">×</span></span>
+              <span class="cw-tabbar-fill"></span>
+              <span class="cw-tabbar-icons" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="cw-spark"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z" fill="currentColor"/></svg>
+                <svg viewBox="0 0 24 24"><rect x="3.5" y="4" width="7.5" height="16" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="13" y="4" width="7.5" height="16" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                <svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="19" cy="12" r="1.6" fill="currentColor"/></svg>
+              </span>
+            </div>
+            <div class="cw-breadcrumb">Portfolio <span>›</span> src <span>›</span> PROJECTS.md <span>›</span> …</div>
+
+            <div class="cw-editor">
+              <div class="cw-line"><span class="cw-ln">1</span><div class="cw-code"><span class="s-mark"># </span><span class="s-h1">Projects</span></div></div>
+              <div class="cw-line"><span class="cw-ln">2</span><div class="cw-code"></div></div>
+              <div class="cw-line"><span class="cw-ln">3</span><div class="cw-code"><span class="s-text">Selected engineering and machine-learning projects.</span></div></div>
+              <div class="cw-line"><span class="cw-ln">4</span><div class="cw-code"></div></div>
+
+              <div class="cw-line"><span class="cw-ln">5</span><div class="cw-code"><span class="s-mark">## </span><span class="s-head">Kalshi Latency Arbitrage Trading Bot</span></div></div>
+              <div class="cw-line"><span class="cw-ln">6</span><div class="cw-code"></div></div>
+              <div class="cw-line"><span class="cw-ln">7</span><div class="cw-code"><span class="s-text">Developed a low-latency algorithmic trading system for <span class="s-green">Kalshi</span> prediction markets that identifies and executes latency arbitrage opportunities by exploiting temporary pricing discrepancies between exchange-traded cryptocurrency prices and event contract markets. Engineered a real-time market data pipeline integrating live cryptocurrency price feeds with Kalshi order book data to detect statistically significant pricing inefficiencies within <span class="s-orange">sub-second</span> time windows. Implemented automated signal generation, execution logic, risk management, and position sizing while optimizing network latency, asynchronous processing, and order placement speed to maximize capture of rapidly decaying arbitrage opportunities.</span></div></div>
+              <div class="cw-line"><span class="cw-ln">8</span><div class="cw-code"></div></div>
+
+              <div class="cw-line"><span class="cw-ln">9</span><div class="cw-code"><span class="s-mark">## </span><span class="s-head">GPT-2 Fine-Tuning</span></div></div>
+              <div class="cw-line"><span class="cw-ln">10</span><div class="cw-code"></div></div>
+              <div class="cw-line"><span class="cw-ln">11</span><div class="cw-code"><span class="s-text">Adapted a pretrained <span class="s-green">GPT-2</span> large language model to generate high-quality text for a specialized domain by training it on custom datasets. Developed an end-to-end pipeline for domain adaptation using <span class="s-blue">PyTorch</span> and the <span class="s-blue">Hugging Face Transformers</span> framework. Curated and preprocessed custom training corpora, implementing tokenization, dataset construction, and sequence optimization to enable efficient large-scale language model training. Fine-tuned the transformer architecture using supervised learning, mixed-precision optimization, and validation-based checkpointing to improve domain-specific text generation. Evaluated model performance through perplexity analysis and qualitative generation benchmarks, leveraging modern NLP techniques to enhance coherence, contextual understanding, and generation quality.</span></div></div>
+              <div class="cw-line"><span class="cw-ln">12</span><div class="cw-code"></div></div>
+
+              <div class="cw-line"><span class="cw-ln">13</span><div class="cw-code"><span class="s-mark">## </span><span class="s-head">LLM Agent with Tool Use, Memory, and Retrieval</span></div></div>
+              <div class="cw-line"><span class="cw-ln">14</span><div class="cw-code"></div></div>
+              <div class="cw-line"><span class="cw-ln">15</span><div class="cw-code"><span class="s-text">Developed an intelligent LLM-powered agent capable of autonomous reasoning, tool invocation, persistent memory, and real-time information retrieval. Implemented a <span class="s-green">ReAct</span>-based architecture using <span class="s-blue">DSPy</span> to dynamically orchestrate function calls, integrated vector-based memory for personalized multi-turn interactions, and engineered <span class="s-orange">retrieval-augmented generation</span> through web search and document parsing to improve factual accuracy on current information. Designed scalable backend workflows, recommendation algorithms, and state management systems to support reliable multi-step task execution while leveraging modern large language model frameworks for contextual decision making.</span></div></div>
+            </div>
+
+            <div class="cw-statusbar">
+              <span class="cw-st-left">
+                <span class="cw-branch">&#9095; main*</span>
+                <span class="cw-sync">&#8595;0 &#8593;3</span>
+                <span class="cw-diag cw-diag-err">&#9711; 0</span>
+                <span class="cw-diag cw-diag-warn">&#9888; 2</span>
+                <span class="cw-diag cw-diag-info">&#9432; 1</span>
+              </span>
+              <span class="cw-st-center">
+                <span>Ln 5, Col 1</span>
+                <span>Spaces: 2</span>
+                <span>UTF-8</span>
+                <span>LF</span>
+                <span>{&#125; Markdown</span>
+                <span class="cw-checkitem">&#10003; oxc</span>
+                <span>Token Count: 1,204</span>
+              </span>
+              <span class="cw-st-right">
+                <span class="cw-claude">&#10022; Claude Code</span>
+                <span class="cw-checkitem">&#10003; Prettier</span>
+                <span class="cw-bell">&#128276;</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE LIST -->
+    <section class="block container">
+      <p class="eyebrow muted">Built For Teams</p>
+      <h2 class="block-head">Everything connected, nothing duplicated.</h2>
+      <ul class="feature-list body-text">
+        <li>Two-way sync with the tools your team already relies on.</li>
+        <li>Automations that turn repetitive updates into a single click.</li>
+        <li>A shared timeline so nobody has to ask for status.</li>
+        <li>Granular permissions that keep sensitive data where it belongs.</li>
+      </ul>
+    </section>
+
+    <!-- FEATURED IN -->
+    <section class="block container">
+      <p class="eyebrow muted">Featured In</p>
+      <div class="press-row" aria-label="Press logos">
+        <span class="press-logo">TechCrunch</span>
+        <span class="press-logo">The Verge</span>
+        <span class="press-logo">Forbes</span>
+        <span class="press-logo">WIRED</span>
+        <span class="press-logo">Fast Company</span>
+      </div>
+    </section>
+
+    <!-- ENTREPRENEURSHIP -->
+    <section class="block container" id="entrepreneurship">
+      <p class="eyebrow muted">Entrepreneurship</p>
+      <h2 class="block-head">Ventures &amp; initiatives.</h2>
+      <p class="body-text block-sub">A rotating look at entrepreneurial projects &mdash; placeholder slides for now, swap in the real ones whenever you&rsquo;re ready.</p>
+
+      <div class="ent-carousel" id="entCarousel">
+        <div class="ent-viewport">
+          <div class="ent-track" id="entTrack">
+            <div class="ent-slide">
+              <div class="ent-slide-img placeholder-img" aria-hidden="true">
+                <svg viewBox="0 0 48 48" width="40" height="40"><rect x="4" y="8" width="40" height="32" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="15" cy="18" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 33l10-10 7 7 8-9 11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Add image</span>
+              </div>
+              <div class="ent-slide-body">
+                <p class="ent-slide-eyebrow">Venture 01</p>
+                <h3 class="ent-slide-title">Add a venture name</h3>
+                <p class="ent-slide-desc">Short description of what this venture does, your role in it, and the dates go here.</p>
+              </div>
+            </div>
+            <div class="ent-slide">
+              <div class="ent-slide-img placeholder-img" aria-hidden="true">
+                <svg viewBox="0 0 48 48" width="40" height="40"><rect x="4" y="8" width="40" height="32" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="15" cy="18" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 33l10-10 7 7 8-9 11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Add image</span>
+              </div>
+              <div class="ent-slide-body">
+                <p class="ent-slide-eyebrow">Venture 02</p>
+                <h3 class="ent-slide-title">Add a venture name</h3>
+                <p class="ent-slide-desc">Short description of what this venture does, your role in it, and the dates go here.</p>
+              </div>
+            </div>
+            <div class="ent-slide">
+              <div class="ent-slide-img placeholder-img" aria-hidden="true">
+                <svg viewBox="0 0 48 48" width="40" height="40"><rect x="4" y="8" width="40" height="32" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="15" cy="18" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 33l10-10 7 7 8-9 11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Add image</span>
+              </div>
+              <div class="ent-slide-body">
+                <p class="ent-slide-eyebrow">Venture 03</p>
+                <h3 class="ent-slide-title">Add a venture name</h3>
+                <p class="ent-slide-desc">Short description of what this venture does, your role in it, and the dates go here.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="ent-nav ent-prev" id="entPrev" aria-label="Previous slide" type="button">
+          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="ent-nav ent-next" id="entNext" aria-label="Next slide" type="button">
+          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+
+        <div class="ent-dots" id="entDots" role="tablist" aria-label="Carousel slides">
+          <button class="ent-dot active" data-index="0" aria-label="Slide 1" type="button"></button>
+          <button class="ent-dot" data-index="1" aria-label="Slide 2" type="button"></button>
+          <button class="ent-dot" data-index="2" aria-label="Slide 3" type="button"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY OUTREACH -->
+    <section class="block container" id="community">
+      <h2 class="edu-title">Community Outreach</h2>
+      <p class="body-text block-sub center">Mentoring students in mathematics, computer science, and research.</p>
+
+      <div class="oc-tabs">
+        <div class="oc-tabs-track" role="tablist" aria-label="Community outreach roles">
+          <button class="oc-tab active" data-role="mentor" role="tab" aria-selected="true" type="button">Graduate Mentor</button>
+          <button class="oc-tab" data-role="outreach" role="tab" aria-selected="false" type="button">Outreach Volunteer</button>
+          <button class="oc-tab" data-role="tutor" role="tab" aria-selected="false" type="button">Math Tutor &amp; Grader</button>
+        </div>
+      </div>
+
+      <div class="card oc-card">
+        <div class="oc-panel active" data-role="mentor">
+          <p class="oc-role">Graduate Mentor</p>
+          <p class="oc-meta">Stanford Women in Mathematics Mentoring (SWIMM) &middot; September 2025 &ndash; June 2026</p>
+          <p class="oc-desc">Mentored undergraduate students pursuing mathematics and related quantitative disciplines, providing academic guidance, career mentorship, and support in navigating research opportunities and graduate education. Fostered an inclusive community through one-on-one mentoring, panel discussions, and collaborative events, helping students develop confidence in advanced mathematics, problem-solving, and quantitative research.</p>
+        </div>
+        <div class="oc-panel" data-role="outreach">
+          <p class="oc-role">Outreach Mentor</p>
+          <p class="oc-meta">Stanford Women in Computer Science (WiCS) &middot; 2022 &ndash; 2023</p>
+          <p class="oc-desc">Mentored high school students from historically underrepresented backgrounds through Stanford Women in Computer Science outreach initiatives in partnership with local schools and nonprofit organizations. Supported the delivery of computer science curricula, guided students through programming and computational thinking concepts, and cultivated long-term mentoring relationships to encourage continued participation in STEM and technology.</p>
+        </div>
+        <div class="oc-panel" data-role="tutor">
+          <p class="oc-role">Mathematics Department Tutor &amp; Grader</p>
+          <p class="oc-meta">Stanford &middot; September 2024 &ndash; June 2026</p>
+          <p class="oc-desc">Provide advanced instruction in theoretical and applied mathematics through Stanford&rsquo;s Mathematics Department. Lead students through rigorous explorations of vector space theory, multivariable analysis, and differential systems, with specialized focus on spectral and matrix theory, eigenvalue and singular value decomposition (SVD), dimensionality reduction, proof construction, and the analysis of linear operators and dynamical systems. Also worked under Professor Lernik Assarian, grading course material on ordinary differential equations; under Professor Mark Lucianovic, grading differential calculus; and under Professor Wojciech Wieczorek, grading integral calculus.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- GET IN TOUCH -->
+  <section class="contact-section" id="get-started">
+    <div class="container contact-inner">
+      <div class="contact-left">
+        <h2 class="contact-title">Get in touch</h2>
+        <p class="contact-text">Please don&rsquo;t hesitate to reach out &mdash; whether it&rsquo;s about research, a role, or just to say hello, my inbox is always open and I&rsquo;d genuinely love to hear from you.</p>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="cf-field">
+            <input type="text" name="name" id="cf-name" placeholder="Name*" required />
+          </div>
+          <div class="cf-field">
+            <input type="email" name="email" id="cf-email" placeholder="Email*" required />
+          </div>
+          <div class="cf-field">
+            <input type="text" name="company" id="cf-company" placeholder="Company" />
+          </div>
+          <div class="cf-field">
+            <textarea name="details" id="cf-details" placeholder="Project details" rows="4"></textarea>
+          </div>
+          <label class="cf-check">
+            <input type="checkbox" id="cf-consent" required />
+            <span class="cf-checkbox" aria-hidden="true"></span>
+            <span class="cf-check-label">I accept and agree to the <a href="#">Privacy Policy</a></span>
+          </label>
+          <button type="submit" class="cf-submit">
+            <span>Send the Form</span>
+            <span class="cf-submit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="13" height="13"><path d="M6 4l12 8-12 8V4z" fill="currentColor"/></svg>
+            </span>
+          </button>
+        </form>
+      </div>
+      <div class="contact-right">
+        <div class="card bizcard">
+          <div class="bizcard-inner">
+            <a class="bc-email" href="mailto:anya.computer.science@gmail.com">anya.computer.science@gmail.com</a>
+            <div class="bc-center">
+              <h3 class="bc-name">Anya <span class="bc-sur">von Diessl</span></h3>
+              <p class="bc-role">Math &amp; Engineering Graduate</p>
+            </div>
+            <p class="bc-location">Palo Alto, CA, 94305</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brandcol">
+        <a href="#" class="brand-word footer-logo">mesh</a>
+        <p class="footer-tagline">Building useful things with mathematics, machine&nbsp;learning, and a lot of curiosity.</p>
+        <a href="#get-started" class="btn-cta footer-btn">Get in touch</a>
+        <p class="footer-madein">With <span aria-hidden="true">&#9829;</span> from Palo Alto</p>
+      </div>
+      <nav class="footer-cols" aria-label="Footer">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="#education">Education</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#community">Community</a>
+          <a href="#get-started">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="mailto:anya.computer.science@gmail.com">Email</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">GitHub</a>
+          <a href="#">X</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+        </div>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
