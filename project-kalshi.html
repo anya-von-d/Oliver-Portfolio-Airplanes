@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalshi Latency Arbitrage Trading Bot &mdash; Anya von Diessl</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Logo (blend-mode, fixed far-left) -->
+  <a href="index.html" class="brand" aria-label="Home">
+    <svg viewBox="0 0 40 24" width="40" height="24" aria-hidden="true">
+      <circle cx="6" cy="6" r="3.4"></circle>
+      <circle cx="20" cy="6" r="3.4"></circle>
+      <circle cx="34" cy="6" r="3.4"></circle>
+      <circle cx="13" cy="18" r="3.4"></circle>
+      <circle cx="27" cy="18" r="3.4"></circle>
+      <path d="M6 6 L20 6 L34 6 M6 6 L13 18 L20 6 L27 18 L34 6 M13 18 L27 18"
+            stroke-width="1.4" fill="none"></path>
+    </svg>
+    <span class="brand-word">mesh</span>
+  </a>
+
+  <!-- Floating glass nav pill -->
+  <header class="nav" id="nav">
+    <nav class="nav-inner" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a class="nav-link" href="index.html#about">About</a></li>
+        <li><a class="nav-link" href="index.html#education">Education</a></li>
+        <li><a class="nav-link" href="index.html#experience">Experience</a></li>
+        <li><a class="nav-link" href="index.html#projects">Projects</a></li>
+        <li><a class="nav-link" href="index.html#entrepreneurship">Entrepreneurship</a></li>
+        <li><a class="nav-link" href="index.html#community">Community Outreach</a></li>
+      </ul>
+      <a href="index.html#get-started" class="btn-cta nav-cta">Get Started</a>
+    </nav>
+  </header>
+
+  <!-- Hamburger button -->
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span class="ham-icon" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </span>
+  </button>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-panel">
+      <nav class="m-flatlist" aria-label="Primary (mobile)">
+        <a class="m-flatlink" href="index.html#about">About</a>
+        <a class="m-flatlink" href="index.html#education">Education</a>
+        <a class="m-flatlink" href="index.html#experience">Experience</a>
+        <a class="m-flatlink" href="index.html#projects">Projects</a>
+        <a class="m-flatlink" href="index.html#entrepreneurship">Entrepreneurship</a>
+        <a class="m-flatlink" href="index.html#community">Community Outreach</a>
+      </nav>
+      <a href="index.html#get-started" class="btn-cta mobile-cta">Get in touch</a>
+    </div>
+  </div>
+
+  <main class="project-page">
+    <div class="container project-page-inner">
+      <a href="index.html#projects" class="project-back">&larr; Back to Projects</a>
+      <p class="eyebrow muted">Project</p>
+      <h1 class="project-title">Kalshi Latency Arbitrage Trading Bot</h1>
+      <div class="project-meta">
+        <span class="project-tag">Python</span>
+        <span class="project-tag">Trading Systems</span>
+        <span class="project-tag">Real-Time Data</span>
+        <span class="project-tag">Kalshi API</span>
+      </div>
+      <p class="project-full-desc">Developed a low-latency algorithmic trading system for Kalshi prediction markets that identifies and executes latency arbitrage opportunities by exploiting temporary pricing discrepancies between exchange-traded cryptocurrency prices and event contract markets. Engineered a real-time market data pipeline integrating live cryptocurrency price feeds with Kalshi order book data to detect statistically significant pricing inefficiencies within sub-second time windows. Implemented automated signal generation, execution logic, risk management, and position sizing while optimizing network latency, asynchronous processing, and order placement speed to maximize capture of rapidly decaying arbitrage opportunities.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brandcol">
+        <a href="index.html" class="brand-word footer-logo">mesh</a>
+        <p class="footer-tagline">Building useful things with mathematics, machine&nbsp;learning, and a lot of curiosity.</p>
+        <a href="index.html#get-started" class="btn-cta footer-btn">Get in touch</a>
+        <p class="footer-madein">With <span aria-hidden="true">&#9829;</span> from Palo Alto</p>
+      </div>
+      <nav class="footer-cols" aria-label="Footer">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="index.html#education">Education</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#community">Community</a>
+          <a href="index.html#get-started">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="mailto:anya.computer.science@gmail.com">Email</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">GitHub</a>
+          <a href="#">X</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+        </div>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

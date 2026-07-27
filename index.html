@@ -93,7 +93,9 @@
 
     <!-- Education (pricing-style cards) -->
     <div class="container edu" id="education">
+      <p class="eyebrow muted center">Academics</p>
       <h2 class="edu-title">Education</h2>
+      <p class="body-text block-sub center edu-subtitle">Degrees and areas of focus at Stanford University.</p>
       <div class="edu-grid">
         <div class="card edu-card">
           <p class="edu-eyebrow">Undergraduate</p>
@@ -112,6 +114,7 @@
 
     <!-- floating product card -->
     <div class="container" id="experience">
+        <p class="eyebrow muted center">Career</p>
         <h2 class="edu-title">Experience</h2>
         <p class="body-text block-sub center exp-subtitle">A timeline of research, teaching, and engineering roles across Stanford and industry.</p>
         <div class="card hero-card">
@@ -189,9 +192,15 @@
 
     <!-- PROJECTS -->
     <section class="block container" id="projects">
-      <p class="eyebrow muted">Projects</p>
-      <h2 class="block-head">A look at what I&rsquo;ve been building.</h2>
-      <p class="body-text block-sub">A few recent projects across quantitative trading and machine learning &mdash; opened, naturally, in my editor.</p>
+      <p class="eyebrow muted center">Build</p>
+      <h2 class="edu-title">Projects</h2>
+      <p class="body-text block-sub center edu-subtitle">A few recent projects across quantitative trading and machine learning &mdash; opened, naturally, in my editor.</p>
+
+      <div class="project-links">
+        <a class="project-link" href="project-kalshi.html">Kalshi Latency Arbitrage Trading Bot</a>
+        <a class="project-link" href="project-gpt2.html">GPT-2 Fine-Tuning</a>
+        <a class="project-link" href="project-llm-agent.html">LLM Agent with Tool Use, Memory, and Retrieval</a>
+      </div>
 
       <div class="code-window wide-card">
         <!-- macOS app menu bar -->
@@ -269,18 +278,18 @@
               <div class="cw-line"><span class="cw-ln">4</span><div class="cw-code"></div></div>
 
               <div class="cw-line"><span class="cw-ln">5</span><div class="cw-code"><span class="s-mark">## </span><span class="s-head">Kalshi Latency Arbitrage Trading Bot</span></div></div>
-              <div class="cw-line"><span class="cw-ln">6</span><div class="cw-code"></div></div>
-              <div class="cw-line"><span class="cw-ln">7</span><div class="cw-code"><span class="s-text">Developed a low-latency algorithmic trading system for <span class="s-green">Kalshi</span> prediction markets that identifies and executes latency arbitrage opportunities by exploiting temporary pricing discrepancies between exchange-traded cryptocurrency prices and event contract markets. Engineered a real-time market data pipeline integrating live cryptocurrency price feeds with Kalshi order book data to detect statistically significant pricing inefficiencies within <span class="s-orange">sub-second</span> time windows. Implemented automated signal generation, execution logic, risk management, and position sizing while optimizing network latency, asynchronous processing, and order placement speed to maximize capture of rapidly decaying arbitrage opportunities.</span></div></div>
+              <div class="cw-line"><span class="cw-ln">6</span><div class="cw-code"><span class="s-text">Low-latency algorithmic trading system exploiting pricing discrepancies in <span class="s-green">Kalshi</span> event contract markets.</span></div></div>
+              <div class="cw-line"><span class="cw-ln">7</span><div class="cw-code"><a href="project-kalshi.html" class="s-blue">&#8594; Read more</a></div></div>
               <div class="cw-line"><span class="cw-ln">8</span><div class="cw-code"></div></div>
 
               <div class="cw-line"><span class="cw-ln">9</span><div class="cw-code"><span class="s-mark">## </span><span class="s-head">GPT-2 Fine-Tuning</span></div></div>
-              <div class="cw-line"><span class="cw-ln">10</span><div class="cw-code"></div></div>
-              <div class="cw-line"><span class="cw-ln">11</span><div class="cw-code"><span class="s-text">Adapted a pretrained <span class="s-green">GPT-2</span> large language model to generate high-quality text for a specialized domain by training it on custom datasets. Developed an end-to-end pipeline for domain adaptation using <span class="s-blue">PyTorch</span> and the <span class="s-blue">Hugging Face Transformers</span> framework. Curated and preprocessed custom training corpora, implementing tokenization, dataset construction, and sequence optimization to enable efficient large-scale language model training. Fine-tuned the transformer architecture using supervised learning, mixed-precision optimization, and validation-based checkpointing to improve domain-specific text generation. Evaluated model performance through perplexity analysis and qualitative generation benchmarks, leveraging modern NLP techniques to enhance coherence, contextual understanding, and generation quality.</span></div></div>
+              <div class="cw-line"><span class="cw-ln">10</span><div class="cw-code"><span class="s-text">Domain-adapted a pretrained <span class="s-green">GPT-2</span> model using <span class="s-orange">PyTorch</span> and Hugging Face Transformers.</span></div></div>
+              <div class="cw-line"><span class="cw-ln">11</span><div class="cw-code"><a href="project-gpt2.html" class="s-blue">&#8594; Read more</a></div></div>
               <div class="cw-line"><span class="cw-ln">12</span><div class="cw-code"></div></div>
 
               <div class="cw-line"><span class="cw-ln">13</span><div class="cw-code"><span class="s-mark">## </span><span class="s-head">LLM Agent with Tool Use, Memory, and Retrieval</span></div></div>
-              <div class="cw-line"><span class="cw-ln">14</span><div class="cw-code"></div></div>
-              <div class="cw-line"><span class="cw-ln">15</span><div class="cw-code"><span class="s-text">Developed an intelligent LLM-powered agent capable of autonomous reasoning, tool invocation, persistent memory, and real-time information retrieval. Implemented a <span class="s-green">ReAct</span>-based architecture using <span class="s-blue">DSPy</span> to dynamically orchestrate function calls, integrated vector-based memory for personalized multi-turn interactions, and engineered <span class="s-orange">retrieval-augmented generation</span> through web search and document parsing to improve factual accuracy on current information. Designed scalable backend workflows, recommendation algorithms, and state management systems to support reliable multi-step task execution while leveraging modern large language model frameworks for contextual decision making.</span></div></div>
+              <div class="cw-line"><span class="cw-ln">14</span><div class="cw-code"><span class="s-text">A <span class="s-green">ReAct</span>-based agent with persistent memory and retrieval-augmented generation, built on <span class="s-orange">DSPy</span>.</span></div></div>
+              <div class="cw-line"><span class="cw-ln">15</span><div class="cw-code"><a href="project-llm-agent.html" class="s-blue">&#8594; Read more</a></div></div>
             </div>
 
             <div class="cw-statusbar">
@@ -311,35 +320,11 @@
       </div>
     </section>
 
-    <!-- FEATURE LIST -->
-    <section class="block container">
-      <p class="eyebrow muted">Built For Teams</p>
-      <h2 class="block-head">Everything connected, nothing duplicated.</h2>
-      <ul class="feature-list body-text">
-        <li>Two-way sync with the tools your team already relies on.</li>
-        <li>Automations that turn repetitive updates into a single click.</li>
-        <li>A shared timeline so nobody has to ask for status.</li>
-        <li>Granular permissions that keep sensitive data where it belongs.</li>
-      </ul>
-    </section>
-
-    <!-- FEATURED IN -->
-    <section class="block container">
-      <p class="eyebrow muted">Featured In</p>
-      <div class="press-row" aria-label="Press logos">
-        <span class="press-logo">TechCrunch</span>
-        <span class="press-logo">The Verge</span>
-        <span class="press-logo">Forbes</span>
-        <span class="press-logo">WIRED</span>
-        <span class="press-logo">Fast Company</span>
-      </div>
-    </section>
-
     <!-- ENTREPRENEURSHIP -->
     <section class="block container" id="entrepreneurship">
       <p class="eyebrow muted">Entrepreneurship</p>
       <h2 class="block-head">Ventures &amp; initiatives.</h2>
-      <p class="body-text block-sub">A rotating look at entrepreneurial projects &mdash; placeholder slides for now, swap in the real ones whenever you&rsquo;re ready.</p>
+      <p class="body-text block-sub">A rotating look at founding roles and entrepreneurial initiatives.</p>
 
       <div class="ent-carousel" id="entCarousel">
         <div class="ent-viewport">
@@ -350,9 +335,9 @@
                 <span>Add image</span>
               </div>
               <div class="ent-slide-body">
-                <p class="ent-slide-eyebrow">Venture 01</p>
-                <h3 class="ent-slide-title">Add a venture name</h3>
-                <p class="ent-slide-desc">Short description of what this venture does, your role in it, and the dates go here.</p>
+                <p class="ent-slide-eyebrow">2022 &ndash; 2024</p>
+                <h3 class="ent-slide-title">Founder, Computer Science Education Company</h3>
+                <p class="ent-slide-desc">Founded a computer science education and technical mentoring company after identifying an unmet demand for advanced software engineering and artificial intelligence instruction. Designed and delivered individualized training on modern programming frameworks, machine learning, and emerging technologies for students and industry professionals, including engineers from leading technology companies such as Google and Meta. Developed tailored curricula bridging theoretical computer science with practical software development, enabling clients to rapidly acquire and apply new technical skills.</p>
               </div>
             </div>
             <div class="ent-slide">
@@ -361,9 +346,9 @@
                 <span>Add image</span>
               </div>
               <div class="ent-slide-body">
-                <p class="ent-slide-eyebrow">Venture 02</p>
-                <h3 class="ent-slide-title">Add a venture name</h3>
-                <p class="ent-slide-desc">Short description of what this venture does, your role in it, and the dates go here.</p>
+                <p class="ent-slide-eyebrow">2026 &ndash; Present</p>
+                <h3 class="ent-slide-title">Founder, Stealth FinTech Startup</h3>
+                <p class="ent-slide-desc">Founded a stealth fintech venture focused on applying artificial intelligence and modern software infrastructure to improve financial services and user decision-making. Led product strategy, technical architecture, and full-stack engineering, designing scalable backend systems, intelligent automation workflows, and secure data pipelines while driving rapid product development from concept through prototype. Collaborated with early users and industry stakeholders to validate product-market fit and refine the platform based on iterative customer feedback.</p>
               </div>
             </div>
             <div class="ent-slide">
@@ -372,9 +357,20 @@
                 <span>Add image</span>
               </div>
               <div class="ent-slide-body">
-                <p class="ent-slide-eyebrow">Venture 03</p>
-                <h3 class="ent-slide-title">Add a venture name</h3>
-                <p class="ent-slide-desc">Short description of what this venture does, your role in it, and the dates go here.</p>
+                <p class="ent-slide-eyebrow">2025 &ndash; 2026</p>
+                <h3 class="ent-slide-title">Co-Founder &amp; CTO, AI Interview Platform</h3>
+                <p class="ent-slide-desc">Co-founded an AI-powered interview platform that conducts adaptive voice and text interviews using customizable conversational agents, enabling organizations to tailor interviewer tone, communication style, and evaluation criteria to specific hiring workflows. Architected and developed the platform&rsquo;s MVP, implementing real-time conversational AI, configurable prompting pipelines, automated interview summarization, and structured candidate analysis. Collaborated on investor fundraising and product strategy, presenting the company to leading venture capital firms, with the platform attracting interest from Y Combinator and multiple early-stage investors.</p>
+              </div>
+            </div>
+            <div class="ent-slide">
+              <div class="ent-slide-img placeholder-img" aria-hidden="true">
+                <svg viewBox="0 0 48 48" width="40" height="40"><rect x="4" y="8" width="40" height="32" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="15" cy="18" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 33l10-10 7 7 8-9 11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Add image</span>
+              </div>
+              <div class="ent-slide-body">
+                <p class="ent-slide-eyebrow">2025 &ndash; 2026</p>
+                <h3 class="ent-slide-title">Technology &amp; Entrepreneurship Fellow, Stanford University</h3>
+                <p class="ent-slide-desc">Selected to participate in Professor Charles Eesley&rsquo;s Technology and Entrepreneurship Seminar, an invitation-based program connecting high-potential founders with leading entrepreneurs and venture investors. Engaged in advanced discussions on venture creation, startup strategy, fundraising, and technology commercialization while receiving mentorship from experienced founders and investors. Built relationships within Stanford&rsquo;s entrepreneurial ecosystem through regular interactions with venture capitalists, startup executives, and emerging technology founders.</p>
               </div>
             </div>
           </div>
@@ -391,6 +387,7 @@
           <button class="ent-dot active" data-index="0" aria-label="Slide 1" type="button"></button>
           <button class="ent-dot" data-index="1" aria-label="Slide 2" type="button"></button>
           <button class="ent-dot" data-index="2" aria-label="Slide 3" type="button"></button>
+          <button class="ent-dot" data-index="3" aria-label="Slide 4" type="button"></button>
         </div>
       </div>
     </section>
