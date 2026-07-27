@@ -32,20 +32,6 @@
     if (e.target.closest("a")) setMenu(false);
   });
 
-  /* ---------- Résumé timeline collapse ---------- */
-  var tlToggle = document.getElementById("tlToggle");
-  var timeline = document.getElementById("timeline");
-  if (tlToggle && timeline) {
-    tlToggle.addEventListener("click", function () {
-      var expanded = timeline.classList.toggle("expanded");
-      tlToggle.setAttribute("aria-expanded", String(expanded));
-      tlToggle.setAttribute(
-        "aria-label",
-        expanded ? "Hide earlier roles" : "Show earlier roles"
-      );
-    });
-  }
-
   /* ---------- Community Outreach role tabs ---------- */
   var ocTabs = document.querySelectorAll(".oc-tab");
   var ocPanels = document.querySelectorAll(".oc-panel");

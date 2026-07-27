@@ -34,6 +34,74 @@ a {
   text-decoration: none;
 }
 
+/* ============================
+   Typography Template (reference)
+   Based on me.sh/notion spacing/type scale.
+   Tokens map onto this file's existing --ink/--body/--font so values
+   stay in sync; new work should pull spacing from the gap-* scale below
+   rather than eyeballing margins.
+   ============================ */
+:root {
+  --font-heading: "Oswald", "VerlagCondensed", var(--font);
+  --font-body: var(--font);
+
+  --color-heading: var(--ink);
+  --color-body: var(--body);
+
+  --heading-letter-spacing: 0.66px;
+  --body-letter-spacing: normal;
+
+  /* spacing scale */
+  --gap-heading-to-paragraph: 24px;
+  --gap-section-to-section: 160px;
+  --gap-block-loose: 97px; /* looser transitions, e.g. hero -> next row */
+  --gap-block-tight: 56px; /* tight transitions, e.g. intro -> hero */
+  --gap-final-to-cta: 120px;
+}
+
+.heading-hero {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 46px;
+  letter-spacing: var(--heading-letter-spacing);
+  color: var(--color-heading);
+  margin: 0 0 var(--gap-heading-to-paragraph) 0;
+}
+
+.heading-section {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: var(--heading-letter-spacing);
+  color: var(--color-heading);
+  margin: 0 0 var(--gap-heading-to-paragraph) 0;
+}
+
+.paragraph {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: var(--body-letter-spacing);
+  color: var(--color-body);
+  margin: 0;
+}
+
+.content-section {
+  margin-bottom: var(--gap-section-to-section);
+}
+.content-section:last-of-type {
+  margin-bottom: var(--gap-final-to-cta);
+}
+.gap-loose {
+  margin-bottom: var(--gap-block-loose);
+}
+.gap-tight {
+  margin-bottom: var(--gap-block-tight);
+}
+
 .container {
   width: 100%;
   max-width: var(--container);
@@ -113,19 +181,18 @@ h1 em {
 /* ---------- Brand / logo ---------- */
 .brand {
   position: fixed;
-  top: 30px;
-  left: max(5vw, calc(-580px + 50vw));
+  top: 28px;
+  /* aligns with the same content-start x as .container's padding-inline */
+  left: calc(max(0px, 50vw - 580px) + max(5vw, 50vw - 580px));
   z-index: 120;
   display: flex;
   align-items: center;
-  gap: 8px;
-  mix-blend-mode: exclusion;
 }
-.brand svg circle {
-  fill: #fff;
-}
-.brand svg path {
-  stroke: #fff;
+.brand img {
+  display: block;
+  height: 34px;
+  width: auto;
+  mix-blend-mode: multiply;
 }
 .brand-word {
   font-weight: 700;
@@ -224,10 +291,6 @@ h1 em {
   transform: translateY(-1px);
   opacity: 0.92;
 }
-.nav-cta {
-  padding: 9px 16px;
-}
-
 /* glow variant */
 .glow {
   position: relative;
@@ -754,11 +817,11 @@ main {
 }
 
 /* ---------- VS Code editor card (Projects) ---------- */
-/* Dark theme (Atom One Dark-inspired), sampled from hizkiajuan.com */
+/* True black night-mode theme, One Dark-inspired syntax colors */
 .code-window {
-  --cw-bg: #1e2227;
-  --cw-panel: #23272e;
-  --cw-border: #2c313a;
+  --cw-bg: #121212;
+  --cw-panel: #1a1a1a;
+  --cw-border: #2e2e2e;
   --cw-text: #abb2bf;
   --cw-dim: #5c6370;
   --cw-muted: #7f848e;
@@ -1136,10 +1199,6 @@ main {
 .cw-checkitem {
   color: var(--s-green);
 }
-.cw-claude {
-  color: var(--orange);
-  font-weight: 500;
-}
 .cw-bell {
   filter: grayscale(1) brightness(1.4);
   font-size: 10px;
@@ -1437,47 +1496,6 @@ main {
   white-space: nowrap;
   padding-top: 2px;
 }
-.tl-collapse {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 8px 0;
-}
-.tl-toggle {
-  position: relative;
-  z-index: 1;
-  width: 24px;
-  height: 24px;
-  border: 0;
-  border-radius: 50%;
-  cursor: pointer;
-  background: #efeeeb;
-  color: var(--muted);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 0 4px #fff;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-.tl-toggle:hover {
-  background: #e6e5e1;
-  color: var(--ink);
-}
-.tl-collapse-label {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.tl-hidden {
-  display: none;
-}
-.timeline.expanded .tl-hidden {
-  display: block;
-}
-
 .home-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1856,8 +1874,7 @@ main {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
-  .nav,
-  .brand-word {
+  .nav {
     display: none;
   }
   .ent-carousel {
