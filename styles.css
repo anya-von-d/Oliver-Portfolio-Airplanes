@@ -814,6 +814,153 @@ main {
   line-height: 28px;
   color: var(--body);
   max-width: 720px;
+  margin-top: 64px;
+}
+
+/* ---------- Project detail pages: wide breakout ---------- */
+/* Lets the code window / tools strip / feature block run wider than the
+   760px reading column without widening the title, tags, or description. */
+.project-wide {
+  width: 100%;
+  max-width: 900px;
+  margin: 8px 0 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ---------- Project detail pages: tools strip ---------- */
+.tools-strip {
+  margin: 40px 0 0;
+}
+.tools-strip-label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+.tools-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+.tools-track {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: max-content;
+  animation: tools-scroll 22s linear infinite;
+}
+.tools-marquee:hover .tools-track {
+  animation-play-state: paused;
+}
+.tool-chip {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+  flex: none;
+}
+.tool-logo {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  display: block;
+}
+.tool-glyph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex: none;
+  border-radius: 50%;
+  background: rgba(251, 114, 50, 0.12);
+  color: var(--orange);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+@keyframes tools-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------- Project detail pages: headline / paragraph / stats ---------- */
+.project-feature {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 16px 48px;
+  margin: 56px 0 0;
+  padding-top: 48px;
+  border-top: 1px solid var(--card-border);
+}
+.feat-headline {
+  font-family: "Playfair Display", "ChronicleText", Georgia, serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 38px;
+  color: var(--ink);
+  margin: 0;
+}
+.feat-para {
+  font-size: 16px;
+  line-height: 25px;
+  color: var(--body);
+  margin: 0;
+  padding-top: 4px;
+}
+.feat-stats {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  margin-top: 8px;
+}
+.feat-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.feat-stat-value {
+  font-family: "Oswald", "Verlag Condensed", var(--font);
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: var(--ink);
+}
+.feat-stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--muted);
 }
 
 /* ---------- VS Code editor card (Projects) ---------- */
@@ -2050,11 +2197,36 @@ main {
   .oc-card {
     padding: 26px 22px 28px;
   }
+  .project-wide {
+    max-width: 100%;
+    margin-left: 0;
+    transform: none;
+  }
+  .project-feature {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .feat-headline {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .feat-para {
+    padding-top: 0;
+  }
+  .feat-stats {
+    gap: 24px;
+  }
+  .project-full-desc {
+    margin-top: 48px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
     scroll-behavior: auto !important;
+  }
+  .tools-track {
+    animation: none !important;
   }
 }
