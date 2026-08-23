@@ -242,6 +242,32 @@ h1 em {
   z-index: 1;
 }
 
+/* ---------- Contact pill (mirrors .nav, right-aligned) ---------- */
+.nav-contact {
+  left: auto;
+  right: calc(max(0px, 50vw - 580px) + max(5vw, 50vw - 580px));
+  transform: none;
+}
+.nav-contact-inner {
+  gap: 0;
+  padding: 0;
+}
+.nav-contact-link {
+  display: inline-flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 22px;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+  border-radius: 16px;
+  transition: background 0.18s ease;
+}
+.nav-contact-link:hover {
+  background: rgba(31, 31, 31, 0.05);
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -457,6 +483,28 @@ main {
   color: rgba(255, 255, 255, 0.66);
   margin: 0 0 32px;
   max-width: 420px;
+}
+.hero-social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+.hero-social-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
 }
 .hero-photo {
   justify-self: end;
@@ -2307,6 +2355,9 @@ main {
     font-size: 16px;
     line-height: 24px;
     max-width: 100%;
+  }
+  .hero-social {
+    justify-content: center;
   }
   .bio-section {
     padding: 44px 0;

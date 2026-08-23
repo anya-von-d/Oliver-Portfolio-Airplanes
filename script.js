@@ -2,12 +2,15 @@
   "use strict";
 
   var nav = document.getElementById("nav");
+  var navContact = document.getElementById("navContact");
 
   // Shrink shadow subtly on scroll (glass reacts to scroll)
   window.addEventListener(
     "scroll",
     function () {
-      nav.classList.toggle("scrolled", window.scrollY > 8);
+      var isScrolled = window.scrollY > 8;
+      nav.classList.toggle("scrolled", isScrolled);
+      if (navContact) navContact.classList.toggle("scrolled", isScrolled);
     },
     { passive: true }
   );
