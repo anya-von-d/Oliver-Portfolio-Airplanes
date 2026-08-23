@@ -1719,6 +1719,115 @@ main {
   color: var(--body);
 }
 
+/* ---------- Technical Skills & Background ---------- */
+.skills-panel {
+  position: relative;
+  margin-top: 8px;
+  padding: 30px 30px 34px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  background: #fff;
+  box-shadow: 2.8px 4.2px 10px rgba(0, 0, 0, 0.06),
+    11px 16px 19px rgba(0, 0, 0, 0.06), 25px 35px 26px rgba(0, 0, 0, 0.03),
+    44px 63px 31px rgba(0, 0, 0, 0.01);
+}
+.skills-net {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.skills-tabs,
+.skills-grid {
+  position: relative;
+  z-index: 1;
+}
+.skills-tabs {
+  margin: 0 auto 28px;
+}
+.skill-tab {
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(31, 31, 31, 0.5);
+  padding: 10px 18px;
+  border-radius: 9px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+.skill-tab:hover {
+  color: var(--ink);
+}
+.skill-tab.active {
+  color: var(--ink);
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 1px 0 rgba(0, 0, 0, 0.03);
+}
+.skill-panel {
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.skill-panel.active {
+  display: grid;
+  animation: ocFadeIn 0.2s ease;
+}
+.skill-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(249, 248, 246, 0.6);
+  border: 1px solid var(--card-border);
+  transition: background 0.15s ease, border-color 0.15s ease,
+    transform 0.15s ease;
+}
+.skill-card:hover {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+.skill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 5px;
+  flex: none;
+}
+.skill-name {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.skill-desc {
+  display: block;
+  margin-top: 2px;
+  font-size: 11.5px;
+  line-height: 16px;
+  color: var(--muted);
+}
+.skill-indigo .skill-dot {
+  background: #4f46e5;
+}
+.skill-green .skill-dot {
+  background: #16a34a;
+}
+.skill-orange .skill-dot {
+  background: var(--orange);
+}
+.skill-purple .skill-dot {
+  background: #b620e0;
+}
+
 /* ---------- Résumé timeline (hero card) ---------- */
 .timeline {
   padding: 26px 32px 30px;
@@ -2358,6 +2467,16 @@ main {
   }
   .oc-card {
     padding: 26px 22px 28px;
+  }
+  .skill-tab {
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+  .skills-panel {
+    padding: 22px 18px 26px;
+  }
+  .skill-panel {
+    grid-template-columns: repeat(2, 1fr);
   }
   .project-wide {
     max-width: 100%;
