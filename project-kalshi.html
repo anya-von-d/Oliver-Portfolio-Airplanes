@@ -218,6 +218,60 @@
 
       <p class="project-full-desc">Developed a low-latency algorithmic trading system for Kalshi prediction markets that identifies and executes latency arbitrage opportunities by exploiting temporary pricing discrepancies between exchange-traded cryptocurrency prices and event contract markets. Engineered a real-time market data pipeline integrating live cryptocurrency price feeds with Kalshi order book data to detect statistically significant pricing inefficiencies within sub-second time windows. Implemented automated signal generation, execution logic, risk management, and position sizing while optimizing network latency, asynchronous processing, and order placement speed to maximize capture of rapidly decaying arbitrage opportunities.</p>
     </div>
+
+    <section class="more-projects">
+      <div class="container">
+        <p class="eyebrow muted center">More Projects</p>
+        <h2 class="edu-title">Explore more of my work.</h2>
+        <div class="proj-grid proj-grid-sm">
+          <a class="proj-card proj-card-sm" href="project-gpt2.html">
+            <div class="proj-card-tags">
+              <span class="project-tag">PyTorch</span>
+              <span class="project-tag">Hugging Face Transformers</span>
+            </div>
+            <div class="proj-card-media">
+              <div class="mini-window">
+                <div class="mini-window-bar" aria-hidden="true">
+                  <span class="mw-dot mw-red"></span><span class="mw-dot mw-yellow"></span><span class="mw-dot mw-green"></span>
+                  <span class="mini-window-label">Terminal &mdash; train.py</span>
+                </div>
+                <div class="mini-window-body">
+                  <div class="mw-line"><span class="mw-prompt">$</span> python train.py --model gpt2 --epochs 3</div>
+                  <div class="mw-line">Epoch 1/3  <span class="s-blue">[###.......]</span>  loss: 2.184</div>
+                  <div class="mw-line">Epoch 2/3  <span class="s-orange">[#######...]</span>  loss: 1.607</div>
+                  <div class="mw-line">Epoch 3/3  <span class="s-green">[##########]</span>  loss: 1.203</div>
+                </div>
+              </div>
+              <span class="proj-card-btn">View project <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+            <h3 class="proj-card-title">GPT-2 Fine-Tuning</h3>
+          </a>
+
+          <a class="proj-card proj-card-sm" href="project-llm-agent.html">
+            <div class="proj-card-tags">
+              <span class="project-tag">DSPy</span>
+              <span class="project-tag">ReAct</span>
+            </div>
+            <div class="proj-card-media">
+              <div class="mini-window">
+                <div class="mini-window-bar" aria-hidden="true">
+                  <span class="mw-dot mw-red"></span><span class="mw-dot mw-yellow"></span><span class="mw-dot mw-green"></span>
+                  <span class="mini-window-label">agent.py</span>
+                </div>
+                <div class="mini-window-body">
+                  <div class="mw-line"><span class="s-head">class</span> <span class="s-green">Agent</span>:</div>
+                  <div class="mw-line">    <span class="s-head">def</span> <span class="s-blue">step</span>(self, query):</div>
+                  <div class="mw-line">        thought = self.reason(query)</div>
+                  <div class="mw-line">        <span class="s-head">return</span> self.memory.recall(action)</div>
+                </div>
+              </div>
+              <span class="proj-card-btn">View project <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+            <h3 class="proj-card-title">LLM Agent with Tool Use, Memory, and Retrieval</h3>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
