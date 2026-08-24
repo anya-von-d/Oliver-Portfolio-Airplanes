@@ -1840,6 +1840,48 @@ main {
   pointer-events: none;
 }
 
+/* ---------- Feature link card (Teaching & Mentorship banner) ---------- */
+.feature-link-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 56px 0;
+  padding: 26px 30px;
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  background: #fff;
+  box-shadow: 2.8px 4.2px 10px rgba(0, 0, 0, 0.06),
+    11px 16px 19px rgba(0, 0, 0, 0.06), 25px 35px 26px rgba(0, 0, 0, 0.03),
+    44px 63px 31px rgba(0, 0, 0, 0.01);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.feature-link-card:hover {
+  transform: translateY(-2px);
+}
+.feature-link-text {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.feature-link-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(31, 31, 31, 0.05);
+  color: var(--ink);
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+.feature-link-card:hover .feature-link-arrow {
+  background: var(--ink);
+  color: #fff;
+  transform: translateX(3px);
+}
+
 /* ---------- Résumé timeline (hero card) ---------- */
 .timeline {
   padding: 26px 32px 30px;
@@ -1883,6 +1925,10 @@ main {
 .tl-indigo {
   color: #4f46e5;
   background: rgba(79, 70, 229, 0.12);
+}
+.tl-rose {
+  color: #db2777;
+  background: rgba(219, 39, 119, 0.12);
 }
 .tl-purple {
   color: #b620e0;
@@ -2319,6 +2365,17 @@ main {
   .vent-photo {
     width: 84px;
     height: 84px;
+  }
+  .feature-link-card {
+    padding: 20px 22px;
+    margin: 40px 0;
+  }
+  .feature-link-text {
+    font-size: 16px;
+  }
+  .feature-link-arrow {
+    width: 38px;
+    height: 38px;
   }
   .brand {
     top: 32px;
