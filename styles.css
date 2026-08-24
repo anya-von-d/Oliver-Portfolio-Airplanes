@@ -178,6 +178,31 @@ h1 em {
   margin: 0 0 32px;
 }
 
+/* ---------- Section header row (title beside content) ---------- */
+.edu-header-row {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  margin-bottom: 32px;
+}
+.edu-title-left {
+  flex: none;
+  margin: 0;
+  text-align: left;
+}
+.edu-title-right {
+  flex: none;
+  margin: 0;
+  text-align: right;
+}
+.edu-header-fill {
+  flex: 1;
+  min-width: 0;
+}
+.edu-header-row .hero-card {
+  margin-top: 0;
+}
+
 /* ---------- Brand / logo ---------- */
 .brand {
   position: fixed;
@@ -727,14 +752,10 @@ main {
   color: var(--ink);
   margin: 0 0 14px;
 }
-.edu-subtitle,
-.exp-subtitle {
-  margin-bottom: 32px;
-}
 .edu-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 .edu-card {
   padding: 22px 24px 26px;
@@ -2422,6 +2443,14 @@ main {
   }
   .edu {
     margin-top: 64px;
+  }
+  .edu-header-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .edu-title-left,
+  .edu-title-right {
+    text-align: left;
   }
   .block-head {
     font-size: 24px;
