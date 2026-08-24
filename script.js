@@ -501,20 +501,18 @@
       e.preventDefault();
       var name = document.getElementById("cf-name").value.trim();
       var email = document.getElementById("cf-email").value.trim();
-      var company = document.getElementById("cf-company").value.trim();
       var details = document.getElementById("cf-details").value.trim();
 
       var subject = "Portfolio inquiry from " + (name || "website visitor");
       var bodyLines = [
         "Name: " + name,
         "Email: " + email,
-        "Company: " + (company || "—"),
         "",
-        "Project details:",
+        "Message:",
         details || "—",
       ];
       var mailto =
-        "mailto:anya.computer.science@gmail.com" +
+        "mailto:vondiessl@alumni.stanford.edu" +
         "?subject=" + encodeURIComponent(subject) +
         "&body=" + encodeURIComponent(bodyLines.join("\n"));
 

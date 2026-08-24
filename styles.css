@@ -194,13 +194,6 @@ h1 em {
   width: auto;
   mix-blend-mode: multiply;
 }
-.brand-word {
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: 0.5px;
-  color: #fff;
-}
-
 /* ---------- Nav pill ---------- */
 .nav {
   position: fixed;
@@ -2147,57 +2140,6 @@ main {
 .cf-field textarea::placeholder {
   color: rgba(255, 255, 255, 0.4);
 }
-.cf-check {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.75);
-}
-.cf-check input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-  width: 20px;
-  height: 20px;
-  margin: 0;
-  cursor: pointer;
-}
-.cf-checkbox {
-  flex: none;
-  width: 20px;
-  height: 20px;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  position: relative;
-  transition: background 0.15s ease, border-color 0.15s ease;
-}
-.cf-check input[type="checkbox"]:checked + .cf-checkbox {
-  background: #fff;
-  border-color: #fff;
-}
-.cf-check input[type="checkbox"]:checked + .cf-checkbox::after {
-  content: "";
-  position: absolute;
-  left: 6px;
-  top: 2px;
-  width: 5px;
-  height: 10px;
-  border: solid var(--navy);
-  border-width: 0 2px 2px 0;
-  transform: rotate(40deg);
-}
-.cf-check input[type="checkbox"]:focus-visible + .cf-checkbox {
-  outline: 2px solid rgba(255, 255, 255, 0.6);
-  outline-offset: 2px;
-}
-.cf-check-label a {
-  color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
 .cf-submit {
   align-self: flex-start;
   margin-top: 10px;
@@ -2300,61 +2242,103 @@ main {
 
 /* ---------- Footer ---------- */
 .site-footer {
-  background: #f2f0ec;
-  padding: 66px 0 46px;
-  box-shadow: 0 -14px 30px -12px rgba(0, 0, 0, 0.12);
+  position: relative;
+  overflow: hidden;
+  background: #0a0a0c;
+  padding: 72px 0 32px;
 }
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 2fr;
-  gap: 48px;
+.footer-glow {
+  position: absolute;
+  top: -160px;
+  left: 6%;
+  width: 440px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(124, 140, 255, 0.35), transparent 70%);
+  filter: blur(20px);
+  pointer-events: none;
 }
-.footer-logo {
-  color: var(--ink);
-  font-size: 22px;
+.footer-inner {
+  position: relative;
+  z-index: 1;
+}
+.footer-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.footer-name {
+  margin: 0 0 14px;
+  font-size: 27px;
+  line-height: 1;
+}
+.footer-name-first {
+  font-family: "Oswald", "Verlag Condensed", var(--font);
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.footer-name-last {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  color: #6e8bff;
 }
 .footer-tagline {
-  margin: 18px 0 22px;
-  font-size: 18px;
-  line-height: 26px;
-  font-weight: 600;
-  color: var(--ink);
-  max-width: 300px;
+  margin: 0;
+  max-width: 420px;
+  font-family: "Fira Code", "JetBrains Mono", ui-monospace, Menlo, Consolas,
+    monospace;
+  font-size: 13.5px;
+  line-height: 21px;
+  color: rgba(255, 255, 255, 0.5);
 }
-.footer-btn {
-  padding: 13px 22px;
-}
-.footer-madein {
-  margin: 26px 0 0;
-  font-size: 13px;
-  color: var(--muted);
-}
-.footer-madein span {
-  color: var(--orange);
-}
-.footer-cols {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.footer-col {
+.footer-contact {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  align-items: center;
+  gap: 18px;
 }
-.footer-col h4 {
-  margin: 0 0 4px;
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--ink);
-}
-.footer-col a {
-  font-size: 15px;
-  color: var(--body);
+.footer-email {
+  font-family: "Fira Code", "JetBrains Mono", ui-monospace, Menlo, Consolas,
+    monospace;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.72);
   transition: color 0.15s ease;
 }
-.footer-col a:hover {
-  color: var(--ink);
+.footer-email:hover {
+  color: #fff;
+}
+.footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.55);
+  transition: color 0.15s ease, background 0.15s ease;
+}
+.footer-social:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+.footer-rule {
+  margin: 40px 0 20px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: "Fira Code", "JetBrains Mono", ui-monospace, Menlo, Consolas,
+    monospace;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
 }
 
 /* ---------- Responsive ---------- */
@@ -2531,13 +2515,15 @@ main {
     max-width: 100%;
     transform: none;
   }
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
   }
-  .footer-cols {
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
   }
   .oc-tab {
     padding: 8px 12px;
