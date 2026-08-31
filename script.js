@@ -98,6 +98,20 @@
     });
   });
 
+  /* ---------- Experience timeline: per-entry description toggle ---------- */
+  var tlToggles = document.querySelectorAll(".tl-toggle");
+  tlToggles.forEach(function (toggle) {
+    toggle.addEventListener("click", function () {
+      var row = toggle.closest(".tl-row");
+      var desc = row && row.querySelector(".tl-desc");
+      if (!desc) return;
+      var isActive = !toggle.classList.contains("active");
+      toggle.classList.toggle("active", isActive);
+      toggle.setAttribute("aria-expanded", String(isActive));
+      desc.classList.toggle("active", isActive);
+    });
+  });
+
   /* ---------- Technical Skills: interactive node graph ---------- */
   var graphCanvas = document.getElementById("skillsGraph");
   if (graphCanvas) {
