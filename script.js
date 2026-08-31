@@ -3,17 +3,25 @@
 
   var nav = document.getElementById("nav");
   var navContact = document.getElementById("navContact");
+  var brand = document.querySelector(".brand");
+  var heroEl = document.querySelector(".hero");
 
-  // Shrink shadow subtly on scroll (glass reacts to scroll)
-  window.addEventListener(
-    "scroll",
-    function () {
-      var isScrolled = window.scrollY > 8;
-      nav.classList.toggle("scrolled", isScrolled);
-      if (navContact) navContact.classList.toggle("scrolled", isScrolled);
-    },
-    { passive: true }
-  );
+  var footerYear = document.getElementById("footer-year");
+  if (footerYear) footerYear.textContent = new Date().getFullYear();
+
+  // Shrink shadow subtly on scroll (glass reacts to scroll); on the hero
+  // page this also flips the nav from light-on-dark to its normal dark-on-
+  // light look once it scrolls past the dark hero video and onto the page.
+  function updateNavScrolled() {
+    var isScrolled = heroEl
+      ? heroEl.getBoundingClientRect().bottom <= 80
+      : window.scrollY > 8;
+    nav.classList.toggle("scrolled", isScrolled);
+    if (navContact) navContact.classList.toggle("scrolled", isScrolled);
+    if (brand) brand.classList.toggle("scrolled", isScrolled);
+  }
+  updateNavScrolled();
+  window.addEventListener("scroll", updateNavScrolled, { passive: true });
 
   /* ---------- Mobile menu ---------- */
   var hamburger = document.getElementById("hamburger");

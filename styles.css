@@ -219,6 +219,12 @@ h1 em {
   width: auto;
   mix-blend-mode: multiply;
 }
+/* Over the dark hero video the dark-ink signature disappears; invert it
+   until the page has scrolled past the hero and back onto the light bg. */
+body:has(.hero) .brand:not(.scrolled) img {
+  mix-blend-mode: normal;
+  filter: brightness(0) invert(1);
+}
 /* ---------- Nav pill ---------- */
 .nav {
   position: fixed;
@@ -259,6 +265,19 @@ h1 em {
   transition: background 0.24s ease, box-shadow 0.24s ease;
   z-index: 1;
 }
+/* Over the dark hero video, the light glass pill has almost no contrast
+   against the video; swap in a dark-tinted glass until scrolled past it. */
+body:has(.hero) .nav:not(.scrolled)::before {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.22) 10%,
+      rgba(0, 0, 0, 0.04) 86%
+    ),
+    rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.14),
+    0 2px 4px -2px rgba(0, 0, 0, 0.3), 0 8px 16px -8px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+}
 
 /* ---------- Contact pill (mirrors .nav, right-aligned) ---------- */
 .nav-contact {
@@ -284,6 +303,12 @@ h1 em {
 }
 .nav-contact-link:hover {
   background: rgba(31, 31, 31, 0.05);
+}
+body:has(.hero) .nav-contact:not(.scrolled) .nav-contact-link {
+  color: #f5f4f0;
+}
+body:has(.hero) .nav-contact:not(.scrolled) .nav-contact-link:hover {
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .nav-links {
@@ -311,6 +336,12 @@ h1 em {
 }
 .nav-link:hover {
   background: rgba(31, 31, 31, 0.05);
+}
+body:has(.hero) .nav:not(.scrolled) .nav-link {
+  color: #f5f4f0;
+}
+body:has(.hero) .nav:not(.scrolled) .nav-link:hover {
+  background: rgba(255, 255, 255, 0.12);
 }
 
 /* CTA button */

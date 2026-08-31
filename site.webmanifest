@@ -1,0 +1,11 @@
+{
+  "name": "Anya von Diessl",
+  "short_name": "Anya von Diessl",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#164a68",
+  "background_color": "#f9f8f6",
+  "display": "browser"
+}
