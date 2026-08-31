@@ -576,7 +576,7 @@ main {
 /* ---------- Campus photo (sticky/scroll-pan reveal) ---------- */
 .campus-photo {
   position: relative;
-  height: 260px;
+  height: 420px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 2.8px 4.2px 10px rgba(0, 0, 0, 0.06),
@@ -588,9 +588,34 @@ main {
   top: 0;
   left: 0;
   width: 100%;
-  height: auto;
+  /* Taller than the box so there is vertical range to pan through on scroll. */
+  height: 130%;
+  object-fit: cover;
+  object-position: center;
   display: block;
   will-change: transform;
+}
+.campus-photo-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.18) 0%,
+    rgba(0, 0, 0, 0.34) 100%
+  );
+  pointer-events: none;
+}
+.campus-edu {
+  position: absolute;
+  inset: 0;
+  align-content: center;
+  padding: 32px;
+}
+.campus-edu .edu-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 .dot-grid {
   position: absolute;
@@ -776,7 +801,7 @@ main {
 }
 .edu-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 .edu-card {
@@ -2493,8 +2518,28 @@ main {
   .bio-section {
     padding: 44px 0;
   }
+  /* Stack image, scrim and cards in one grid cell so the box grows with the
+     stacked cards while the photo still covers it. */
   .campus-photo {
-    height: 190px;
+    height: auto;
+    min-height: 190px;
+    display: grid;
+  }
+  .campus-photo-img,
+  .campus-photo-scrim,
+  .campus-edu {
+    grid-area: 1 / 1;
+    position: relative;
+    inset: auto;
+  }
+  .campus-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .campus-edu {
+    z-index: 1;
+    padding: 20px;
   }
   .bio-statement {
     font-size: 24px;
