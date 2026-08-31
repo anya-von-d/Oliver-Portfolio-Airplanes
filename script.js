@@ -35,6 +35,52 @@
     if (e.target.closest("a")) setMenu(false);
   });
 
+  /* ---------- Campus photo (sticky scroll-pan reveal) ---------- */
+  var campusPhoto = document.getElementById("campusPhoto");
+  if (campusPhoto) {
+    var campusImg = campusPhoto.querySelector(".campus-photo-img");
+    var campusReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    var campusTicking = false;
+
+    function updateCampusPhoto() {
+      campusTicking = false;
+      var rect = campusPhoto.getBoundingClientRect();
+      var windowH = window.innerHeight;
+      // 0 when the box first enters the viewport from the bottom,
+      // 1 once it has fully exited past the top.
+      var total = rect.height + windowH;
+      var progress = (windowH - rect.top) / total;
+      progress = Math.max(0, Math.min(1, progress));
+
+      var maxShift = campusImg.offsetHeight - rect.height;
+      if (maxShift > 0) {
+        campusImg.style.transform =
+          "translateY(-" + progress * maxShift + "px)";
+      }
+    }
+
+    function requestCampusUpdate() {
+      if (campusTicking) return;
+      campusTicking = true;
+      requestAnimationFrame(updateCampusPhoto);
+    }
+
+    if (campusImg.complete) {
+      updateCampusPhoto();
+    } else {
+      campusImg.addEventListener("load", updateCampusPhoto);
+    }
+
+    if (!campusReduced) {
+      window.addEventListener("scroll", requestCampusUpdate, {
+        passive: true,
+      });
+      window.addEventListener("resize", requestCampusUpdate);
+    }
+  }
+
   /* ---------- Community Outreach role tabs ---------- */
   var ocTabs = document.querySelectorAll(".oc-tab");
   var ocPanels = document.querySelectorAll(".oc-panel");

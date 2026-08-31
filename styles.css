@@ -468,8 +468,10 @@ main {
 .hero {
   position: relative;
   overflow: hidden;
+  margin-top: -140px;
+  padding-top: 140px;
   padding-bottom: 40px;
-  background: var(--navy);
+  background: #0a0a0c;
 }
 .hero-inner {
   position: relative;
@@ -569,6 +571,26 @@ main {
   color: var(--body);
   margin: 0;
   max-width: 640px;
+}
+
+/* ---------- Campus photo (sticky/scroll-pan reveal) ---------- */
+.campus-photo {
+  position: relative;
+  height: 260px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 2.8px 4.2px 10px rgba(0, 0, 0, 0.06),
+    11px 16px 19px rgba(0, 0, 0, 0.06), 25px 35px 26px rgba(0, 0, 0, 0.03),
+    44px 63px 31px rgba(0, 0, 0, 0.01);
+}
+.campus-photo-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+  will-change: transform;
 }
 .dot-grid {
   position: absolute;
@@ -2401,6 +2423,10 @@ main {
   main {
     padding-top: 110px;
   }
+  .hero {
+    margin-top: -110px;
+    padding-top: 110px;
+  }
   h1 {
     font-size: 32px;
     line-height: 38px;
@@ -2433,6 +2459,9 @@ main {
   }
   .bio-section {
     padding: 44px 0;
+  }
+  .campus-photo {
+    height: 190px;
   }
   .bio-statement {
     font-size: 24px;
