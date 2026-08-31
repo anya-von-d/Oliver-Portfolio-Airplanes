@@ -2162,7 +2162,7 @@ main {
 
 /* ---------- Get in touch (navy contact section) ---------- */
 .contact-section {
-  background: var(--navy);
+  background: #000;
   margin-top: 120px;
   padding: 92px 0 116px;
 }
@@ -2330,18 +2330,11 @@ main {
 .site-footer {
   position: relative;
   overflow: hidden;
-  background: #0a0a0c;
+  background: var(--bg);
   padding: 72px 0 32px;
 }
 .footer-glow {
-  position: absolute;
-  top: -160px;
-  left: 6%;
-  width: 440px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(124, 140, 255, 0.35), transparent 70%);
-  filter: blur(20px);
-  pointer-events: none;
+  display: none;
 }
 .footer-inner {
   position: relative;
@@ -2363,14 +2356,14 @@ main {
   font-family: "Oswald", "Verlag Condensed", var(--font);
   font-weight: 700;
   letter-spacing: 1px;
-  color: #fff;
+  color: var(--ink);
   text-transform: uppercase;
 }
 .footer-name-last {
   font-family: "Playfair Display", Georgia, serif;
   font-style: italic;
   font-weight: 500;
-  color: #6e8bff;
+  color: var(--orange);
 }
 .footer-tagline {
   margin: 0;
@@ -2379,7 +2372,7 @@ main {
     monospace;
   font-size: 13.5px;
   line-height: 21px;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--body);
 }
 .footer-contact {
   display: flex;
@@ -2390,11 +2383,11 @@ main {
   font-family: "Fira Code", "JetBrains Mono", ui-monospace, Menlo, Consolas,
     monospace;
   font-size: 13.5px;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(31, 31, 31, 0.7);
   transition: color 0.15s ease;
 }
 .footer-email:hover {
-  color: #fff;
+  color: var(--ink);
 }
 .footer-social {
   display: flex;
@@ -2404,17 +2397,17 @@ main {
   width: 30px;
   height: 30px;
   border-radius: 8px;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(31, 31, 31, 0.45);
   transition: color 0.15s ease, background 0.15s ease;
 }
 .footer-social:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.08);
+  color: var(--ink);
+  background: rgba(31, 31, 31, 0.06);
 }
 .footer-rule {
   margin: 40px 0 20px;
   height: 1px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(31, 31, 31, 0.1);
 }
 .footer-bottom {
   display: flex;
@@ -2424,7 +2417,7 @@ main {
   font-family: "Fira Code", "JetBrains Mono", ui-monospace, Menlo, Consolas,
     monospace;
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--muted);
 }
 
 /* ---------- Responsive ---------- */
