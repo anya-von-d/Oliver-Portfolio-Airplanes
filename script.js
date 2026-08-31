@@ -55,440 +55,431 @@
   /* ---------- Technical Skills: interactive node graph ---------- */
   var graphCanvas = document.getElementById("skillsGraph");
   if (graphCanvas) {
-    var graphPanel = document.getElementById("skillsPanel");
     var gctx = graphCanvas.getContext("2d");
-    var gReduced = window.matchMedia("(prefers-reduced-motion: reduce)")
-      .matches;
-    var gDpr = window.devicePixelRatio || 1;
+    var gReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var GRAPH_MONO =
+      "'IBM Plex Mono', 'Fira Code', ui-monospace, Menlo, monospace";
 
-    var CATEGORY_COLOR = {
-      language: [124, 140, 255],
-      framework: [61, 220, 151],
-      domain: [251, 114, 50],
-      tool: [214, 140, 240],
+    var CAT_COLOR = {
+      language: "#0066ff",
+      framework: "#00d97e",
+      domain: "#ff6b35",
+      tool: "#8b5cf6",
     };
-    var CATEGORY_LABEL = {
-      language: "Language",
-      framework: "Framework",
-      domain: "Domain",
-      tool: "Tool",
+    var CAT_LABEL = {
+      language: "Languages",
+      framework: "Frameworks",
+      domain: "Domains",
+      tool: "Tools",
+    };
+    // Each category is seeded into its own quadrant so the graph settles
+    // into four loose clusters rather than one undifferentiated blob.
+    var CAT_ANGLE = {
+      language: -Math.PI * 0.75,
+      framework: -Math.PI * 0.25,
+      domain: Math.PI * 0.25,
+      tool: Math.PI * 0.75,
     };
 
-    var SKILL_DEFS = [
-      ["Python", "language"], ["C++", "language"], ["R", "language"],
-      ["MATLAB", "language"], ["SQL", "language"], ["Java", "language"],
-      ["JavaScript", "language"], ["TypeScript", "language"],
-      ["CUDA", "language"], ["HTML", "language"], ["CSS", "language"],
-      ["Julia", "language"],
-      ["PyTorch", "framework"], ["TensorFlow", "framework"],
-      ["NumPy", "framework"], ["pandas", "framework"],
-      ["scikit-learn", "framework"], ["React", "framework"],
-      ["SciPy", "framework"], ["Matplotlib", "framework"],
-      ["JAX", "framework"], ["OpenCV", "framework"],
-      ["Deep Learning", "domain"], ["Computer Vision", "domain"],
-      ["Bayesian Inference", "domain"], ["Monte Carlo", "domain"],
-      ["Numerical Methods", "domain"], ["Causal Inference", "domain"],
-      ["Medical Imaging", "domain"], ["NLP", "domain"],
-      ["Reinforcement Learning", "domain"], ["Generative AI", "domain"],
-      ["Optimization", "domain"], ["Statistics", "domain"],
-      ["Stochastic Modeling", "domain"], ["Statistical Inference", "domain"],
-      ["Continuous Math Methods", "domain"],
-      ["Git", "tool"], ["Linux", "tool"], ["HPC", "tool"],
-      ["Parallel Prog.", "tool"], ["Bash", "tool"], ["Docker", "tool"],
-      ["AWS", "tool"], ["LaTeX", "tool"], ["Jupyter", "tool"],
-      ["W&B", "tool"],
-    ];
+    var SKILL_NODES = [
+      ["python", "Python", "language"],
+      ["cpp", "C++", "language"],
+      ["r", "R", "language"],
+      ["matlab", "MATLAB", "language"],
+      ["sql", "SQL", "language"],
+      ["java", "Java", "language"],
+      ["js", "JavaScript", "language"],
+      ["ts", "TypeScript", "language"],
+      ["cuda", "CUDA", "language"],
+      ["pytorch", "PyTorch", "framework"],
+      ["tensorflow", "TensorFlow", "framework"],
+      ["numpy", "NumPy", "framework"],
+      ["pandas", "pandas", "framework"],
+      ["sklearn", "scikit-learn", "framework"],
+      ["react", "React", "framework"],
+      ["scipy", "SciPy", "framework"],
+      ["matplotlib", "Matplotlib", "framework"],
+      ["jax", "JAX", "framework"],
+      ["opencv", "OpenCV", "framework"],
+      ["dl", "Deep Learning", "domain"],
+      ["cv", "Computer Vision", "domain"],
+      ["bayesian", "Bayesian Inference", "domain"],
+      ["montecarlo", "Monte Carlo", "domain"],
+      ["numerical", "Numerical Methods", "domain"],
+      ["causal", "Causal Inference", "domain"],
+      ["medical", "Medical Imaging", "domain"],
+      ["nlp", "NLP", "domain"],
+      ["rl", "Reinforcement Learning", "domain"],
+      ["genai", "Generative AI", "domain"],
+      ["optimization", "Optimization", "domain"],
+      ["stats", "Statistics", "domain"],
+      ["git", "Git", "tool"],
+      ["linux", "Linux", "tool"],
+      ["hpc", "HPC", "tool"],
+      ["parallel", "Parallel Prog.", "tool"],
+      ["webdev", "Web Dev", "tool"],
+      ["bash", "Bash", "tool"],
+      ["docker", "Docker", "tool"],
+      ["aws", "AWS", "tool"],
+      ["latex", "LaTeX", "tool"],
+      ["jupyter", "Jupyter", "tool"],
+      ["wandb", "W&B", "tool"],
+    ].map(function (n) {
+      return { id: n[0], label: n[1], category: n[2] };
+    });
 
-    var EDGE_DEFS = [
-      ["Python", "NumPy"], ["Python", "pandas"], ["Python", "PyTorch"],
-      ["Python", "TensorFlow"], ["Python", "scikit-learn"],
-      ["Python", "SciPy"], ["Python", "Matplotlib"], ["Python", "JAX"],
-      ["Python", "OpenCV"], ["Python", "Jupyter"], ["Python", "Statistics"],
-      ["C++", "CUDA"], ["C++", "HPC"], ["C++", "Parallel Prog."],
-      ["C++", "Deep Learning"],
-      ["CUDA", "HPC"], ["CUDA", "Parallel Prog."], ["CUDA", "PyTorch"],
-      ["CUDA", "JAX"], ["CUDA", "Deep Learning"],
-      ["R", "Statistics"], ["R", "Statistical Inference"],
-      ["R", "Bayesian Inference"],
-      ["MATLAB", "Numerical Methods"], ["MATLAB", "Optimization"],
-      ["MATLAB", "Continuous Math Methods"],
-      ["SQL", "pandas"], ["SQL", "AWS"],
-      ["JavaScript", "React"], ["JavaScript", "TypeScript"],
-      ["JavaScript", "HTML"], ["JavaScript", "CSS"],
-      ["TypeScript", "React"], ["HTML", "CSS"],
-      ["Julia", "Numerical Methods"], ["Julia", "Statistics"],
-      ["PyTorch", "Deep Learning"], ["PyTorch", "Computer Vision"],
-      ["PyTorch", "NLP"], ["PyTorch", "Generative AI"],
-      ["PyTorch", "Reinforcement Learning"], ["PyTorch", "W&B"],
-      ["TensorFlow", "Deep Learning"], ["TensorFlow", "W&B"],
-      ["NumPy", "pandas"], ["NumPy", "SciPy"], ["NumPy", "Statistics"],
-      ["NumPy", "Matplotlib"],
-      ["scikit-learn", "Statistics"], ["scikit-learn", "Optimization"],
-      ["SciPy", "Numerical Methods"], ["SciPy", "Optimization"],
-      ["JAX", "Deep Learning"], ["OpenCV", "Computer Vision"],
-      ["Deep Learning", "Computer Vision"], ["Deep Learning", "NLP"],
-      ["Deep Learning", "Generative AI"],
-      ["Deep Learning", "Reinforcement Learning"],
-      ["Computer Vision", "Medical Imaging"],
-      ["Bayesian Inference", "Statistical Inference"],
-      ["Bayesian Inference", "Monte Carlo"],
-      ["Monte Carlo", "Stochastic Modeling"],
-      ["Monte Carlo", "Numerical Methods"],
-      ["Numerical Methods", "Continuous Math Methods"],
-      ["Numerical Methods", "Optimization"],
-      ["Causal Inference", "Statistics"],
-      ["Causal Inference", "Statistical Inference"],
-      ["NLP", "Generative AI"], ["Reinforcement Learning", "Optimization"],
-      ["Statistics", "Statistical Inference"],
-      ["Stochastic Modeling", "Continuous Math Methods"],
-      ["Git", "Linux"], ["Git", "Bash"], ["Linux", "Bash"],
-      ["Linux", "Docker"], ["Linux", "HPC"], ["HPC", "Parallel Prog."],
-      ["Bash", "Docker"], ["Docker", "AWS"], ["Jupyter", "NumPy"],
-      ["Jupyter", "Matplotlib"], ["W&B", "Deep Learning"],
-    ];
-
-    function gRandom(seed) {
-      var t = seed + 0x6d2b79f5;
-      t = Math.imul(t ^ (t >>> 15), t | 1);
-      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-    }
+    var SKILL_LINKS = [
+      ["python", "pytorch"], ["python", "tensorflow"], ["python", "numpy"],
+      ["python", "pandas"], ["python", "sklearn"], ["python", "scipy"],
+      ["python", "matplotlib"], ["python", "jax"],
+      ["js", "ts"], ["js", "react"], ["ts", "react"], ["react", "webdev"],
+      ["pytorch", "dl"], ["tensorflow", "dl"], ["jax", "dl"],
+      ["dl", "cv"], ["dl", "medical"], ["dl", "nlp"], ["dl", "rl"],
+      ["dl", "genai"],
+      ["sklearn", "bayesian"], ["sklearn", "stats"],
+      ["numpy", "numerical"], ["numpy", "montecarlo"],
+      ["scipy", "optimization"], ["scipy", "numerical"],
+      ["opencv", "cv"],
+      ["bayesian", "causal"], ["bayesian", "montecarlo"], ["bayesian", "stats"],
+      ["cv", "medical"], ["numerical", "montecarlo"], ["nlp", "genai"],
+      ["optimization", "numerical"], ["stats", "causal"],
+      ["rl", "optimization"],
+      ["r", "bayesian"], ["r", "causal"], ["r", "stats"],
+      ["matlab", "numerical"], ["matlab", "optimization"],
+      ["cpp", "parallel"], ["cpp", "hpc"], ["cpp", "cuda"],
+      ["cuda", "parallel"], ["cuda", "dl"],
+      ["sql", "pandas"], ["java", "hpc"],
+      ["linux", "bash"], ["linux", "hpc"], ["linux", "docker"],
+      ["hpc", "parallel"], ["hpc", "aws"], ["git", "linux"],
+      ["docker", "aws"],
+      ["jupyter", "python"], ["jupyter", "matplotlib"],
+      ["wandb", "pytorch"], ["wandb", "dl"], ["latex", "stats"],
+    ].map(function (l) {
+      return { source: l[0], target: l[1] };
+    });
 
     var gNodes = [];
-    var gNodeIndex = {};
-    var gEdges = [];
-    var gAdjacency = [];
-    var gWidth = 0;
-    var gHeight = 0;
-    var gMouse = { x: -9999, y: -9999 };
-    var gHovered = -1;
-    var gDrag = -1;
-    var gDragMoved = false;
-    var gSettleFrames = gReduced ? 260 : 0;
+    var gById = {};
+    var gAdj = {};
+    var gW = 0;
+    var gH = 0;
+    var gMouse = { x: 0, y: 0 };
+    var gHovered = null;
+    var gDragged = null;
+    var gSettle = 0;
 
-    function gBuildData() {
-      gNodes = SKILL_DEFS.map(function (def, i) {
-        gNodeIndex[def[0]] = i;
-        return {
-          label: def[0],
-          category: def[1],
-          x: 0,
-          y: 0,
-          vx: 0,
-          vy: 0,
-          r: 4.5,
-        };
-      });
-      gEdges = EDGE_DEFS.map(function (pair) {
-        return { a: gNodeIndex[pair[0]], b: gNodeIndex[pair[1]] };
-      }).filter(function (e) {
-        return e.a !== undefined && e.b !== undefined;
-      });
-      gAdjacency = gNodes.map(function () {
-        return [];
-      });
-      gEdges.forEach(function (e) {
-        gAdjacency[e.a].push(e.b);
-        gAdjacency[e.b].push(e.a);
+    function gBuildAdjacency() {
+      SKILL_LINKS.forEach(function (l) {
+        (gAdj[l.source] || (gAdj[l.source] = [])).push(l.target);
+        (gAdj[l.target] || (gAdj[l.target] = [])).push(l.source);
       });
     }
 
     function gLayout() {
-      var seed = Math.floor(gWidth * gHeight) + 11;
-      gNodes.forEach(function (n, i) {
-        seed += 1;
-        n.x = gWidth * 0.12 + gRandom(seed) * gWidth * 0.76;
-        seed += 1;
-        n.y = gHeight * 0.12 + gRandom(seed) * gHeight * 0.76;
-        n.vx = 0;
-        n.vy = 0;
+      var cx = gW / 2;
+      var cy = gH / 2;
+      var base = Math.min(gW, gH) * 0.28;
+      gNodes = SKILL_NODES.map(function (n) {
+        var angle = CAT_ANGLE[n.category] + (Math.random() - 0.5) * 1.2;
+        var dist = base + (Math.random() - 0.5) * base * 0.6;
+        return {
+          id: n.id,
+          label: n.label,
+          category: n.category,
+          x: cx + Math.cos(angle) * dist,
+          y: cy + Math.sin(angle) * dist,
+          vx: 0,
+          vy: 0,
+          radius: n.label.length > 10 ? 42 : n.label.length > 6 ? 36 : 30,
+        };
       });
+      gById = {};
+      gNodes.forEach(function (n) {
+        gById[n.id] = n;
+      });
+      // With motion reduced the graph still settles, then holds still.
+      gSettle = gReduced ? 240 : 0;
     }
 
     function gResize() {
       var w = graphCanvas.offsetWidth;
       var h = graphCanvas.offsetHeight;
       if (!w || !h) return;
-      gDpr = window.devicePixelRatio || 1;
-      graphCanvas.width = w * gDpr;
-      graphCanvas.height = h * gDpr;
+      var dpr = window.devicePixelRatio || 1;
+      graphCanvas.width = w * dpr;
+      graphCanvas.height = h * dpr;
       gctx.setTransform(1, 0, 0, 1, 0, 0);
-      gctx.scale(gDpr, gDpr);
-      gWidth = w;
-      gHeight = h;
-      gLayout();
+      gctx.scale(dpr, dpr);
+      gW = w;
+      gH = h;
+      if (!gNodes.length) gLayout();
     }
 
     function gStep() {
-      var i, j, n1, n2, dx, dy, dist, force;
-      var cx = gWidth / 2;
-      var cy = gHeight / 2;
+      var cx = gW / 2;
+      var cy = gH / 2;
+      var i, j, k, dx, dy, d;
 
       for (i = 0; i < gNodes.length; i++) {
-        for (j = i + 1; j < gNodes.length; j++) {
-          n1 = gNodes[i];
-          n2 = gNodes[j];
-          dx = n1.x - n2.x;
-          dy = n1.y - n2.y;
-          dist = Math.sqrt(dx * dx + dy * dy) || 0.01;
-          if (dist < 170) {
-            force = (1600 / (dist * dist)) * 6;
-            var fx = (dx / dist) * force;
-            var fy = (dy / dist) * force;
-            if (i !== gDrag) {
-              n1.vx += fx;
-              n1.vy += fy;
-            }
-            if (j !== gDrag) {
-              n2.vx -= fx;
-              n2.vy -= fy;
-            }
+        var n = gNodes[i];
+        if (n.id === gDragged) continue;
+        var fx = 0;
+        var fy = 0;
+
+        // Inverse-square repulsion, scaled by how much room the pair needs.
+        for (j = 0; j < gNodes.length; j++) {
+          if (i === j) continue;
+          var o = gNodes[j];
+          dx = n.x - o.x;
+          dy = n.y - o.y;
+          d = Math.sqrt(dx * dx + dy * dy) || 1;
+          var gap = n.radius + o.radius + 20;
+          if (d < gap * 3) {
+            var rep = (800 / (d * d)) * (gap / 50);
+            fx += (dx / d) * rep;
+            fy += (dy / d) * rep;
           }
         }
-      }
 
-      gEdges.forEach(function (e) {
-        n1 = gNodes[e.a];
-        n2 = gNodes[e.b];
-        dx = n2.x - n1.x;
-        dy = n2.y - n1.y;
-        dist = Math.sqrt(dx * dx + dy * dy) || 0.01;
-        var pull = (dist - 92) * 0.02;
-        var fx = (dx / dist) * pull;
-        var fy = (dy / dist) * pull;
-        if (e.a !== gDrag) {
-          n1.vx += fx;
-          n1.vy += fy;
+        // Springs pull linked skills toward a 120px rest length.
+        var nbrs = gAdj[n.id];
+        if (nbrs) {
+          for (k = 0; k < nbrs.length; k++) {
+            var t = gById[nbrs[k]];
+            if (!t) continue;
+            dx = t.x - n.x;
+            dy = t.y - n.y;
+            d = Math.sqrt(dx * dx + dy * dy) || 1;
+            var spring = (d - 120) * 0.003;
+            fx += (dx / d) * spring;
+            fy += (dy / d) * spring;
+          }
         }
-        if (e.b !== gDrag) {
-          n2.vx -= fx;
-          n2.vy -= fy;
-        }
-      });
 
-      gNodes.forEach(function (n, i) {
-        if (i === gDrag) return;
-        n.vx += (cx - n.x) * 0.0012;
-        n.vy += (cy - n.y) * 0.0012;
-        n.vx *= 0.82;
-        n.vy *= 0.82;
+        // Gentle pull to centre keeps the cloud from drifting apart.
+        fx += (cx - n.x) * 0.0004;
+        fy += (cy - n.y) * 0.0004;
+
+        // Hovering nudges the surrounding nodes aside.
+        if (gHovered && gHovered !== n.id) {
+          dx = n.x - gMouse.x;
+          dy = n.y - gMouse.y;
+          d = Math.sqrt(dx * dx + dy * dy) || 1;
+          if (d < 120) {
+            var push = (120 - d) * 0.008;
+            fx += (dx / d) * push;
+            fy += (dy / d) * push;
+          }
+        }
+
+        n.vx = (n.vx + fx) * 0.85;
+        n.vy = (n.vy + fy) * 0.85;
         n.x += n.vx;
         n.y += n.vy;
-        var pad = 26;
+
+        var pad = n.radius + 10;
         if (n.x < pad) {
           n.x = pad;
-          n.vx = Math.abs(n.vx) * 0.4;
+          n.vx *= -0.5;
         }
-        if (n.x > gWidth - pad) {
-          n.x = gWidth - pad;
-          n.vx = -Math.abs(n.vx) * 0.4;
+        if (n.x > gW - pad) {
+          n.x = gW - pad;
+          n.vx *= -0.5;
         }
         if (n.y < pad) {
           n.y = pad;
-          n.vy = Math.abs(n.vy) * 0.4;
+          n.vy *= -0.5;
         }
-        if (n.y > gHeight - pad) {
-          n.y = gHeight - pad;
-          n.vy = -Math.abs(n.vy) * 0.4;
+        if (n.y > gH - pad) {
+          n.y = gH - pad;
+          n.vy *= -0.5;
         }
-      });
-    }
-
-    function gConnected(idx) {
-      var set = {};
-      if (idx < 0) return set;
-      gAdjacency[idx].forEach(function (n) {
-        set[n] = true;
-      });
-      return set;
+      }
     }
 
     function gDraw() {
-      gctx.clearRect(0, 0, gWidth, gHeight);
-      var connected = gConnected(gHovered);
+      gctx.clearRect(0, 0, gW, gH);
 
-      gEdges.forEach(function (e) {
-        var n1 = gNodes[e.a];
-        var n2 = gNodes[e.b];
+      var connected = {};
+      if (gHovered) {
+        SKILL_LINKS.forEach(function (l) {
+          if (l.source === gHovered) connected[l.target] = true;
+          if (l.target === gHovered) connected[l.source] = true;
+        });
+      }
+
+      var pulse = (Date.now() % 2000) / 2000;
+
+      SKILL_LINKS.forEach(function (l) {
+        var a = gById[l.source];
+        var b = gById[l.target];
+        if (!a || !b) return;
         var active =
-          gHovered >= 0 && (e.a === gHovered || e.b === gHovered);
+          gHovered && (l.source === gHovered || l.target === gHovered);
+
         gctx.beginPath();
-        gctx.moveTo(n1.x, n1.y);
-        gctx.lineTo(n2.x, n2.y);
-        if (active) {
-          var c = CATEGORY_COLOR[gNodes[gHovered].category];
-          gctx.strokeStyle =
-            "rgba(" + c[0] + "," + c[1] + "," + c[2] + ",0.65)";
-          gctx.lineWidth = 1.5;
-        } else {
-          gctx.strokeStyle = "rgba(255,255,255,0.07)";
-          gctx.lineWidth = 1;
-        }
+        gctx.moveTo(a.x, a.y);
+        gctx.lineTo(b.x, b.y);
+        gctx.strokeStyle = active
+          ? CAT_COLOR[a.category] + "80"
+          : gHovered
+          ? "rgba(200,200,210,0.08)"
+          : "rgba(200,200,210,0.2)";
+        gctx.lineWidth = active ? 2 : 1;
         gctx.stroke();
-      });
 
-      gNodes.forEach(function (n, i) {
-        var c = CATEGORY_COLOR[n.category];
-        var isHovered = i === gHovered;
-        var isConnected = connected[i];
-        var isActive = isHovered || isConnected;
-
-        if (isActive) {
-          gctx.font =
-            (isHovered ? "700 " : "600 ") +
-            "13px -apple-system, 'system-ui', sans-serif";
-          var textW = gctx.measureText(n.label).width;
-          var r = Math.max(30, textW / 2 + 18);
-          if (isHovered) r += 4;
-
+        // A dot travels along each active edge to show the connection.
+        if (active && !gReduced) {
           gctx.beginPath();
-          gctx.arc(n.x, n.y, r, 0, Math.PI * 2);
-          gctx.fillStyle =
-            "rgba(" + c[0] + "," + c[1] + "," + c[2] + ",0.14)";
+          gctx.arc(
+            a.x + (b.x - a.x) * pulse,
+            a.y + (b.y - a.y) * pulse,
+            3,
+            0,
+            Math.PI * 2
+          );
+          gctx.fillStyle = CAT_COLOR[a.category] + "aa";
           gctx.fill();
-          gctx.lineWidth = isHovered ? 2 : 1.4;
-          gctx.strokeStyle =
-            "rgba(" +
-            c[0] +
-            "," +
-            c[1] +
-            "," +
-            c[2] +
-            "," +
-            (isHovered ? 0.95 : 0.55) +
-            ")";
-          gctx.stroke();
-
-          gctx.fillStyle = isHovered
-            ? "rgba(255,255,255,0.96)"
-            : "rgba(255,255,255,0.75)";
-          gctx.textAlign = "center";
-          gctx.textBaseline = "middle";
-          gctx.fillText(n.label, n.x, n.y);
-
-          if (isHovered) {
-            gctx.font =
-              "700 10px -apple-system, 'system-ui', sans-serif";
-            gctx.fillStyle =
-              "rgba(" + c[0] + "," + c[1] + "," + c[2] + ",0.9)";
-            gctx.textBaseline = "top";
-            gctx.fillText(
-              CATEGORY_LABEL[n.category].toUpperCase(),
-              n.x,
-              n.y + r + 8
-            );
-          }
-        } else {
-          gctx.beginPath();
-          gctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-          gctx.fillStyle =
-            "rgba(" + c[0] + "," + c[1] + "," + c[2] + ",0.55)";
-          gctx.fill();
-
-          gctx.font = "500 10.5px -apple-system, 'system-ui', sans-serif";
-          gctx.fillStyle = "rgba(255,255,255,0.32)";
-          gctx.textAlign = "center";
-          gctx.textBaseline = "middle";
-          gctx.fillText(n.label, n.x, n.y + 15);
         }
       });
-    }
 
-    function gFindNearest(x, y) {
-      var best = -1;
-      var bestDist = 26;
-      gNodes.forEach(function (n, i) {
-        var dx = n.x - x;
-        var dy = n.y - y;
-        var d = Math.sqrt(dx * dx + dy * dy);
-        var hitR = i === gHovered ? 60 : 22;
-        if (d < hitR && d < bestDist + 40) {
-          if (best === -1 || d < bestDist) {
-            best = i;
-            bestDist = d;
-          }
+      gNodes.forEach(function (n) {
+        var isHot = n.id === gHovered;
+        var isNear = !!connected[n.id];
+        var isDim = gHovered && !isHot && !isNear;
+        var color = CAT_COLOR[n.category];
+        var r = isHot ? n.radius + 6 : n.radius;
+
+        if (isHot) {
+          var grad = gctx.createRadialGradient(
+            n.x, n.y, r * 0.5,
+            n.x, n.y, r * 2
+          );
+          grad.addColorStop(0, color + "30");
+          grad.addColorStop(1, "transparent");
+          gctx.beginPath();
+          gctx.arc(n.x, n.y, r * 2, 0, Math.PI * 2);
+          gctx.fillStyle = grad;
+          gctx.fill();
+        }
+
+        gctx.beginPath();
+        gctx.arc(n.x, n.y, r, 0, Math.PI * 2);
+        gctx.fillStyle = isDim ? "#1a1a24" : "#13131d";
+        gctx.fill();
+        gctx.strokeStyle = isDim
+          ? "rgba(200,200,210,0.1)"
+          : isHot
+          ? color
+          : isNear
+          ? color + "88"
+          : "rgba(200,200,210,0.25)";
+        gctx.lineWidth = isHot ? 2.5 : isNear ? 2 : 1;
+        gctx.stroke();
+
+        gctx.font =
+          (isHot ? "600 12px " : "500 10px ") + GRAPH_MONO;
+        gctx.textAlign = "center";
+        gctx.textBaseline = "middle";
+        gctx.fillStyle = isDim
+          ? "rgba(200,200,210,0.2)"
+          : isHot
+          ? "#f0f0f5"
+          : isNear
+          ? "#d0d0dd"
+          : "rgba(200,200,210,0.65)";
+        gctx.fillText(n.label, n.x, n.y);
+
+        if (isHot) {
+          gctx.font = "500 9px " + GRAPH_MONO;
+          gctx.fillStyle = color;
+          gctx.fillText(
+            CAT_LABEL[n.category].toUpperCase(),
+            n.x,
+            n.y + r + 14
+          );
         }
       });
-      return best;
     }
 
     function gLoop() {
-      if (!gReduced || gSettleFrames > 0) {
+      if (!gReduced || gSettle > 0) {
         gStep();
-        if (gSettleFrames > 0) gSettleFrames -= 1;
+        if (gSettle > 0) gSettle -= 1;
+      }
+      if (gDragged) {
+        var d = gById[gDragged];
+        if (d) {
+          d.x += (gMouse.x - d.x) * 0.3;
+          d.y += (gMouse.y - d.y) * 0.3;
+          d.vx = 0;
+          d.vy = 0;
+        }
       }
       gDraw();
       requestAnimationFrame(gLoop);
     }
 
-    function gPointerPos(e) {
+    function gPos(e) {
       var rect = graphCanvas.getBoundingClientRect();
-      var clientX = e.touches ? e.touches[0].clientX : e.clientX;
-      var clientY = e.touches ? e.touches[0].clientY : e.clientY;
-      return { x: clientX - rect.left, y: clientY - rect.top };
+      var pt = e.touches && e.touches[0] ? e.touches[0] : e;
+      return { x: pt.clientX - rect.left, y: pt.clientY - rect.top };
+    }
+
+    function gHit(x, y) {
+      for (var i = gNodes.length - 1; i >= 0; i--) {
+        var n = gNodes[i];
+        var dx = x - n.x;
+        var dy = y - n.y;
+        var reach = n.radius + 8;
+        if (dx * dx + dy * dy < reach * reach) return n.id;
+      }
+      return null;
     }
 
     graphCanvas.addEventListener("mousemove", function (e) {
-      var p = gPointerPos(e);
-      gMouse = p;
-      if (gDrag >= 0) {
-        gDragMoved = true;
-        gNodes[gDrag].x = p.x;
-        gNodes[gDrag].y = p.y;
-        gNodes[gDrag].vx = 0;
-        gNodes[gDrag].vy = 0;
-      } else {
-        gHovered = gFindNearest(p.x, p.y);
-      }
-    });
-    graphCanvas.addEventListener("mouseleave", function () {
-      gMouse = { x: -9999, y: -9999 };
-      if (gDrag < 0) gHovered = -1;
+      gMouse = gPos(e);
+      if (gDragged) return;
+      gHovered = gHit(gMouse.x, gMouse.y);
     });
     graphCanvas.addEventListener("mousedown", function (e) {
-      var p = gPointerPos(e);
-      var idx = gFindNearest(p.x, p.y);
-      if (idx >= 0) {
-        gDrag = idx;
-        gDragMoved = false;
+      gMouse = gPos(e);
+      var id = gHit(gMouse.x, gMouse.y);
+      if (id) {
+        gDragged = id;
         e.preventDefault();
       }
     });
     window.addEventListener("mouseup", function () {
-      gDrag = -1;
+      gDragged = null;
+    });
+    graphCanvas.addEventListener("mouseleave", function () {
+      gHovered = null;
+      gDragged = null;
     });
 
     graphCanvas.addEventListener(
       "touchstart",
       function (e) {
-        var p = gPointerPos(e);
-        var idx = gFindNearest(p.x, p.y);
-        gHovered = idx;
-        if (idx >= 0) {
-          gDrag = idx;
-          gDragMoved = false;
-        }
+        gMouse = gPos(e);
+        var id = gHit(gMouse.x, gMouse.y);
+        gHovered = id;
+        if (id) gDragged = id;
       },
       { passive: true }
     );
     graphCanvas.addEventListener(
       "touchmove",
       function (e) {
-        if (gDrag < 0) return;
-        var p = gPointerPos(e);
-        gDragMoved = true;
-        gNodes[gDrag].x = p.x;
-        gNodes[gDrag].y = p.y;
-        gNodes[gDrag].vx = 0;
-        gNodes[gDrag].vy = 0;
+        gMouse = gPos(e);
       },
       { passive: true }
     );
     graphCanvas.addEventListener("touchend", function () {
-      gDrag = -1;
+      gDragged = null;
     });
 
-    gBuildData();
+    gBuildAdjacency();
     window.addEventListener("resize", gResize);
     gResize();
     requestAnimationFrame(gLoop);
