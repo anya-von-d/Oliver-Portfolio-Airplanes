@@ -1685,9 +1685,6 @@ main {
   color: var(--orange);
 }
 .vent-panel-wrap {
-  display: flex;
-  gap: 28px;
-  align-items: flex-start;
   min-height: 300px;
   border-radius: 16px;
   border: 1px solid var(--card-border);
@@ -1697,32 +1694,19 @@ main {
     44px 63px 31px rgba(0, 0, 0, 0.01);
   padding: 30px;
 }
-.vent-photo {
-  flex: none;
-  width: 128px;
-  height: 128px;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-}
-.vent-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
 .vent-panels {
-  flex: 1;
   min-width: 0;
 }
 .vent-panel {
   display: none;
 }
 .vent-panel.active {
-  display: block;
+  display: flex;
+  flex-direction: column;
   animation: ocFadeIn 0.2s ease;
 }
 .vent-panel-eyebrow {
+  align-self: flex-end;
   margin: 0 0 8px;
   font-size: 12px;
   font-weight: 600;
@@ -2453,13 +2437,8 @@ main {
     gap: 14px;
   }
   .vent-panel-wrap {
-    flex-direction: column;
     padding: 24px;
     min-height: 0;
-  }
-  .vent-photo {
-    width: 84px;
-    height: 84px;
   }
   .feature-link-card {
     padding: 20px 22px;
